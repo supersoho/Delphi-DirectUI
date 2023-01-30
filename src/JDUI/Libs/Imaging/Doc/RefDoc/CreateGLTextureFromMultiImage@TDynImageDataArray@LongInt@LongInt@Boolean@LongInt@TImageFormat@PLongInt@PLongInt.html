@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>CreateGLTextureFromMultiImage Function</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="generator" content="Doc-O-Matic" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <link rel="STYLESHEET" href="default.css" type="text/css" />
+
+<script type="text/javascript" src="scripts.js"></script>
+</head>
+<body class="Element57" onmousedown="onBodyMouseDown();">
+
+<!-- Begin Popups -->
+
+<!-- End Popups -->
+
+<!-- Begin Page Header -->
+<div class="Element92">
+<div class="Element5">
+CreateGLTextureFromMultiImage Function</div>
+<div class="Element7">
+<a href="ImagingOpenGL_pas.html">ImagingOpenGL</a></div>
+</div>
+
+<!-- End Page Header -->
+
+<!-- Begin Client Area -->
+
+<!-- Begin Page Content -->
+<div class="Element58">
+<div class="Element11">
+<div class="Element10">
+<p class="Element10">
+Converts images in TDymImageDataArray to one OpenGL texture.</p></div>
+</div>
+<div class="Element99">
+Pascal</div>
+<div class="Element101"><div class="Element100"><pre class="Element100"><strong>function</strong> CreateGLTextureFromMultiImage(<strong>const</strong> Images: <a href="TDynImageDataArray.html">TDynImageDataArray</a>; 
+                                       Width: LongInt = 0; 
+                                       Height: LongInt = 0; 
+                                       MipMaps: Boolean = True; 
+                                       MainLevelIndex: LongInt = 0; 
+                                       OverrideFormat: <a href="TImageFormat.html">TImageFormat</a> = ifUnknown; 
+                                       CreatedWidth: PLongInt = <strong>nil</strong>; 
+                                       CreatedHeight: PLongInt = <strong>nil</strong>): GLuint;</pre></div></div>
+<div class="Element14">
+File</div>
+<div class="Element11">
+<div class="Element10">
+<p class="Element10">
+<a href="ImagingOpenGL_pas.html">ImagingOpenGL</a> (at line 132)</p></div>
+</div>
+<div class="Element14">
+Description</div>
+<div class="Element11">
+<div class="Element10">
+<p class="Element10">
+ Image at index MainLevelIndex in the array is used as main mipmap level and additional images are used as subsequent levels. If there is not enough images in array missing levels are automatically generated (and if there is enough images but they have wrong dimensions or format then they are resized/converted). If driver supports only power of two sized textures images are resized. OverrideFormat can be used to convert image into specific format before it is passed to OpenGL, ifUnknown means no conversion. If desired texture format is not supported by hardware default A8R8G8B8 format is used instead for color images and ifGray8 is used for luminance images. DXTC (S3TC) compressed and floating point textures are created if supported by hardware. Width and Height can be used to set size of main mipmap level according to your needs, Width and Height of 0 mean use width and height of input image that will become main level mipmap. MipMaps set to True mean build all possible levels, False means use only level 0. You can use CreatedWidth and CreatedHeight parameters to query dimensions of created texture's largest mipmap level (it could differ from dimensions of source image).</p></div>
+</div>
+<div class="Element14">
+Related Information</div>
+<div class="Element11">
+<div class="Element10">
+<a href="ImagingOpenGL_pas.html">ImagingOpenGL</a></div>
+</div>
+</div>
+<!-- End Page Content -->
+
+<!-- Begin Page Footer -->
+<div class="Element95">
+<em>You are here:</em> Symbol Reference &gt; Functions &gt; <a href="CreateGLTextureFromMultiImage@TDynImageDataArray@LongInt@LongInt@Boolean@LongInt@TImageFormat@PLongInt@PLongInt.html">CreateGLTextureFromMultiImage Function </a></div>
+<div class="Element93">
+<table width="100%" cellspacing="0" cellpadding="0">
+<tr><td width="100%">
+<div class="Element4">
+<a href="toc.html">Contents</a> | <a href="idx.html">Index</a></div>
+</td></tr><tr><td width="100%">
+<div class="Element91">
+<a href="CreateGLTextureFromImage@TImageData@LongInt@LongInt@Boolean@TImageFormat@PLongInt@PLongInt.html">Previous</a> | <a href="CreateImageFromD3DSurface@IDirect3DSurface9@TImageData.html">Next</a></div>
+</td></tr></table></div>
+
+<!-- End Page Footer -->
+
+<!-- End Client Area -->
+</body></html>

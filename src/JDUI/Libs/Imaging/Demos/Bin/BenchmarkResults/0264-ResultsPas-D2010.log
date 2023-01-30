@@ -1,0 +1,121 @@
+Vampyre Imaging Library Benchmark Demo version 0.26.4
+
+-------------  Loading Images -------------
+Loading image: Tigers.bmp
+Image loaded in:                                                        975 us
+Loading image: Tigers.jpg
+Image loaded in:                                                     10 344 us
+Loading image: Tigers.png
+Image loaded in:                                                     21 202 us
+Loading image: Tigers.mng
+Image loaded in:                                                     25 699 us
+Loading image: Tigers.jng
+Image loaded in:                                                     17 091 us
+Loading image: Tigers.gif
+Image loaded in:                                                     12 773 us
+Loading image: Tigers.dds
+Image loaded in:                                                        223 us
+Loading image: Tigers.tga
+Image loaded in:                                                      1 800 us
+Loading image: Tigers.pbm
+Image loaded in:                                                      2 019 us
+Loading image: Tigers.pgm
+Image loaded in:                                                         97 us
+Loading image: Tigers.ppm
+Image loaded in:                                                      2 321 us
+Loading image: Tigers.pam
+Image loaded in:                                                        156 us
+Loading image: Tigers.pfm
+Image loaded in:                                                        681 us
+Loading image: Tigers.jp2
+Image loaded in:                                                    244 686 us
+Loading image: Tigers.tif
+Image loaded in:                                                     23 703 us
+Loading image: Tigers.psd
+Image loaded in:                                                      2 481 us
+Loading image: Tigers.pcx
+Image loaded in:                                                      3 620 us
+
+-----------  Image Manipulation -----------
+Resizing image to 3000x3000 (bilinear) ... 
+Image resized in:                                                    36 945 us
+Converting image to A16R16G16B16 64bit format ... 
+Image converted in:                                                 219 147 us
+Flipping image ... 
+Image flipped in:                                                    39 279 us
+Mirroring image ... 
+Image mirrored in:                                                   46 229 us
+Swapping channels of image ... 
+Channels swapped in:                                                207 539 us
+Converting image to A32B32G32R32F 128bit floating point format... 
+Image converted in:                                                 506 624 us
+Converting image to A4R4G4B4 16bit format... 
+Image converted in:                                                 540 526 us
+Converting image to A8R8G8B8 32bit format... 
+Image converted in:                                                 507 547 us
+Cloning image ... 
+Image cloned in:                                                     30 841 us
+Copying rectangle ... 
+Rectangle copied in:                                                  5 723 us
+Filling rectangle ... 
+Rectangle filled in:                                                  3 043 us
+Stretching rectangle (bicubic) ... 
+Rectangle stretched in:                                             622 323 us
+Replacing colors in rectangle ... 
+Colors replaced in:                                                  35 901 us
+Creating mipmaps ... 
+Mipmaps created in:                                               5 274 075 us
+Splitting image ... 
+Image split in:                                                      38 381 us
+Resizing image to 1000x1000 (bicubic) ... 
+Image resized in:                                                   832 507 us
+Rotating image 180 degrees CCW ... 
+Image rotated in:                                                     9 971 us
+Rotating image 90 degrees CCW ... 
+Image rotated in:                                                    13 868 us
+Reducing colors count to 1024... 
+Colors reduced in:                                                  152 617 us
+Making palette for images ... 
+Palette made in:                                                     24 819 us
+Mapping image to existing palette ... 
+Image mapped in:                                                    783 770 us
+Compressing image to DXT1 format... 
+Image compressed in:                                                184 749 us
+Decompressing image from DXT1 format... 
+Image decompressed in:                                               12 056 us
+Converting image to R8G8B8 24bit format... 
+Image converted in:                                                   5 819 us
+
+-------------  Saving Images --------------
+Saving image to format: bmp
+Image saved in:                                                       8 400 us
+Saving image to format: jpg
+Image saved in:                                                      55 276 us
+Saving image to format: png
+Image saved in:                                                     121 032 us
+Saving image to format: mng
+Image saved in:                                                     122 191 us
+Saving image to format: jng
+Image saved in:                                                      57 914 us
+Saving image to format: gif
+Image saved in:                                                     148 596 us
+Saving image to format: dds
+Image saved in:                                                       2 402 us
+Saving image to format: tga
+Image saved in:                                                       2 700 us
+Saving image to format: pgm
+Image saved in:                                                      14 923 us
+Saving image to format: ppm
+Image saved in:                                                      21 076 us
+Saving image to format: pam
+Image saved in:                                                      20 438 us
+Saving image to format: pfm
+Image saved in:                                                     101 240 us
+Saving image to format: jp2
+Image saved in:                                                     875 531 us
+Saving image to format: tif
+Image saved in:                                                      48 859 us
+Saving image to format: psd
+Image saved in:                                                      57 573 us
+Saving image to format: xpm
+Image saved in:                                                     215 096 us

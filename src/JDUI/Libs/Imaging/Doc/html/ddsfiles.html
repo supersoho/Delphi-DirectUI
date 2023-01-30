@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>Loading and Saving DDS Files</title></head><body>
+    <span class="title">Loading and Saving DDS Files</span>
+    <p class="para">DirectDraw Surface is Microsoft's file format for storing textures.
+      You can find information on this file format and on its Imaging support
+      in <span class="link"><a href="dds.html">Supported File Formats/DDS</a></span>
+      section. This section shows how to perform
+      some load/save operations specific for DDS files (cube map and volume texture support).
+      Each example consists of description of a action you want to do and
+      code listing in which the action is carried out by Imaging.
+    </p>
+    <span class="caption">Example 1: Simple Loading and Saving</span>
+    <p class="para">You have single texture without mipmaps and you want to load it and
+      save it.
+    </p>
+    <pre class="syntax">uses
+  ImagingTypes, Imaging;
+var
+  Img: <span class="codeinline"><span class="link"><a href="../RefDoc/TImageData.html">TImageData</a></span></span>;
+begin
+  // call this before using any TImageData record
+  <span class="codeinline"><span class="link"><a href="../RefDoc/InitImage@TImageData.html">InitImage</a></span></span>(Img);
+  // load texture from file
+  <span class="codeinline"><span class="link"><a href="../RefDoc/LoadImageFromFile@string@TImageData.html">LoadImageFromFile</a></span></span>('X:\images\tex01.dds', Img);
+  ...
+  // do something with the image
+  ...
+  // save the image to file
+  <span class="codeinline"><span class="link"><a href="../RefDoc/SaveImageToFile@string@TImageData.html">SaveImageToFile</a></span></span>('X:\images\tex02.dds', Img);
+  // memory occupied by the image is freed
+  <span class="codeinline"><span class="link"><a href="../RefDoc/FreeImage@TImageData.html">FreeImage</a></span></span>(Img);
+end.
+    </pre>
+    <span class="caption">Example 2: Loading and Saving Mipmapped Texture</span>
+    <p class="para">You have single texture with mipmaps and you want to load it and
+      save it.
+    </p>
+    <div class="warning">Warning:
+    <span class="ntwpara">Imaging saves mipmaps in the same order as you send them to
+      <code class="keyword">SaveMultiImageTo*</code> functions in <code class="codeinline">Images</code> parameter.
+      Mipmap dimensions (next level has width and height of the previous level divided by two)
+      and format (must be same as the main image's) are automatically adjusted
+      during saving.
+    </span></div>
+    <pre class="syntax">uses
+  ImagingTypes, Imaging;
+var
+  ImgArray: <span class="codeinline"><span class="link"><a href="../RefDoc/TDynImageDataArray.html">TDynImageDataArray</a></span></span>;
+  MipMapLevels: LongInt;
+begin
+  // load texture from file
+  <span class="codeinline"><span class="link"><a href="../RefDoc/LoadMultiImageFromFile@string@TDynImageDataArray.html">LoadMultiImageFromFile</a></span></span>('X:\images\tex01mip.dds', ImgArray);
+  // get the number of mipmap levels in the loaded DDS file
+  // in this case it is equal to Length(ImgArray)
+  MipMapLevels := <span class="codeinline"><span class="link"><a href="../RefDoc/GetOption@LongInt.html">GetOption</a></span></span>(<span class="codeinline"><span class="link"><a href="../RefDoc/ImagingDDSLoadedMipMapCount.html">ImagingDDSLoadedMipMapCount</a></span></span>);
+  ...
+  // do something with the image
+  ...
+  // save the texture with mipmaps to file, number of mipmaps saved to
+  // file will be Length(ImgArray)
+  <span class="codeinline"><span class="link"><a href="../RefDoc/SaveMultiImageToFile@string@TDynImageDataArray.html">SaveMultiImageToFile</a></span></span>('X:\images\tex02mip.dds', ImgArray);
+  // memory occupied by the images is freed
+  <span class="codeinline"><span class="link"><a href="../RefDoc/FreeImagesInArray@TDynImageDataArray.html">FreeImagesInArray</a></span></span>(ImgArray);
+end.
+    </pre>
+    <span class="caption">Example 3: Loading and Saving Mipmapped Cube Map</span>
+    <p class="para">You have cubic environment map with mipmaps and you want to load it and
+      save it.
+      The cube faces in DDS files are written in this order: positive x, negative x,
+      positive y, negative y, positive z, negative z.
+      Each face is written with its main image
+      followed by any mipmap levels. All faces must be the same size
+      and have the same number of mipmap levels.
+    </p>
+    <div class="warning">Warning:
+    <span class="ntwpara">Imaging saves cube faces and mipmaps in the same order as you send them to
+      <code class="keyword">SaveMultiImageTo*</code> functions in <code class="codeinline">Images</code> parameter.
+      Make sure that number of images you send to saving functions is equal to
+      NumberOfFaces * MipMapLevels where these two values are defined by options
+      interface (see code below). If the number of images is not right then DDS is
+      saved as simple 2D texture.
+      Mipmap dimensions (next level has width and height of the previous level divided by two)
+      and format (must be same as the main image's) are automatically adjusted
+      during saving.
+    </span></div>
+    <pre class="syntax">uses
+  ImagingTypes, Imaging;
+var
+  ImgArray: <span class="codeinline"><span class="link"><a href="../RefDoc/TDynImageDataArray.html">TDynImageDataArray</a></span></span>;
+  MipMapLevels, Faces: LongInt;
+  IsCubeMap: Boolean;
+begin
+  // load texture from file
+  <span class="codeinline"><span class="link"><a href="../RefDoc/LoadMultiImageFromFile@string@TDynImageDataArray.html">LoadMultiImageFromFile</a></span></span>('X:\images\tex01cubemip.dds', ImgArray);
+  // get the number of mipmap levels in the loaded DDS file
+  // in this case it is equal to Length(ImgArray) div Faces
+  MipMapLevels := <span class="codeinline"><span class="link"><a href="../RefDoc/GetOption@LongInt.html">GetOption</a></span></span>(<span class="codeinline"><span class="link"><a href="../RefDoc/ImagingDDSLoadedMipMapCount.html">ImagingDDSLoadedMipMapCount</a></span></span>);
+  // check whether we have loaded cube map
+  IsCubeMap := Boolean(<span class="codeinline"><span class="link"><a href="../RefDoc/GetOption@LongInt.html">GetOption</a></span></span>(<span class="codeinline"><span class="link"><a href="../RefDoc/ImagingDDSLoadedCubeMap.html">ImagingDDSLoadedCubeMap</a></span></span>));
+  // get the number of cube faces in the loaded DDS file
+  // Length(ImgArray) = Faces * MipMapLevels
+  Faces := <span class="codeinline"><span class="link"><a href="../RefDoc/GetOption@LongInt.html">GetOption</a></span></span>(<span class="codeinline"><span class="link"><a href="../RefDoc/ImagingDDSLoadedDepth.html">ImagingDDSLoadedDepth</a></span></span>);
+  ...
+  // do something with the image
+  ...
+  // tell Imaging how many mipmap levels next DDS file should have (for each face)
+  <span class="codeinline"><span class="link"><a href="../RefDoc/SetOption@LongInt@LongInt.html">SetOption</a></span></span>(<span class="codeinline"><span class="link"><a href="../RefDoc/ImagingDDSSaveMipMapCount.html">ImagingDDSSaveMipMapCount</a></span></span>, MipMapLevels);
+  // tell Imaging that the next DDS file should be cubic environment map
+  <span class="codeinline"><span class="link"><a href="../RefDoc/SetOption@LongInt@LongInt.html">SetOption</a></span></span>(<span class="codeinline"><span class="link"><a href="../RefDoc/ImagingDDSSaveCubeMap.html">ImagingDDSSaveCubeMap</a></span></span>, IsCubeMap);
+  // tell Imaging how many faces next DDS file should have
+  <span class="codeinline"><span class="link"><a href="../RefDoc/SetOption@LongInt@LongInt.html">SetOption</a></span></span>(<span class="codeinline"><span class="link"><a href="../RefDoc/ImagingDDSSaveDepth.html">ImagingDDSSaveDepth</a></span></span>, Faces);
+  // save the cube map with mipmaps to file
+  <span class="codeinline"><span class="link"><a href="../RefDoc/SaveMultiImageToFile@string@TDynImageDataArray.html">SaveMultiImageToFile</a></span></span>('X:\images\tex02cubemip.dds', ImgArray);
+  // memory occupied by the images is freed
+  <span class="codeinline"><span class="link"><a href="../RefDoc/FreeImagesInArray@TDynImageDataArray.html">FreeImagesInArray</a></span></span>(ImgArray);
+end.
+    </pre>
+    <span class="caption">Example 4: Loading and Saving Mipmapped Volume Texture</span>
+    <p class="para">You have volume texture with mipmaps and you want to load it and
+      save it.
+      For volumes without mipmaps,
+      each depth slice is written to the file in order.
+      If mipmaps are included, all depth slices for a given mipmap
+      level are written together, with each level
+      containing half as many slices as the previous level
+      with a minimum of 1. Volume textures do not support
+      DXTn compression as of DirectX 9.0.
+    </p>
+    <div class="warning">Warning:
+    <span class="ntwpara">Imaging saves volume slices and mipmaps in the same order as you send them to
+      <code class="keyword">SaveMultiImageTo*</code> functions in <code class="codeinline">Images</code> parameter.
+      Make sure that number of images you send to saving functions is right
+      (it is not NumberOfFaces * MipMapLevels!).
+      If the number of images is not right then DDS is
+      saved as simple 2D texture.
+      Mipmap dimensions (next level has width and height of the previous level divided by two)
+      and format (must be same as the main image's) are automatically adjusted
+      during saving.
+    </span></div>
+    <pre class="syntax">uses
+  ImagingTypes, Imaging;
+var
+  ImgArray: <span class="codeinline"><span class="link"><a href="../RefDoc/TDynImageDataArray.html">TDynImageDataArray</a></span></span>;
+  MipMapLevels, Slices: LongInt;
+  IsVolume: Boolean;
+begin
+  // load texture from file
+  <span class="codeinline"><span class="link"><a href="../RefDoc/LoadMultiImageFromFile@string@TDynImageDataArray.html">LoadMultiImageFromFile</a></span></span>('X:\images\tex01volmip.dds', ImgArray);
+  // get the number of mipmap levels in the loaded DDS file
+  // in this case it is NOT equal to Length(ImgArray) div Slices
+  MipMapLevels := <span class="codeinline"><span class="link"><a href="../RefDoc/GetOption@LongInt.html">GetOption</a></span></span>(<span class="codeinline"><span class="link"><a href="../RefDoc/ImagingDDSLoadedMipMapCount.html">ImagingDDSLoadedMipMapCount</a></span></span>);
+  // check whether we have loaded volume texture 
+  IsVolume := Boolean(<span class="codeinline"><span class="link"><a href="../RefDoc/GetOption@LongInt.html">GetOption</a></span></span>(<span class="codeinline"><span class="link"><a href="../RefDoc/ImagingDDSLoadedVolume.html">ImagingDDSLoadedVolume</a></span></span>));
+  // get the number of volume slices in the loaded DDS file
+  // Length(ImgArray) &lt;&gt; Slices * MipMapLevels
+  Slices := <span class="codeinline"><span class="link"><a href="../RefDoc/GetOption@LongInt.html">GetOption</a></span></span>(<span class="codeinline"><span class="link"><a href="../RefDoc/ImagingDDSLoadedDepth.html">ImagingDDSLoadedDepth</a></span></span>);
+  ...
+  // do something with the image
+  ...
+  // tell Imaging how many mipmap levels next DDS file should have
+  <span class="codeinline"><span class="link"><a href="../RefDoc/SetOption@LongInt@LongInt.html">SetOption</a></span></span>(<span class="codeinline"><span class="link"><a href="../RefDoc/ImagingDDSSaveMipMapCount.html">ImagingDDSSaveMipMapCount</a></span></span>, MipMapLevels);
+  // tell Imaging that the next DDS file should be volume texture
+  <span class="codeinline"><span class="link"><a href="../RefDoc/SetOption@LongInt@LongInt.html">SetOption</a></span></span>(<span class="codeinline"><span class="link"><a href="../RefDoc/ImagingDDSSaveVolume.html">ImagingDDSSaveVolume</a></span></span>, IsVolume);
+  // tell Imaging how many slices next DDS file should have
+  <span class="codeinline"><span class="link"><a href="../RefDoc/SetOption@LongInt@LongInt.html">SetOption</a></span></span>(<span class="codeinline"><span class="link"><a href="../RefDoc/ImagingDDSSaveDepth.html">ImagingDDSSaveDepth</a></span></span>, Slices);
+  // save the volume texture with mipmaps to file
+  <span class="codeinline"><span class="link"><a href="../RefDoc/SaveMultiImageToFile@string@TDynImageDataArray.html">SaveMultiImageToFile</a></span></span>('X:\images\tex02volmip.dds', ImgArray);
+  // memory occupied by the images is freed
+  <span class="codeinline"><span class="link"><a href="../RefDoc/FreeImagesInArray@TDynImageDataArray.html">FreeImagesInArray</a></span></span>(ImgArray);
+end.
+    </pre>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

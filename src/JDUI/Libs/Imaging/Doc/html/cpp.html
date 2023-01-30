@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>C/C++ Demos</title></head><body>
+    <span class="title">C/C++ Demos</span>
+    <p class="para">These C/C++ demos currently exist:</p>
+    <ul class="bullet"><li class="li">
+        <span class="link"><a href="#benchmark">Benchmark</a></span>
+      </li><li class="li">
+        <span class="link"><a href="#test">Small Test</a></span>
+      </li></ul>
+    <div class="note">Note:
+    <span class="ntwpara">If you want to use Imaging in C/C++ you must include
+    <code class="codeinline">ImagingImport.h</code> header and link compiled
+    <code class="codeinline">ImagingImport.c</code> file (both located in
+    <code class="keyword">Source\Wrappers\Cpp</code> directory)
+    and for C++ use namespace
+    <code class="codeinline">Imaging</code>. You must call <span class="codeinline"><span class="link"><a href="../RefDoc/ImLoadLibrary.html">ImLoadLibrary</a></span></span>
+    before usage of any Imaging functions and you must call
+    <span class="codeinline"><span class="link"><a href="../RefDoc/ImFreeLibrary.html">ImFreeLibrary</a></span></span> when you don't want to use library anymore.
+    </span></div>
+    <div class="note">Note:
+    <span class="ntwpara">All non-Object Pascal programs using Imaging require <b>VampyreImaging.dll</b>
+    (Windows) or <b>libVampyreImaging.so</b> (Linux) to run.
+    Compiled Imaging library must be located somewhere on system's
+    search path for these demos to work.
+    </span></div>
+    
+    <span class="subtopic1">
+      <a id="benchmark">Benchmark</a>
+    </span>
+    <p class="para">This is not actually benchmark like Object Pascal
+    <span class="link"><a href="pascal.html#benchmark">version</a></span> because
+    all measured functions are called from external library, but it
+    shows how to use Imaging dll from C/C++ at least.
+    </p>
+    <span class="tabletitle">Demo Information</span><table class="table"><tr class="tr"><td class="td"><span class="tablepara">
+          <b>Name</b>
+        </span></td><td class="td"><span class="tablepara">Benchmark</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <b>Language</b>
+        </span></td><td class="td"><span class="tablepara">C++</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <b>Source Path</b>
+        </span></td><td class="td"><span class="tablepara">(Imaging Root)\Demos\Cpp\Benchmark</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <b>Exe Path</b>
+        </span></td><td class="td"><span class="tablepara">(Imaging Root)\Demos\Bin\BenchCpp.exe</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <b>Platforms (tested)</b>
+        </span></td><td class="td"><span class="tablepara">
+          <b>W</b>
+in32</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <b>Compilers (tested)</b>
+        </span></td><td class="td"><span class="tablepara">MSVC 8.0 <b>W</b>, GCC 3.4.2 <b>W</b></span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <b>Demo shows usage of</b>
+        </span></td><td class="td"><span class="tablepara">low level (using dyn. library wrapper)</span></td></tr></table>
+    <p class="para">For details look at Object Pascal
+    <span class="link"><a href="pascal.html#benchmark">version</a></span>. There are only two
+    differences:    </p>
+    <ol class="orderedlist"><li class="li">Log file with result is called Results.Cpp.</li><li class="li">Executable must be located
+    in Demos\Bin or anywhere in the subdirectories of Demos\Cpp dir to
+    be able to find used data files.</li></ol>
+    
+    <span class="subtopic1">
+      <a id="test">Small Test</a>
+    </span>
+    <p class="para">Simple test program that shows how to use Imaging library from C/C++
+    environment.</p>
+    <span class="tabletitle">Demo Information</span><table class="table"><tr class="tr"><td class="td"><span class="tablepara">
+          <b>Name</b>
+        </span></td><td class="td"><span class="tablepara">Small Test</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <b>Language</b>
+        </span></td><td class="td"><span class="tablepara">C/C++</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <b>Source Path</b>
+        </span></td><td class="td"><span class="tablepara">(Imaging Root)\Demos\Cpp\Test</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <b>Exe Path</b>
+        </span></td><td class="td"><span class="tablepara">(Imaging Root)\Demos\Bin\test[.exe]</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <b>Platforms (tested)</b>
+        </span></td><td class="td"><span class="tablepara">
+          <b>W</b>
+in32, <b>L</b>inux</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <b>Compilers (tested)</b>
+        </span></td><td class="td"><span class="tablepara">MSVC 8.0 <b>W</b>, GCC 3.4.2 <b>WL</b></span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <b>Imaging interface</b>
+        </span></td><td class="td"><span class="tablepara">low level (using dyn. library wrapper)</span></td></tr></table>
+    <p class="para">Test image is created and diagonal line is drawn across it.
+    Then it is saved to <b>ctestimage.png</b> file.</p>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

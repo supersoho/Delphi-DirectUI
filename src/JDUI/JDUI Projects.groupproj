@@ -1,0 +1,108 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{8B4064BA-417E-487E-A29B-EECCF30E5279}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="DirectUIDemo\DirectUIDemo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Packages\DirectUI\JDUIControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Libs\DragDrop\Packages\DragDropDXE5.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Libs\Graphics32\Packages\GR32_DSGN_RSXE3.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Libs\Graphics32\Packages\GR32_RSXE3.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Libs\pngcomponents\PackagesD2010\PngComponents.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Libs\chromium\packages\DCEF_DX10.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DirectUIDemo">
+        <MSBuild Projects="DirectUIDemo\DirectUIDemo.dproj"/>
+    </Target>
+    <Target Name="DirectUIDemo:Clean">
+        <MSBuild Projects="DirectUIDemo\DirectUIDemo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DirectUIDemo:Make">
+        <MSBuild Projects="DirectUIDemo\DirectUIDemo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="JDUIControls">
+        <MSBuild Projects="Packages\DirectUI\JDUIControls.dproj"/>
+    </Target>
+    <Target Name="JDUIControls:Clean">
+        <MSBuild Projects="Packages\DirectUI\JDUIControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="JDUIControls:Make">
+        <MSBuild Projects="Packages\DirectUI\JDUIControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DragDropDXE5">
+        <MSBuild Projects="Libs\DragDrop\Packages\DragDropDXE5.dproj"/>
+    </Target>
+    <Target Name="DragDropDXE5:Clean">
+        <MSBuild Projects="Libs\DragDrop\Packages\DragDropDXE5.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DragDropDXE5:Make">
+        <MSBuild Projects="Libs\DragDrop\Packages\DragDropDXE5.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="GR32_DSGN_RSXE3">
+        <MSBuild Projects="Libs\Graphics32\Packages\GR32_DSGN_RSXE3.dproj"/>
+    </Target>
+    <Target Name="GR32_DSGN_RSXE3:Clean">
+        <MSBuild Projects="Libs\Graphics32\Packages\GR32_DSGN_RSXE3.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GR32_DSGN_RSXE3:Make">
+        <MSBuild Projects="Libs\Graphics32\Packages\GR32_DSGN_RSXE3.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="GR32_RSXE3">
+        <MSBuild Projects="Libs\Graphics32\Packages\GR32_RSXE3.dproj"/>
+    </Target>
+    <Target Name="GR32_RSXE3:Clean">
+        <MSBuild Projects="Libs\Graphics32\Packages\GR32_RSXE3.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GR32_RSXE3:Make">
+        <MSBuild Projects="Libs\Graphics32\Packages\GR32_RSXE3.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PngComponents">
+        <MSBuild Projects="Libs\pngcomponents\PackagesD2010\PngComponents.dproj"/>
+    </Target>
+    <Target Name="PngComponents:Clean">
+        <MSBuild Projects="Libs\pngcomponents\PackagesD2010\PngComponents.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PngComponents:Make">
+        <MSBuild Projects="Libs\pngcomponents\PackagesD2010\PngComponents.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="DCEF_DX10">
+        <MSBuild Projects="Libs\chromium\packages\DCEF_DX10.dproj"/>
+    </Target>
+    <Target Name="DCEF_DX10:Clean">
+        <MSBuild Projects="Libs\chromium\packages\DCEF_DX10.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DCEF_DX10:Make">
+        <MSBuild Projects="Libs\chromium\packages\DCEF_DX10.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DirectUIDemo;JDUIControls;DragDropDXE5;GR32_DSGN_RSXE3;GR32_RSXE3;PngComponents;DCEF_DX10"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DirectUIDemo:Clean;JDUIControls:Clean;DragDropDXE5:Clean;GR32_DSGN_RSXE3:Clean;GR32_RSXE3:Clean;PngComponents:Clean;DCEF_DX10:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DirectUIDemo:Make;JDUIControls:Make;DragDropDXE5:Make;GR32_DSGN_RSXE3:Make;GR32_RSXE3:Make;PngComponents:Make;DCEF_DX10:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

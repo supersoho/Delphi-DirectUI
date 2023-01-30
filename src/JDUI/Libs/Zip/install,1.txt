@@ -1,0 +1,28 @@
+Delphi 6 Installation instructions for the Registered Source Code version of VCLZip:
+
+If you have installed VCLZip previously, including the evaluation version, you can if you wish, install this new version to the same directory.  The installation will overwrite files so you may wish to make a backup of the current files first.  In this case, you will only need to proceed through step 6 of the instructions below.
+
+================
+
+1) Select File|Open from the menu. 
+
+2) Browse to the directory that you installed the VCLZip files to
+
+3) In the "Files of Type" drop down combo box select Delphi Package Source (*.dpk)
+
+4) In the directory list box select VCLZipD6_4.dpk 
+
+5) Click on the Open button
+
+6) A window will appear.  Press the Compile button.  This will create or recompile the package.
+
+7) Press the Install button if it is enabled.  This will install VCLZip, VCLUnZip and TSFXConfig to the VCLZip tab of the component palette.
+
+8) Close the window.
+
+9) Select Tools|Environment Options from the menu.
+
+10) Select the Library tab
+
+11) If not already there, add the path where you installed the VCLZip files to the the Library Path edit box path list.  Also be sure there is NOT an older conflicting path in the path list if you had installed VCLZip to a different directory previously.
+

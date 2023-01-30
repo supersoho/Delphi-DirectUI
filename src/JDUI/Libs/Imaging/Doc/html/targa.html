@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>Truevision Targa File Format</title></head><body>
+    <span class="title">Truevision Targa File Format</span>
+    <p class="para">Truevision defined the TGA file format in 1984 for use with its
+      first videographics products. It was the first truecolor
+      file format widely available. They are still widely used for
+      images with alpha channels.
+      It can store indexed, grayscale, RGB and ARGB images.
+      Targas can be uncompressed or compressed with RLE (run length encoding)
+      algorithm.
+    </p>
+    <span class="tabletitle">Targa File Format Support</span><table class="table"><tr class="tr"><th class="th">Format</th><th class="th">TImageFormat equivalent</th><th class="th">Loading</th><th class="th">Saving</th></tr><tr class="tr"><td class="td"><span class="tablepara">8 bit indexed</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifIndex8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">8 bit grayscale</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifGray8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">16 bit ARGB</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA1R5G5B5</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">24 bit RGB</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifR8G8B8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">32 bit ARGB</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA8R8G8B8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">All above but RLE compressed</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">-</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">8 bit indexed Huffman, Delta, RLE</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifIndex8</code>
+        </span></td><td class="td"><span class="tablepara">No</span></td><td class="td"><span class="tablepara">No</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">8 bit indexed Huffman, Delta, RLE, 4-pass</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifIndex8</code>
+        </span></td><td class="td"><span class="tablepara">No</span></td><td class="td"><span class="tablepara">No</span></td></tr></table>
+    <div class="note">Note:
+    <span class="ntwpara">If anyone has some information about two last formats (TGA image type
+      codes 32 and 33) please tell me.
+    </span></div>
+    <p class="para">When working with Targa files you can find useful some options
+      which can be set by <span class="codeinline"><span class="link"><a href="../RefDoc/SetOption@LongInt@LongInt.html">SetOption</a></span></span> function and their current values
+      can be get by <span class="codeinline"><span class="link"><a href="../RefDoc/GetOption@LongInt.html">GetOption</a></span></span> function.
+      Or you can set them by modifying properties of <span class="codeinline"><span class="link"><a href="../RefDoc/TTargaFileFormat.html">TTargaFileFormat</a></span></span>
+      class.
+    </p>
+    <span class="tabletitle">Options Related to Targa Files</span><table class="table"><tr class="tr"><th class="th">OptionId</th><th class="th">Allowed Values</th><th class="th">Usage</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingTargaRLE.html">ImagingTargaRLE</a></span></span>
+        </span></td><td class="td"><span class="tablepara">
+          <b>0 (false)</b>
+ or <b>1 (true)</b></span></td><td class="td"><span class="tablepara">Indicates whether Targa image will be saved with or without
+        RLE compression (efficient only for images
+        with large areas of the same color).
+        Default value is <b>0 (false)</b>. </span></td></tr></table>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

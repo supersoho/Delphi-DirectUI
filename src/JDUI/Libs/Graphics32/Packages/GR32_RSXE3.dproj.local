@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899/12/30 00:00:00.000.000,F:\尹进的文件\IM\Client\Libs\Graphics32\Packages\GR32_RSXE3.dproj=F:\尹进的文件\IM\Client\Libs\Graphics32\Packages\GR32_RSXE2.dproj</Transaction>
+    <Transaction>2023/01/16 16:24:04.000.344,=rtl.dcp</Transaction>
+    <Transaction>2023/01/16 16:24:04.000.314,=vclimg.dcp</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="1">
+    <File Path="..\..\Graphics32"/>
+    <File Path="..\GR32.pas"/>
+    <File Path="..\GR32_Backends.pas"/>
+    <File Path="..\GR32_Backends_Generic.pas"/>
+    <File Path="..\GR32_Backends_VCL.pas"/>
+    <File Path="..\GR32_Bindings.pas"/>
+    <File Path="..\GR32_Blend.pas"/>
+    <File Path="..\GR32_Containers.pas"/>
+    <File Path="..\GR32_DrawingEx.pas"/>
+    <File Path="..\GR32_ExtImage.pas"/>
+    <File Path="..\GR32_Filters.pas"/>
+    <File Path="..\GR32_Image.pas"/>
+    <File Path="..\GR32_Layers.pas"/>
+    <File Path="..\GR32_LowLevel.pas"/>
+    <File Path="..\GR32_Math.pas"/>
+    <File Path="..\GR32_MicroTiles.pas"/>
+    <File Path="..\GR32_OrdinalMaps.pas"/>
+    <File Path="..\GR32_Polygons.pas"/>
+    <File Path="..\GR32_RangeBars.pas"/>
+    <File Path="..\GR32_Rasterizers.pas"/>
+    <File Path="..\GR32_RepaintOpt.pas"/>
+    <File Path="..\GR32_Resamplers.pas"/>
+    <File Path="..\GR32_System.pas"/>
+    <File Path="..\GR32_Transforms.pas"/>
+    <File Path="..\GR32_VectorMaps.pas"/>
+    <File Path="..\GR32_XPThemes.pas"/>
+    <File Path="rtl.dcp"/>
+    <File Path="vcl.dcp"/>
+    <File Path="vclimg.dcp"/>
+  </ProjectSortOrder>
+</BorlandProject>

@@ -1,0 +1,24 @@
+Delphi 2005 Installation instructions for the Registered Source Code version of VCLZip:
+
+If you have installed VCLZip previously, including the evaluation version, you can if you wish, install this new version to the same directory.  The installation will overwrite files so you may wish to make a backup of the current files first.
+
+================
+
+1) Select File|Open from the menu. 
+
+2) Browse to the directory that you installed the VCLZip files to
+
+3) In the "Files of Type" drop down combo box select Delphi Package Source (*.dpk)
+
+4) In the directory list box select VCLZipD2005_4.dpk.
+
+5) Click on the Open button
+
+6) VCLZipD2005_4.bpl will show up in the project window.
+
+7) Right click it and select the Install menu item.  This will install VCLZip, VCLUnZip and TSFXConfig to the VCLZip tab of the component palette.
+
+8) You are now ready to start using VCLZip!
+
+9) Be sure, for any project that uses VCLZip or VCLUnZip, the path where you installed the VCLZip files is included in your "Project | Options" Directory/Conditionals Tab's Include Path textbox.
+

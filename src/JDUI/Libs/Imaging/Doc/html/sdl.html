@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>SDL Surfaces</title></head><body>
+    <span class="title">SDL Surfaces</span>
+    <p class="para">This extension provides functions for loading/saving
+      <code class="keyword">SDL</code> surfaces using Imaging and for converting
+      images to <code class="keyword">SDL</code> surfaces and vice versa.
+      You need <code class="keyword">SDL</code> headers for <code class="keyword">Object Pascal</code>
+      (<code class="keyword">JEDI-SDL</code>) to compile this extension.
+      It is implemented in <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingSDL_pas.html">ImagingSDL.pas</a></span></span> unit located
+      in <code class="keyword">(ImagingRoot)\Source\Extensions</code> directory.
+      To use it simply add this unit to <code class="codeinline">uses</code> list of your program.
+      Imaging library with this extension can be used as a replacement
+      for <code class="keyword">SDL_image</code> library if you don't want your
+      application to be dependent on four C dll/so libraries
+      (<code class="keyword">SDL_image</code> + jpeglib + libpng + zlib).
+    </p>
+    <p class="para">Here is the table with <code class="keyword">SDL</code> functions
+      currently available.
+      There is also Imaging <code class="keyword">SDL</code> demo you can look at
+      for inspiration <span class="link"><a href="pascal.html#sdldemo">Object Pascal SDL Demo</a></span>.
+    </p>
+    <span class="tabletitle">Imaging SDL extension functions</span><table class="table"><tr class="tr"><th class="th">Loading Functions</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/LoadSDLSurfaceFromFile@string.html">LoadSDLSurfaceFromFile</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/LoadSDLSurfaceFromStream@TStream.html">LoadSDLSurfaceFromStream</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/LoadSDLSurfaceFromMemory@Pointer@LongInt.html">LoadSDLSurfaceFromMemory</a></span></span>
+        </span></td></tr><tr class="tr"><th class="th">Saving Functions</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SaveSDLSurfaceToFile@string@PSDL_Surface.html">SaveSDLSurfaceToFile</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SaveSDLSurfaceToStream@string@TStream@PSDL_Surface.html">SaveSDLSurfaceToStream</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SaveSDLSurfaceToMemory@string@Pointer@LongInt@PSDL_Surface.html">SaveSDLSurfaceToMemory</a></span></span>
+        </span></td></tr><tr class="tr"><th class="th">Conversion Functions</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/CreateSDLSurfaceFromImage@TImageData@LongWord@TImageFormat.html">CreateSDLSurfaceFromImage</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/CreateImageFromSDLSurface@PSDL_Surface@TImageData@TImageFormat.html">CreateImageFromSDLSurface</a></span></span>
+        </span></td></tr></table>
+    <div class="note">Note:
+    <span class="ntwpara">
+      <span class="codeinline"><span class="link"><a href="../RefDoc/LoadSDLSurfaceFromFile@string.html">LoadSDLSurfaceFromFile</a></span></span>
+ and similar functions use
+      <code class="codeinline">SDL_SWSURFACE</code> as <code class="codeinline">Flags</code> when creating
+      <code class="keyword">SDL</code> surface. If you want other
+      <code class="codeinline">Flags</code> to be used load image by standard
+      <span class="codeinline"><span class="link"><a href="../RefDoc/LoadImageFromFile@string@TImageData.html">LoadImageFromFile</a></span></span> and similar functions and then call
+      <span class="codeinline"><span class="link"><a href="../RefDoc/CreateSDLSurfaceFromImage@TImageData@LongWord@TImageFormat.html">CreateSDLSurfaceFromImage</a></span></span> which has more options.
+    </span></div>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

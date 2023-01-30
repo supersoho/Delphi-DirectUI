@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>Tagged Image File Format</title></head><body>
+    <span class="title">Tagged Image File Format</span>
+    <p class="para">TIFF is a flexible and adaptable file format.
+      It can handle multiple images and data in a single file through the
+      inclusion of "tags" in the file header.
+      Tags can indicate the basic geometry of the image, such as its size,
+      or define how the image data is arranged and whether various image compression
+      options are used.
+      For example, TIFF can be used as a container for JPEG and RLE
+      compressed images.
+      The ability to store image data in a
+      lossless format makes TIFF files a useful method for archiving images.
+      Other TIFF file options include multiple layers or pages.
+    </p>
+    <p class="para">Currently Imaging uses LibTiff C library to load and save TIFFs.
+      It can read and write most types of TIFF files.
+      But it is currently available only in Delphi (uses LibTiffDelphi object files)
+      and it can make your compiled binaries quite big (almost 400 KiB size increase
+      when compiled with TIFF support).
+      
+      If you don't need TIFF support and want smaller exe instead you 
+      can disable it by uncommenting <code class="codeinline">{$DEFINE DONT_LINK_TIFF}</code>
+      line in in <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingExtras_pas.html">ImagingExtras.pas</a></span></span> unit.
+    </p>
+    <p class="para">Native Object Pascal TIFF support is planned for some future Imaging release.
+    </p>
+    <span class="tabletitle">Tagged Image File Format File Format Support</span><table class="table"><tr class="tr"><th class="th">Format</th><th class="th">TImageFormat equivalent</th><th class="th">Loading</th><th class="th">Saving</th></tr><tr class="tr"><td class="td"><span class="tablepara">8 bit indexed</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifIndex8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">24 bit RGB</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifR8G8B8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">48 bit RGB</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifR16G16B16</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">32 bit ARGB</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA8R8G8B8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">64 bit ARGB</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA16R16G16B16</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">8 bit grayscale</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifGray8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">16 bit grayscale</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifGray16</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">16 bit grayscale + alpha</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA8Gray8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">32 bit grayscale + alpha</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA16Gray16</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">32 bit grayscale</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifGray32</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">16 bit R FP16</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifR16F</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">64 bit ARGB FP16</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA16R16G16B16F</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">32 bit R FP32</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifR32F</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">128 bit ARGB FP32</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA32B32G32R32F</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">other types</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">depends on type</code>
+        </span></td><td class="td"><span class="tablepara">Yes/No</span></td><td class="td"><span class="tablepara">No</span></td></tr></table>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

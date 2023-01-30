@@ -1,0 +1,47 @@
+package PngComponents;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Png Components'}
+{$LIBSUFFIX '140'}
+{$RUNONLY}
+{$IMPLICITBUILD ON}
+
+requires
+  vclactnband,
+  vcl,
+  rtl,
+  vclimg;
+
+contains
+  PngSpeedButton in '..\Source\PngSpeedButton.pas',
+  PngFunctions in '..\Source\PngFunctions.pas',
+  PngImageList in '..\Source\PngImageList.pas',
+  PngBitBtn in '..\Source\PngBitBtn.pas',
+  PngButtonFunctions in '..\Source\PngButtonFunctions.pas',
+  PngCheckListBox in '..\Source\PngCheckListBox.pas';
+
+end.

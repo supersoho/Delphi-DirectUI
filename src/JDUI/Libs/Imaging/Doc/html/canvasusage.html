@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>Using Canvas Class</title></head><body>
+    <span class="title">Using Canvas Class</span>
+    <p class="para">Class <span class="codeinline"><span class="link"><a href="../RefDoc/TImagingCanvas.html">TImagingCanvas</a></span></span> in <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingCanvases_pas.html">ImagingCanvases.pas</a></span></span>
+      unit allows library user to draw onto image and apply various effects.
+      Base canvas class works for all image data formats with direct pixel access
+      (so not for compressed formats).
+      Because of this some operations are slower (sometimes a lot)
+      than implementation optimized for just one data format
+      (as it is done for example in Graphics32 library).
+    </p>
+    <p class="para">Descendants optimized for specific data formats can be created.
+      Currently there is only most basic <span class="codeinline"><span class="link"><a href="../RefDoc/TFastARGB32Canvas.html">TFastARGB32Canvas</a></span></span> class
+      for <code class="codeinline">ifA8R8G8B8</code> images.
+    </p>
+    <p class="para">Canvas can be created for both low and high level images.
+      Image data is only referenced by canvas.
+      If you change image data size (like format conversion or resizing)
+      you must update canvas by calling <code class="codeinline">UpdateCanvasState</code>
+      method so that canvas can update its helper structures depending
+      on size of the data (like scanline pointers).
+      You only need to update the canvas when size of image data
+      changes, not after setting pixels or drawing outside of the canvas
+      (like using <span class="codeinline"><span class="link"><a href="../RefDoc/CopyRect@TImageData@LongInt@LongInt@LongInt@LongInt@TImageData@LongInt@LongInt.html">CopyRect</a></span></span> function).
+    </p>
+    <p class="para">Currently Canvas class has these features:
+    </p>
+    <ul class="bullet"><li class="li">Set pen and fill color in 32bit and FP format. Set
+          pen width and pen/fill mode (supported only in few functions).</li><li class="li">Set and get pixel colors.</li><li class="li">Clipping against custom rectangle.</li><li class="li">Draw lines, framed rectangles, and ellipses.</li><li class="li">Fill rectangles with solid color or with blending.</li><li class="li">Draw part of canvas onto another canvas.</li><li class="li">Stretch part of canvas onto another canvas with filtering (bilinear/bicubic/nearest).</li><li class="li">Drawing (Draw/StretchDraw/FillRect) with blending.
+          Several source and destination blending factors are supported
+          (so you can get alpha blending, adding, modulate, ...).</li><li class="li">Linear filters (convolution) with custom kernels and some predefined.</li><li class="li">Nonlinear filters with custom functions and some predefined (min, max, median).</li><li class="li">Point filters with custom functions and some predefined (contrast, gamma, thresholding, brightness, 
+        premultiply alpha, ...).</li></ul>
+    <p class="para">You can find some canvas usage code in Tips article linked bellow
+      and in the demos. There is still a lot of functions that can be added to
+      canvas and hopefully they will be.
+    </p>
+    <div class="linklist"><div class="s">More Canvas Info</div><div class="linklistitem"><span class="listedlink"><a href="canvas.html">Canvas Class Tips</a></span></div><div class="linklistitem"><span class="listedlink"><a href="pascal.html#ibrowser">VCL Image Browser Demo</a></span></div><div class="linklistitem"><span class="listedlink"><a href="pascal.html#lclimager">LCL Imager Demo</a></span></div></div>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

@@ -1,0 +1,436 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Imaging.pas Functions</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="generator" content="Doc-O-Matic" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <link rel="STYLESHEET" href="default.css" type="text/css" />
+
+<script type="text/javascript" src="scripts.js"></script>
+</head>
+<body class="Element57" onmousedown="onBodyMouseDown();">
+
+<!-- Begin Popups -->
+
+<!-- End Popups -->
+
+<!-- Begin Page Header -->
+<div class="Element92">
+<div class="Element27">
+Imaging.pas Functions</div>
+</div>
+
+<!-- End Page Header -->
+
+<!-- Begin Client Area -->
+
+<!-- Begin Page Content -->
+<div class="Element58">
+<div class="Element14">
+Functions</div>
+<div class="Element10030">
+<div class="Section30">
+<div class="Element212">
+<div class="TableDiv">
+<table cellspacing="0" class="Table1">
+<tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="CloneImage@TImageData@TImageData.html">CloneImage</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Creates identical copy of image data.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="ConvertImage@TImageData@TImageFormat.html">ConvertImage</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Converts image to the given format.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="CopyPalette@PPalette32@PPalette32@LongInt@LongInt@LongInt.html">CopyPalette</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Copies Count palette entries from SrcPal starting at index SrcIdx to DstPal at index DstPal.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="CopyRect@TImageData@LongInt@LongInt@LongInt@LongInt@TImageData@LongInt@LongInt.html">CopyRect</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Copies rectangular part of SrcImage to DstImage.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="DetermineFileFormat@string.html">DetermineFileFormat</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Checks given file for every supported image file format and if the file is in one of them returns its string identifier (which can be used in LoadFromStream/LoadFromMem type functions).&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="DetermineMemoryFormat@Pointer@LongInt.html">DetermineMemoryFormat</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Checks given memory for every supported image file format and if the memory is in one of them returns its string identifier (which can be used in LoadFromStream/LoadFromMem type functions).&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="DetermineStreamFormat@TStream.html">DetermineStreamFormat</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Checks given stream for every supported image file format and if the stream is in one of them returns its string identifier (which can be used in LoadFromStream/LoadFromMem type functions).&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="EnumFileFormats@LongInt@string@string@string@Boolean@Boolean.html">EnumFileFormats</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Enumerates all registered image file formats.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="FillCustomPalette@PPalette32@LongInt@Byte@Byte@Byte@Byte.html">FillCustomPalette</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Creates palette with given bitcount for each channel.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="FillGrayscalePalette@PPalette32@LongInt.html">FillGrayscalePalette</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Creates grayscale palette where each color channel has the same value.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="FillRect@TImageData@LongInt@LongInt@LongInt@LongInt@Pointer.html">FillRect</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Fills given rectangle of image with given pixel fill data.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="FindColor@PPalette32@LongInt@TColor32.html">FindColor</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns index of color in palette or index of nearest color if exact match is not found.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="FindImageFileFormatByClass@TImageFileFormatClass.html">FindImageFileFormatByClass</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns image format loader/saver based on its class or nil if not found or not registered.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="FindImageFileFormatByExt@string.html">FindImageFileFormatByExt</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns image format loader/saver according to given extension or nil if not found.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="FindImageFileFormatByName@string.html">FindImageFileFormatByName</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns image format loader/saver according to given filename or nil if not found.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="FlipImage@TImageData.html">FlipImage</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Flips given image.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="FreeImage@TImageData.html">FreeImage</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Frees given image data.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="FreeImagesInArray@TDynImageDataArray.html">FreeImagesInArray</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Call <a href="FreeImage@TImageData.html">FreeImage</a>() on all images in given dynamic array and sets its length to zero.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="FreePalette@PPalette32.html">FreePalette</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Frees given palette.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="GenerateMipMaps@TImageData@LongInt@TDynImageDataArray.html">GenerateMipMaps</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Generates mipmaps for image.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="GetFileFormatAtIndex@LongInt.html">GetFileFormatAtIndex</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns image file format loader/saver at given index.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="GetFileFormatCount.html">GetFileFormatCount</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns number of registered image file format loaders/saver.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="GetFileNameFilterIndex@string@Boolean.html">GetFileNameFilterIndex</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns filter index of image file format of file specified by FileName.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="GetFilterIndexExtension@LongInt@Boolean.html">GetFilterIndexExtension</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns file extension (without dot) of image format selected by given filter index.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="GetFormatName@TImageFormat.html">GetFormatName</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns symbolic name of given format.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="GetImageFileFormatsFilter@Boolean.html">GetImageFileFormatsFilter</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns filter string for usage with open and save picture dialogs which contains all registered image file formats.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="GetImageFormatInfo@TImageFormat@TImageFormatInfo.html">GetImageFormatInfo</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns short information about given image format.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="GetIO.html">GetIO</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns current IO functions.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="GetOption@LongInt.html">GetOption</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns value of integer option specified by OptionId parameter.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="GetPixel32@TImageData@LongInt@LongInt.html">GetPixel32</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Function for getting pixel colors.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="GetPixelDirect@TImageData@LongInt@LongInt@Pointer.html">GetPixelDirect</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Copies pixel of Image at [X, Y] to memory pointed at by Pixel.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="GetPixelFP@TImageData@LongInt@LongInt.html">GetPixelFP</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Function for getting pixel colors.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="GetPixelsSize@TImageFormat@LongInt@LongInt.html">GetPixelsSize</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns size in bytes of Width x Height area of pixels.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="GetVersionStr.html">GetVersionStr</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns Imaging version string in format 'Major.Minor.Patch'.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="IffFormat@Boolean@TImageFormat@TImageFormat.html">IffFormat</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+If Condition is True then TruePart is retured, otherwise FalsePart is returned.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="ImageToStr@TImageData.html">ImageToStr</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns string with information about given Image.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="InitImage@TImageData.html">InitImage</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Initializes image (all is set to zeroes).&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="IsFileFormatSupported@string.html">IsFileFormatSupported</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Checks that an apropriate file format is supported purely from inspecting the given file name's extension (not contents of the file itself).&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="LoadImageFromFile@string@TImageData.html">LoadImageFromFile</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Loads single image from given file.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="LoadImageFromMemory@Pointer@LongInt@TImageData.html">LoadImageFromMemory</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Loads single image from given memory location.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="LoadImageFromStream@TStream@TImageData.html">LoadImageFromStream</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Loads single image from given stream.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="LoadMultiImageFromFile@string@TDynImageDataArray.html">LoadMultiImageFromFile</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Loads multiple images from given file.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="LoadMultiImageFromMemory@Pointer@LongInt@TDynImageDataArray.html">LoadMultiImageFromMemory</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Loads multiple images from given memory location.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="LoadMultiImageFromStream@TStream@TDynImageDataArray.html">LoadMultiImageFromStream</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Loads multiple images from given stream.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="MakePaletteForImages@TDynImageDataArray@PPalette32@LongInt@Boolean.html">MakePaletteForImages</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Creates palette with MaxColors based on the colors of images in Images array.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="MapImageToPalette@TImageData@PPalette32@LongInt.html">MapImageToPalette</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Maps image to existing palette producing image in ifIndex8 format.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="MirrorImage@TImageData.html">MirrorImage</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Mirrors given image.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="NewImage@LongInt@LongInt@TImageFormat@TImageData.html">NewImage</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Creates empty image of given dimensions and format.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="NewPalette@LongInt@PPalette32.html">NewPalette</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Allocates new palette with Entries ARGB color entries.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="PopOptions.html">PopOptions</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Pops back values of all options from the top of the stack.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="PushOptions.html">PushOptions</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Pushes current values of all options on the stack.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="RaiseImaging@string@array_of_const.html">RaiseImaging</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Raises <a href="EImagingError.html">EImagingError</a> with given message.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="ReduceColors@TImageData@LongInt.html">ReduceColors</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Reduces the number of colors of the Image.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="RegisterImageFileFormat@TImageFileFormatClass.html">RegisterImageFileFormat</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Registers new image loader/saver so it can be used by LoadFrom/SaveTo functions.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="RegisterOption@LongInt@PLongInt.html">RegisterOption</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Registers new option so it can be used by <a href="SetOption@LongInt@LongInt.html">SetOption</a> and <a href="GetOption@LongInt.html">GetOption</a> functions.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="ReplaceColor@TImageData@LongInt@LongInt@LongInt@LongInt@Pointer@Pointer.html">ReplaceColor</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Replaces pixels with OldPixel in the given rectangle by NewPixel.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="ResetFileIO.html">ResetFileIO</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Sets file IO functions to Imaging default.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="ResizeImage@TImageData@LongInt@LongInt@TResizeFilter.html">ResizeImage</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Resizes given image to new dimensions.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="RotateImage@TImageData@Single.html">RotateImage</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Rotates image by Angle degrees counterclockwise.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="SaveImageToFile@string@TImageData.html">SaveImageToFile</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Saves single image to given file.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="SaveImageToMemory@string@Pointer@LongInt@TImageData.html">SaveImageToMemory</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Saves single image to given memory location.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="SaveImageToStream@string@TStream@TImageData.html">SaveImageToStream</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Saves single image to given stream.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="SaveMultiImageToFile@string@TDynImageDataArray.html">SaveMultiImageToFile</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Saves multiple images to given file.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="SaveMultiImageToMemory@string@Pointer@LongInt@TDynImageDataArray.html">SaveMultiImageToMemory</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Saves multiple images to given memory location.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="SaveMultiImageToStream@string@TStream@TDynImageDataArray.html">SaveMultiImageToStream</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Saves multiple images to given stream.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="SetOption@LongInt@LongInt.html">SetOption</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Sets value of integer option specified by OptionId parameter.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="SetPixel32@TImageData@LongInt@LongInt@TColor32Rec.html">SetPixel32</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Procedure for setting pixel colors.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="SetPixelDirect@TImageData@LongInt@LongInt@Pointer.html">SetPixelDirect</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Copies pixel from memory pointed at by Pixel to Image at position [X, Y].&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="SetPixelFP@TImageData@LongInt@LongInt@TColorFPRec.html">SetPixelFP</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Procedure for setting pixel colors.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="SetUserFileIO@TOpenReadProc@TOpenWriteProc@TCloseProc@TEofProc@TSeekProc@TTellProc@TReadProc@TWriteProc.html">SetUserFileIO</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+User can set his own file IO functions used when loading from/saving to files by this function.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="SplitImage@TImageData@TDynImageDataArray@LongInt@LongInt@LongInt@LongInt@Boolean@Pointer.html">SplitImage</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Splits image into XChunks x YChunks subimages.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="StretchRect@TImageData@LongInt@LongInt@LongInt@LongInt@TImageData@LongInt@LongInt@LongInt@LongInt@TResizeFilter.html">StretchRect</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Stretches the contents of the source rectangle to the destination rectangle with optional resampling.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="SwapChannels@TImageData@LongInt@LongInt.html">SwapChannels</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Swaps SrcChannel and DstChannel color or alpha channels of image.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="SwapChannelsOfPalette@PPalette32@LongInt@LongInt@LongInt.html">SwapChannelsOfPalette</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Swaps SrcChannel and DstChannel color or alpha channels of palette.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="TestImage@TImageData.html">TestImage</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns True if given <a href="TImageData.html">TImageData</a> record is valid.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="TestImagesInArray@TDynImageDataArray.html">TestImagesInArray</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns True if all <a href="TImageData.html">TImageData</a> records in given array are valid.&nbsp;</div></td></tr></table></div></div>
+</div>
+</div>
+</div>
+<!-- End Page Content -->
+
+<!-- Begin Page Footer -->
+<div class="Element95">
+<em>You are here:</em> Symbol Reference &gt; Files &gt; <a href="Imaging_pas.html">Imaging.pas</a></div>
+<div class="Element93">
+<table width="100%" cellspacing="0" cellpadding="0">
+<tr><td width="100%">
+<div class="Element4">
+<a href="toc.html">Contents</a> | <a href="idx.html">Index</a></div>
+</td></tr></table></div>
+
+<!-- End Page Footer -->
+
+<!-- End Client Area -->
+</body></html>

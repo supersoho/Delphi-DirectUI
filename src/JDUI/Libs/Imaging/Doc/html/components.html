@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>VCL/LCL Classes</title></head><body>
+    <span class="title">VCL/LCL Classes</span>
+    <p class="para">Imaging contains <code class="keyword">VCL/LCL </code><code class="codeinline">TGraphic</code> descendant which uses Imaging library
+      for loading and saving various different file formats.
+      They actually descend from <code class="codeinline">TBitmap</code> and override only
+      loading, saving, and assigning procedures.
+      These classes are implemented in <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingComponents_pas.html">ImagingComponents.pas</a></span></span> unit.
+    </p>
+    <p class="para">Classes are automatically registered in unit's <code class="codeinline">initialization</code>
+      section so you only need to add <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingComponents_pas.html">ImagingComponents</a></span></span> to
+      <code class="codeinline">uses</code> list somewhere in your project and
+      <code class="codeinline">TPicture</code> class will be able to load and save images using
+      Imaging.
+      There are packages for <code class="keyword">Delphi</code>,
+      and <code class="keyword">Lazarus</code> in
+      <code class="keyword">Source\Projects</code> directory which you can install
+      to your IDEs and use Imaging classes in form design stage too.
+    </p>
+    <p class="para">Note that <span class="codeinline"><span class="link"><a href="../RefDoc/TImagingGraphic.html">TImagingGraphic</a></span></span> and all its descendants
+      can load images in all file formats supported by Imaging
+      but save images only in file format they are named after
+      (i.e. <span class="codeinline"><span class="link"><a href="../RefDoc/TImagingJpeg.html">TImagingJpeg</a></span></span> saves jpeg images).
+      <span class="codeinline"><span class="link"><a href="../RefDoc/TImagingGraphic.html">TImagingGraphic</a></span></span> itself doesn't override
+      saving methods so TBitmap's saving is used.
+    </p>
+    <span class="tabletitle">Classes and functions in ImagingComponents</span><table class="table"><tr class="tr"><th class="th">Classes</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/TImagingGraphic.html">TImagingGraphic</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/TImagingBitmap.html">TImagingBitmap</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/TImagingJpeg.html">TImagingJpeg</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/TImagingPNG.html">TImagingPNG</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/TImagingGIF.html">TImagingGIF</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/TImagingTarga.html">TImagingTarga</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/TImagingDDS.html">TImagingDDS</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/TImagingMNG.html">TImagingMNG</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/TImagingJNG.html">TImagingJNG</a></span></span>
+        </span></td></tr><tr class="tr"><th class="th">Functions</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/DataFormatToPixelFormat@TImageFormat.html">DataFormatToPixelFormat</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/PixelFormatToDataFormat@TPixelFormat.html">PixelFormatToDataFormat</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ConvertImageToBitmap@TBaseImage@TBitmap.html">ConvertImageToBitmap</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ConvertBitmapToImage@TBitmap@TBaseImage.html">ConvertBitmapToImage</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ConvertDataToBitmap@TImageData@TBitmap.html">ConvertDataToBitmap</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ConvertBitmapToData@TBitmap@TImageData.html">ConvertBitmapToData</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/DisplayImage@TCanvas@LongInt@LongInt@TBaseImage.html">DisplayImage</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/DisplayImageData@TCanvas@TRect@TImageData@TRect.html">DisplayImageData</a></span></span>
+        </span></td></tr><tr class="tr"><th class="th">Useful functions in other units</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/GetImageFileFormatsFilter@Boolean.html">GetImageFileFormatsFilter</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/GetFilterIndexExtension@LongInt@Boolean.html">GetFilterIndexExtension</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/GetFileNameFilterIndex@string@Boolean.html">GetFileNameFilterIndex</a></span></span>
+        </span></td></tr></table>
+    <div class="linklist"><div class="s">Information about the usage of VCL/LCL Classes</div><div class="linklistitem"><span class="listedlink"><a href="procedures.html">How To ... </a></span></div><div class="linklistitem"><span class="listedlink"><a href="pascal.html">Object Pascal Demos</a></span></div></div>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

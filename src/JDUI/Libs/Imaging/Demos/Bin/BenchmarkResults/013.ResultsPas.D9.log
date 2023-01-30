@@ -1,0 +1,67 @@
+Vampyre Imaging Library Benchmark Demo version 0.13
+
+-------------  Loading Images -------------
+Loading image: Tigers.jpg
+Image loaded in: 53719 us
+Loading image: Tigers.bmp
+Image loaded in: 22713 us
+Loading image: Tigers.png
+Image loaded in: 23435 us
+Loading image: Tigers.tga
+Image loaded in: 7676 us
+Loading image: Tigers.dds
+Image loaded in: 706 us
+
+-----------  Image Manipulation -----------
+Decompressing image from DXT1 format... 
+Image decompressed in: 8198 us
+Resizing image to 3000x3000 ... 
+Image resized in: 139038 us
+Converting image to A16R16G16B16 64bit format ... 
+Image converted in: 437922 us
+Flipping image ... 
+Image flipped in: 170459 us
+Mirroring image ... 
+Image mirrored in: 264249 us
+Swapping channels of image ... 
+Channels swapped in: 428178 us
+Converting image to A32B32G32R32F 128bit floating point format... 
+Image converted in: 921444 us
+Converting image to A4R4G4B4 16bit format... 
+Image converted in: 1469922 us
+Converting image to A8R8G8B8 32bit format... 
+Image converted in: 1573826 us
+Cloning image ... 
+Image cloned in: 137803 us
+Copying rectangle ... 
+Rectangle copied in: 25375 us
+Filling rectangle ... 
+Rectangle filled in: 31143 us
+Creating mipmaps ... 
+Mipmaps created in: 399165 us
+Splitting image ... 
+Image split in: 205881 us
+Resizing image to 1000x1000 ... 
+Image resized in: 33454 us
+Reducing colors count to 512... 
+Colors reduced in: 292964 us
+Making palette for images ... 
+Palette made in: 45834 us
+Mapping image to existing palette ... 
+Image mapped in: 1807541 us
+Compressing image to DXT1 format... 
+Image compressed in: 384627 us
+
+-------------  Saving Images --------------
+Saving image to format: dds
+Image saved in: 2083 us
+Converting image to R8G8B8 24bit format... 
+Image converted in: 45023 us
+Saving image to format: jpg
+Image saved in: 171047 us
+Saving image to format: bmp
+Image saved in: 15729 us
+Saving image to format: png
+Image saved in: 360682 us
+Saving image to format: tga
+Image saved in: 15221 us

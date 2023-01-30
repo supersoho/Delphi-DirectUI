@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>OpenGL Textures</title></head><body>
+    <span class="title">OpenGL Textures</span>
+    <p class="para">This extensions contains functions for loading and saving
+      <code class="keyword">OpenGL</code> textures
+      using Imaging and for converting images to textures and vice versa.
+      You need <code class="keyword">OpenGL</code> headers for
+      <code class="keyword">Object Pascal</code> to be able to compile this extension.
+      Headers from 
+      <code class="keyword">Delphi GL</code> (<code class="codeinline">dglOpenGL.pas</code>),
+      <code class="keyword">JEDI-SDL</code> (<code class="codeinline">gl.pas</code>), and 
+      <code class="keyword">GLScene</code> (<code class="codeinline">gl.pas</code>)
+      were tested and they work.
+      Extension is implemented in <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingOpenGL_pas.html">ImagingOpenGL.pas</a></span></span> unit located
+      in <code class="keyword">(ImagingRoot)\Source\Extensions</code> directory.
+      To use it simply add this unit to <code class="codeinline">uses</code> list of your program.
+      Currently only 2D textures are supported, DXTC/S3TC and 3Dc compressed, and
+      floating point textures are created if supported by hardware.
+    </p>
+    <p class="para">Here is the table with <code class="keyword">OpenGL</code> functions
+      currently available.
+      There is also Imaging <code class="keyword">OpenGL</code> demo you can look at
+      for inspiration <span class="link"><a href="pascal.html#opengldemo">Object Pascal OpenGL Demo</a></span>.
+    </p>
+    <span class="tabletitle">Imaging OpenGL extension functions</span><table class="table"><tr class="tr"><th class="th">Loading Functions</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/LoadGLTextureFromFile@string@PLongInt@PLongInt.html">LoadGLTextureFromFile</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/LoadGLTextureFromStream@TStream@PLongInt@PLongInt.html">LoadGLTextureFromStream</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/LoadGLTextureFromMemory@Pointer@LongInt@PLongInt@PLongInt.html">LoadGLTextureFromMemory</a></span></span>
+        </span></td></tr><tr class="tr"><th class="th">Saving Functions</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SaveGLTextureToFile@string@GLuint.html">SaveGLTextureToFile</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SaveGLTextureToStream@string@TStream@GLuint.html">SaveGLTextureToStream</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SaveGLTextureToMemory@string@Pointer@LongInt@GLuint.html">SaveGLTextureToMemory</a></span></span>
+        </span></td></tr><tr class="tr"><th class="th">Conversion Functions</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/CreateGLTextureFromImage@TImageData@LongInt@LongInt@Boolean@TImageFormat@PLongInt@PLongInt.html">CreateGLTextureFromImage</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/CreateGLTextureFromMultiImage@TDynImageDataArray@LongInt@LongInt@Boolean@LongInt@TImageFormat@PLongInt@PLongInt.html">CreateGLTextureFromMultiImage</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/CreateImageFromGLTexture@GLuint@TImageData@TImageFormat.html">CreateImageFromGLTexture</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/CreateMultiImageFromGLTexture@GLuint@TDynImageDataArray@LongInt@TImageFormat.html">CreateMultiImageFromGLTexture</a></span></span>
+        </span></td></tr><tr class="tr"><th class="th">Other Functions</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/GetGLTextureCaps@TGLTextureCaps.html">GetGLTextureCaps</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/GetGLProcAddress@string.html">GetGLProcAddress</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/IsGLExtensionSupported@string.html">IsGLExtensionSupported</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImageFormatToGL@TImageFormat@GLenum@GLenum@GLint@TGLTextureCaps.html">ImageFormatToGL</a></span></span>
+        </span></td></tr></table>
+    <div class="note">Note:
+    <span class="ntwpara">All <code class="keyword">OpenGL</code> textures created by Imaging functions
+      have default parameters set - that means that no
+      <code class="codeinline">glTexParameter</code> calls are made so default filtering,
+      wrapping, and other parameters are used. Created textures
+      are left bound by <code class="codeinline">glBindTexture</code> when function is exited.
+    </span></div>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

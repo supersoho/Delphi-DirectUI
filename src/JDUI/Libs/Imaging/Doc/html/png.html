@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>Portable Network Graphics File Format</title></head><body>
+    <span class="title">Portable Network Graphics File Format</span>
+    <p class="para">PNG is extensible file format for the lossless, portable, well-compressed
+      storage of raster images. PNG provides a patent-free replacement for GIF and can also
+      replace many common uses of TIFF. Indexed-color, grayscale, and truecolor images
+      are supported, plus an optional alpha channel. Sample depths range from 1 to 16 bits.
+    </p>
+    <p class="para">Images can also be filtered using different lossless filter for each scanline so that
+      subsequent compression can produce even smaller images. PNG also supports interlaced
+      images to allow progressive display.
+      Imaging can load all possible PNG data formats but cannot save 1, 2, and 4 bit or
+      interlaced images. It supports all filters when loading or saving images.
+      Imaging uses <b>ZLib</b> library written by Jean-loup Gailly and Mark Adler
+      to compress and decompress PNG image data.
+      It was translated to Pascal by Jacques Nomssi Nzali.
+    </p>
+    <p class="para">As of version 0.26.4, Imaging also supports APNG format.
+      APNG is unofficial extension of PNG image file format created by two guys from Mozilla Corporation.
+      The point of APNG is to allow storing simple animations in PNG files (hence the "A" for "Animated").
+      There is already PNG-like chunk based format for animations called MNG 
+      (already supported by Imaging - at least the basic features). 
+      However, MNG is quite complex format and its support among browsers and image viewers/editors is lacking. 
+      Code library supporting all MNG features is huge.
+      APNG on the other hand is just an extension of PNG and its implementation is not so complex.        Imaging can load APNG files, animate them (optional - put frames 
+      at desired positions, blend frames, apply disposal methods),
+      and also save multiple images as single APNG file.      
+    </p>
+    <span class="tabletitle">Portable Network Graphics File Format Support</span><table class="table"><tr class="tr"><th class="th">Format</th><th class="th">TImageFormat equivalent</th><th class="th">Loading</th><th class="th">Saving</th></tr><tr class="tr"><td class="td"><span class="tablepara">1 bit indexed</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifIndex8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">No</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">2 bit indexed</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifIndex8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">No</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">4 bit indexed</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifIndex8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">No</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">8 bit indexed</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifIndex8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">24 bit RGB</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifR8G8B8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">48 bit RGB</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifR16G16B16</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">32 bit ARGB</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA8R8G8B8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">64 bit ARGB</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA16R16G16B16</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">1 bit grayscale</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifGray8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">No</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">2 bit grayscale</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifGray8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">No</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">4 bit grayscale</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifGray8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">No</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">8 bit grayscale</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifGray8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">16 bit grayscale</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifGray16</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">16 bit grayscale + alpha</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA8Gray8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">32 bit grayscale + alpha</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA16Gray16</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr></table>
+    <p class="para">When working with PNG files you can find useful some options
+      which can be set by <span class="codeinline"><span class="link"><a href="../RefDoc/SetOption@LongInt@LongInt.html">SetOption</a></span></span> function and their current values
+      can be get by <span class="codeinline"><span class="link"><a href="../RefDoc/GetOption@LongInt.html">GetOption</a></span></span> function.
+      Or you can set them by modifying properties of <span class="codeinline"><span class="link"><a href="../RefDoc/TPNGFileFormat.html">TPNGFileFormat</a></span></span>
+      class.
+    </p>
+    <span class="tabletitle">Options Related to PNG Files</span><table class="table"><tr class="tr"><th class="th">OptionId</th><th class="th">Allowed Values</th><th class="th">Usage</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingPNGPreFilter.html">ImagingPNGPreFilter</a></span></span>
+        </span></td><td class="td"><span class="tablepara">
+          <b>0, 1, 2, 3, 4, 5, 6</b>
+        </span></td><td class="td"><span class="tablepara">Sets precompression filter used when saving PNG images. Allowed values
+          are:
+          <ul class="list"><li class="li">0 - None Filter</li><li class="li">1 - Sub Filter</li><li class="li">2 - Up Filter</li><li class="li">3 - Average Filter</li><li class="li">4 - Paeth Filter</li><li class="li">5 - Use 0 for indexed/gray images and 4 for RGB/ARGB images</li><li class="li">6 - Adaptive filtering - use best filter for each scanline - very slow</li></ul>
+          Note that filters 3 and 4 are much slower than filters 1 and 2.
+          Default value is <b>5</b>. </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingPNGCompressLevel.html">ImagingPNGCompressLevel</a></span></span>
+        </span></td><td class="td"><span class="tablepara">
+          <b>0 (no compression)</b>
+ to <b>9 (best compression)</b></span></td><td class="td"><span class="tablepara">Sets ZLib compression level used when saving PNG images.
+        Default value is <b>5</b>. </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingPNGLoadAnimated.html">ImagingPNGLoadAnimated</a></span></span>
+        </span></td><td class="td"><span class="tablepara">
+          <b>0 (false)</b>
+ or <b>1 (true)</b></span></td><td class="td"><span class="tablepara">Boolean option that specifies whether PNG images with more frames (APNG format)
+            are animated by Imaging (according to frame disposal/blend methods) or just
+            raw frames are loaded and sent to user (if you want to animate APNG yourself).
+            Default value is <b>1</b>. </span></td></tr></table>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

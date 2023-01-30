@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>FillCustomPalette Function</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="generator" content="Doc-O-Matic" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <link rel="STYLESHEET" href="default.css" type="text/css" />
+
+<script type="text/javascript" src="scripts.js"></script>
+</head>
+<body class="Element57" onmousedown="onBodyMouseDown();">
+
+<!-- Begin Popups -->
+
+<!-- End Popups -->
+
+<!-- Begin Page Header -->
+<div class="Element92">
+<div class="Element5">
+FillCustomPalette Function</div>
+<div class="Element7">
+<a href="Imaging_pas.html">Imaging</a></div>
+</div>
+
+<!-- End Page Header -->
+
+<!-- Begin Client Area -->
+
+<!-- Begin Page Content -->
+<div class="Element58">
+<div class="Element11">
+<div class="Element10">
+<p class="Element10">
+Creates palette with given bitcount for each channel.</p></div>
+</div>
+<div class="Element99">
+Pascal</div>
+<div class="Element101"><div class="Element100"><pre class="Element100"><strong>procedure</strong> FillCustomPalette(Pal: <a href="PPalette32.html">PPalette32</a>; 
+                            Entries: LongInt; 
+                            RBits: Byte; 
+                            GBits: Byte; 
+                            BBits: Byte; 
+                            Alpha: Byte = $FF);</pre></div></div>
+<div class="Element14">
+File</div>
+<div class="Element11">
+<div class="Element10">
+<p class="Element10">
+<a href="Imaging_pas.html">Imaging</a> (at line 277)</p></div>
+</div>
+<div class="Element14">
+Description</div>
+<div class="Element11">
+<div class="Element10">
+<p class="Element10">
+ 2^(RBits + GBits + BBits) should be equl to Entries. Examples: (3, 3, 2) will create palette with all possible colors of R3G3B2 format and (8, 0, 0) will create palette with 256 shades of red. Pal must be allocated to at least Entries * SizeOf(<a href="TColor32Rec.html">TColor32Rec</a>) bytes.</p></div>
+</div>
+<div class="Element14">
+Related Information</div>
+<div class="Element11">
+<div class="Element10">
+<a href="Imaging_pas.html">Imaging</a></div>
+</div>
+</div>
+<!-- End Page Content -->
+
+<!-- Begin Page Footer -->
+<div class="Element95">
+<em>You are here:</em> Symbol Reference &gt; Functions &gt; <a href="FillCustomPalette@PPalette32@LongInt@Byte@Byte@Byte@Byte.html">FillCustomPalette Function </a></div>
+<div class="Element93">
+<table width="100%" cellspacing="0" cellpadding="0">
+<tr><td width="100%">
+<div class="Element4">
+<a href="toc.html">Contents</a> | <a href="idx.html">Index</a></div>
+</td></tr><tr><td width="100%">
+<div class="Element91">
+<a href="EnumFileFormats@LongInt@string@string@string@Boolean@Boolean.html">Previous</a> | <a href="FillGrayscalePalette@PPalette32@LongInt.html">Next</a></div>
+</td></tr></table></div>
+
+<!-- End Page Footer -->
+
+<!-- End Client Area -->
+</body></html>

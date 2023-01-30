@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>How To ... (VCL/LCL Classes)</title></head><body>
+    <span class="title">How To ... (VCL/LCL Classes)</span>
+    <p class="para">This section shows few possible usages of
+      VCL/LCL Imaging Classes and related functions
+      described in
+      <span class="link"><a href="components.html">VCL/LCL Classes</a></span>.
+      You can also learn how to use these classes
+      by looking at demos which use them
+      <span class="link"><a href="pascal.html">Pascal Demos</a></span>.
+    </p>
+    <p class="para">Using <code class="codeinline">TGraphic</code> Imaging descendants:</p>
+    <pre class="syntax">...
+
+uses
+  ImagingTypes, Imaging, ImagingClasses,
+  // Add unit with VCL/LCL support, new file formats are automatically
+  // registered to TPicture (so they will appear in TOpenPictureDialog for example)
+  <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingComponents_pas.html">ImagingComponents</a></span></span>;
+  
+...
+
+procedure Assignments;
+var
+  ImgBitmap: <span class="codeinline"><span class="link"><a href="../RefDoc/TImagingBitmap.html">TImagingBitmap</a></span></span>;
+  ImgData: <span class="codeinline"><span class="link"><a href="../RefDoc/TImageData.html">TImageData</a></span></span>;
+  ImgClass: <span class="codeinline"><span class="link"><a href="../RefDoc/TBaseImage.html">TBaseImage</a></span></span>
+begin
+  // Create empty Imaging bitmap
+  ImgBitmap := <span class="codeinline"><span class="link"><a href="../RefDoc/TImagingBitmap.html">TImagingBitmap</a></span></span>.Create;
+  // Load image from file to TImageData record and assign it to bitmap
+  <span class="codeinline"><span class="link"><a href="../RefDoc/InitImage@TImageData.html">InitImage</a></span></span>(ImgData);
+  <span class="codeinline"><span class="link"><a href="../RefDoc/LoadImageFromFile@string@TImageData.html">LoadImageFromFile</a></span></span>('littlecat.png', ImgData);
+  ImgBitmap.AssignFromData(ImgData);
+  // Now create high level image class from file and assign it to bitmap
+  // by overridden TPersistent.Assign method
+  ImgClass := <span class="codeinline"><span class="link"><a href="../RefDoc/TSingleImage.html">TSingleImage</a></span></span>.CreateFromFile('notsolittlecat.png');
+  ImgBitmap.Assign(ImgClass);
+  // Assign Imaging bitmap to TImage component on Form1 (it should be immediately
+  // displayed)
+  Form1.Image.Picture.Graphic := ImgBitmap;
+  // Free loaded images
+  <span class="codeinline"><span class="link"><a href="../RefDoc/FreeImage@TImageData.html">FreeImage</a></span></span>(ImgData);
+  ImgClass.Free;
+end;
+    </pre>
+    <p class="para">Displaying Imaging's images in VCL/LCL:</p>
+    <pre class="syntax">// This procedure shows given image (high level class) on form
+// by converting it to TBitmap and then drawing on form's canvas
+procedure ShowImageOnForm1(Form: TForm; Image: <span class="codeinline"><span class="link"><a href="../RefDoc/TBaseImage.html">TBaseImage</a></span></span>);
+var
+  Bitmap: TBitmap;
+begin
+  Bitmap := TBitmap.Create;
+  // Call Imaging procedure for converting images to Graphics' TBitmap object
+  <span class="codeinline"><span class="link"><a href="../RefDoc/ConvertImageToBitmap@TBaseImage@TBitmap.html">ConvertImageToBitmap</a></span></span>(Image, Bitmap);
+  // Draw bitmap onto form's canvas
+  Form.Canvas.Draw(0, 0, Bitmap);
+  Bitmap.Free;
+end;
+
+// This procedure shows given image (high level class) on form's
+// canvas directly without conversion so it is significantly faster
+// than ShowImageOnForm1. But it has a drawback: it does not work
+// with all image data formats.
+procedure ShowImageOnForm2(Form: TForm; Image: <span class="codeinline"><span class="link"><a href="../RefDoc/TBaseImage.html">TBaseImage</a></span></span>);
+begin
+  // Call Imaging procedure for displaying images directly on canvas without
+  // costly conversion. Drawback of this is that it supports only images in
+  // ifA8R8G8B8 data format
+  <span class="codeinline"><span class="link"><a href="../RefDoc/DisplayImage@TCanvas@LongInt@LongInt@TBaseImage.html">DisplayImage</a></span></span>(Form.Canvas, Form.BoundsRect, Image, Image.BoundsRect);
+end;
+
+// You have TBitmap and you want to save it as PNG or other file format
+// supported by Imaging
+procedure SaveBitmapAsPNG(Bitmap: TBitmap; const FileName: string);
+var
+  PNG: TImagingPNG;
+begin
+  PNG := TImagingPNG.Create;
+  PNG.Assign(Bitmap);
+  PNG.SaveToFile(FileName);
+  PNG.Free;
+end;
+    </pre>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

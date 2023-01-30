@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>Supported Data Formats</title></head><body>
+    <span class="title">Supported Data Formats</span>
+    <p class="para">Image data format is the internal memory representation of every image.
+    Data formats are described by <span class="codeinline"><span class="link"><a href="../RefDoc/TImageFormat.html">TImageFormat</a></span></span> enumeration
+    member of <span class="codeinline"><span class="link"><a href="../RefDoc/TImageData.html">TImageData</a></span></span> structure.
+    Additional information about each of the data formats is stored in
+    <span class="codeinline"><span class="link"><a href="../RefDoc/TImageFormatInfo.html">TImageFormatInfo</a></span></span> structure.</p>
+    <span class="tabletitle">Functions related to data formats (low level interface)</span><table class="table"><tr class="tr"><th class="th">Function name</th><th class="th">Usage</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/GetImageFormatInfo@TImageFormat@TImageFormatInfo.html">GetImageFormatInfo</a></span></span>
+        </span></td><td class="td"><span class="tablepara">Returns additional information about the given data format</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/GetPixelsSize@TImageFormat@LongInt@LongInt.html">GetPixelsSize</a></span></span>
+        </span></td><td class="td"><span class="tablepara">Returns number of bytes occupied by Width x Height area of pixels in the given data format
+        (works for all data formats)</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/GetFormatName@TImageFormat.html">GetFormatName</a></span></span>
+        </span></td><td class="td"><span class="tablepara">Returns symbolic name of the given data format</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ConvertImage@TImageData@TImageFormat.html">ConvertImage</a></span></span>
+        </span></td><td class="td"><span class="tablepara">Converts images between different data formats </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/NewImage@LongInt@LongInt@TImageFormat@TImageData.html">NewImage</a></span></span>
+        </span></td><td class="td"><span class="tablepara">Creates new image with the given data format</span></td></tr></table>
+    <span class="subtopic1">Data Format Categories</span>
+    <p class="para">Image data formats can be divided to these main categories: </p>
+    <ul class="bullet"><li class="li">
+        <span class="link"><a href="#argb">ARGB Formats</a></span>
+        <br/>
+
+      Each pixel consists of several color channels and
+      optional alpha transparency channel.
+      </li><li class="li">
+        <span class="link"><a href="#index">Indexed Formats</a></span>
+        <br/>
+
+      Each pixel is index to the array of colors called the palette.
+      </li><li class="li">
+        <span class="link"><a href="#gray">Grayscale Formats</a></span>
+        <br/>
+
+      Pixels consist of intensity channel and optional alpha transparency channel.
+      </li><li class="li">
+        <span class="link"><a href="#float">Floating-point ARGB Formats</a></span>
+        <br/>
+
+      These formats are similar to ARGB formats but color values are stored
+      as floating-point numbers.
+      </li><li class="li">
+        <span class="link"><a href="#special">Special Formats</a></span>
+        <br/>
+
+      Each special format requires special and unique conversion
+      procedures. Compressed formats like DXTC belong to this category.
+      </li></ul>
+    <span class="subtopic2">Meaning of Data Format Symbolic Names</span>
+    <p class="para">Each data format has its symbolic name.
+    These names are formed in the way which tells something about
+    its internal structure. Symbolic names look like this:<br/><br/><center><code class="codeinline">if[(channel1)(channel1sizebits)]..[(channeln)(channelnsizebits)][modifier1]..[modifiern]</code></center><br/>
+    For example <code class="codeinline">ifA8R8G8B8</code> shows that each image pixel
+    contains four 8 bit sized channels.
+    <code class="codeinline">ifR32F</code> format contains one 32 bit channel and <code class="keyword">F</code>
+    modifier indicates that this is floating-point format.
+    All channels in the symbolic names are listed from left to right,
+    most significant bit (MSB) to least significant bit (LSB).
+    For example, <code class="codeinline">ifA8R8G8B8</code> is ordered from the MSB channel
+    <code class="keyword">A</code> (alpha), to the LSB channel <code class="keyword">B</code> (blue).
+    When traversing image data on little endian machines,
+    the data is stored in memory from LSB to MSB, which means that the channel order in memory is
+    from LSB (blue) to MSB (alpha).<br/><div class="note">Note:
+    <span class="ntwpara">Special data format names do not follow this naming convention.
+    Their symbolic names refer for example to compression technology used
+    (<code class="codeinline">ifDXT5</code> is data format of image compressed with DXT5).
+    </span></div></p>
+    <table class="table"><tr class="tr"><th class="th">Symbolic Name Fragment</th><th class="th">Info</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">X</code>
+        </span></td><td class="td"><span class="tablepara">Unused memory space</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">R</code>
+        </span></td><td class="td"><span class="tablepara">Red color channel</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">G</code>
+        </span></td><td class="td"><span class="tablepara">Green color channel</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">B</code>
+        </span></td><td class="td"><span class="tablepara">Blue color channel</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">A</code>
+        </span></td><td class="td"><span class="tablepara">Alpha transparency channel</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">Index</code>
+        </span></td><td class="td"><span class="tablepara">Index to palette</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">Gray</code>
+        </span></td><td class="td"><span class="tablepara">Grayscale intensity channel</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">F</code>
+        </span></td><td class="td"><span class="tablepara">Indicates that this format stores channel values as
+        floating point numbers</span></td></tr></table>
+    <a id="argb">
+      <span class="subtopic2">ARGB Formats</span>
+    </a>
+    <p class="para">The following table lists all ARGB formats supported in the current
+    version of Imaging library. Channel values are stored as unsigned
+    integers.</p>
+    <table class="table"><tr class="tr"><th class="th">Symbolic Name</th><th class="th">Info</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifX5R1G1B1</code>
+        </span></td><td class="td"><span class="tablepara">8 bit format with one bit for each color channel. 5 bits are unused.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifR3G3B2</code>
+        </span></td><td class="td"><span class="tablepara">8 bit format with 3 bits for read and green and 2 bits for blue channel.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifR5G6B5</code>
+        </span></td><td class="td"><span class="tablepara">16 bit format with 5 bits for read and blue and 6 bits for green channel.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA1R5G5B5</code>
+        </span></td><td class="td"><span class="tablepara">16 bit format with 5 bits for each color and one bit for alpha.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA4R4G4B4</code>
+        </span></td><td class="td"><span class="tablepara">16 bit format with 4 bits for each color and alpha.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifX1R5G5B5</code>
+        </span></td><td class="td"><span class="tablepara">16 bit format with 5 bits for each color and one unused bit.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifX4R4G4B4</code>
+        </span></td><td class="td"><span class="tablepara">16 bit format with 4 bits for each color and 4 unused bits.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifR8G8B8</code>
+        </span></td><td class="td"><span class="tablepara">24 bit format with 8 bits for each color.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA8R8G8B8</code>
+        </span></td><td class="td"><span class="tablepara">32 bit format with 8 bits for each color and alpha.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifX8R8G8B8</code>
+        </span></td><td class="td"><span class="tablepara">32 bit format with 8 bits for each color and 8 unused bits.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifR16G16B16</code>
+        </span></td><td class="td"><span class="tablepara">48 bit format with 16 bits for each color.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA16R16G16B16</code>
+        </span></td><td class="td"><span class="tablepara">64 bit format with 16 bits for each color and alpha.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifB16G16R16</code>
+        </span></td><td class="td"><span class="tablepara">48 bit BGR format with 16 bits for each color.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA16B16G16R16</code>
+        </span></td><td class="td"><span class="tablepara">64 bit BGR format with 16 bits for each color and alpha.</span></td></tr></table>
+    <a id="index">
+      <span class="subtopic2">Indexed Formats</span>
+    </a>
+    <p class="para">The following table lists all indexed formats supported in the current
+    version of Imaging library. Indexes are stored as unsigned
+    integers. Palette is <span class="codeinline"><span class="link"><a href="../RefDoc/PPalette32.html">PPalette32</a></span></span> member of <span class="codeinline"><span class="link"><a href="../RefDoc/TImageData.html">TImageData</a></span></span>
+    structure. It is a pointer to array of 32 bit ARGB values in
+    <code class="codeinline">ifA8R8G8B8</code> format.
+    </p>
+    <table class="table"><tr class="tr"><th class="th">Symbolic Name</th><th class="th">Info</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifIndex8</code>
+        </span></td><td class="td"><span class="tablepara">8 bit format with 8 bits for index.</span></td></tr></table>
+    <a id="gray">
+      <span class="subtopic2">Grayscale Formats</span>
+    </a>
+    <p class="para">The following table lists all grayscale formats supported in the current
+    version of Imaging library.
+    Channels values are stored as unsigned integers.</p>
+    <table class="table"><tr class="tr"><th class="th">Symbolic Name</th><th class="th">Info</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifGray8</code>
+        </span></td><td class="td"><span class="tablepara">8 bit format with 8 bits for grayscale intensity.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA8Gray8</code>
+        </span></td><td class="td"><span class="tablepara">16 bit format with 8 bits for alpha transparency and
+        8 bits for grayscale intensity.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifGray16</code>
+        </span></td><td class="td"><span class="tablepara">16 bit format with 16 bits for grayscale intensity.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifGray32</code>
+        </span></td><td class="td"><span class="tablepara">32 bit format with 32 bits for grayscale intensity.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifGray64</code>
+        </span></td><td class="td"><span class="tablepara">64 bit format with 64 bits for grayscale intensity.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA16Gray16</code>
+        </span></td><td class="td"><span class="tablepara">32 bit format with 16 bits for alpha transparency and
+        16 bits for grayscale intensity.</span></td></tr></table>
+    <a id="float">
+      <span class="subtopic2">Floating-point ARGB Formats</span>
+    </a>
+    <p class="para">The following table lists all floating-point formats supported in the current
+    version of Imaging library.
+    Channels values are stored as signed floating-point numbers.</p>
+    <table class="table"><tr class="tr"><th class="th">Symbolic Name</th><th class="th">Info</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifR32F</code>
+        </span></td><td class="td"><span class="tablepara">32 bit format with one red 32 bit IEEE-754 channel.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA32R32G32B32F</code>
+        </span></td><td class="td"><span class="tablepara">128 bit format with 32 bit IEEE-754 channel for each color and alpha.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA32B32G32R32F</code>
+        </span></td><td class="td"><span class="tablepara">128 bit BGR format with 32 bit IEEE-754 channel for each color and alpha.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifR16F</code>
+        </span></td><td class="td"><span class="tablepara">16 bit format with one red 16 bit half-float (s1e5m10) channel.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA16R16G16B16F</code>
+        </span></td><td class="td"><span class="tablepara">64 bit format with 16 bit half-float (s1e5m10) channel for each color and alpha.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA16B16G16R16F</code>
+        </span></td><td class="td"><span class="tablepara">64 bit BGR format with 16 bit half-float (s1e5m10) channel for each color and alpha.</span></td></tr></table>
+    <a id="special">
+      <span class="subtopic2">Special Formats</span>
+    </a>
+    <p class="para">The following table lists all special formats supported in the current
+    version of Imaging library. 
+    </p>
+    <table class="table"><tr class="tr"><th class="th">Symbolic Name</th><th class="th">Info</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifDXT1</code>
+        </span></td><td class="td"><span class="tablepara">Image in this format is compressed with DXT1 compression
+        (15/16 bit interpolated color, zero or one bit alpha).</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifDXT3</code>
+        </span></td><td class="td"><span class="tablepara">Image in this format is compressed with DXT3 compression
+        (16 bit interpolated color, 4 bit explicit alpha).</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifDXT5</code>
+        </span></td><td class="td"><span class="tablepara">Image in this format is compressed with DXT5 compression
+        (16 bit interpolated color, 8 bit interpolated alpha).</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifBTC</code>
+        </span></td><td class="td"><span class="tablepara">Image in this format is compressed with BTC compression
+        (block truncation coding, grayscale, 2bits per pixel).</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifATI1N</code>
+        </span></td><td class="td"><span class="tablepara">Image in this format is compressed using 3Dc+ compression
+        (one channel, 4bits per pixel).</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="codeinline">ifATI2N</code>
+        </span></td><td class="td"><span class="tablepara">Image in this format is compressed using original 3Dc compression
+        (two channels, 8bits per pixel).</span></td></tr></table>
+    <div class="note">Note:
+    <span class="ntwpara">There maybe some legal issues when using DXTC/S3TC compression
+      (3Dc probably too as it is "subset" of DXT5) as S3 holds patent to this.</span></div>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

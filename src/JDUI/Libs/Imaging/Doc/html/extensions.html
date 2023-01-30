@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>Extensions</title></head><body>
+    <span class="title">Extensions</span>
+    <p class="para">Imaging's functionality can be extended by so called
+      extensions. These provide additional file format support,
+      interaction between Imaging and various graphics APIs and
+      libraries (<b>OpenGL</b>, <b>Direct3D</b>, <b>SDL</b>)
+      and other functionality.
+    </p>
+    <p class="para">Extensions can be divided into two categories. One that is used
+      automatically by Imaging core like image file format extensions.
+      Imaging will register all these extensions on startup.
+    </p>
+    <p class="para">Second category extensions provide user interface to some
+      extended functions like <b>OpenGL</b> texture creation.
+      These extensions are ordinary Pascal units. If you want to use them
+      simply add these units to your project's uses list and call their functions.
+      Those extensions are currently not accessible using DLL/SO interface.
+    </p>
+    <p class="para">There is also another extension classification.
+      Extensions that meet Imaging's crossplatform and/or other requirements are
+      located in <code class="keyword">Source</code> directory (<b>core</b> extensions).
+      Extensions that do not meet them are located in <code class="keyword">Extras</code>
+      directory (<b>extras</b>).
+    </p>
+    <div class="linklist"><div class="s">Currently available file format extensions (core + extras)</div><div class="linklistitem"><span class="listedlink"><a href="extfileformats.html">File Format Extensions</a></span></div></div>
+    <div class="linklist"><div class="s">Currently available core extensions</div><div class="linklistitem"><span class="listedlink"><a href="opengl.html">OpenGL Textures</a></span></div><div class="linklistitem"><span class="listedlink"><a href="direct3d.html">Direct3D Textures</a></span></div><div class="linklistitem"><span class="listedlink"><a href="sdl.html">SDL Surfaces</a></span></div></div>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

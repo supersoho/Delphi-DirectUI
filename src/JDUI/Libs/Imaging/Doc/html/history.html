@@ -1,0 +1,856 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>Vampyre Imaging Library History</title></head><body>
+    <a id="top">
+      <span class="title">Vampyre Imaging Library History</span>
+    </a>
+    <p class="para">You can find a listing of Imaging versions on this page.
+      There is the release date of each version together with
+      a short note and a list of the most important changes that were made.
+      You can find the change tags explained here
+      <span class="link"><a href="#legend">Changes Legend</a></span>.
+    </p>
+    
+    
+      <span class="subtopic2">Version 0.26.4 - 11th October 2009</span>
+      For complete list of changes see <code class="keyword">File Notes</code>
+        section at the end of each source file.
+      
+      <ul class="bullet"><li class="li">
+          <code class="keyword">[+]</code>
+          <b>APNG</b>
+ file format (Animated PNG) loading, animating, and saving
+          added to existing PNG support. 
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Arbitrary angle image rotation. 
+        </li><li class="li">
+          <code class="keyword">[*]</code>
+
+          Mac OS X (Intel) compatibility (garbled LCL bitmaps in Carbon, JPEG 2000 support, ...).
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+          <b>XPM</b>
+ file format saving added, <b>JPEG 2000</b> file format loading 
+          improved.  
+        </li><li class="li">
+          <code class="keyword">[+/F]</code>
+
+          New canvas methods: premultiply and unpremultiply alpha.
+          New methods for TFastARGB32Canvas: InvertColors, DrawAlpha/StretchDrawAlpha.
+          Fixed DrawAlpha/StretchDrawAlpha destination alpha calculation.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Three new extensions in <code class="keyword">Extras/Extensions</code> directory:
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingJpegIJL_pas.html">ImagingJpegIJL.pas</a></span></span> uses Intel Jpeg Library to load/save Jpegs (DLL needed),
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingSquishLib_pas.html">ImagingSquishLib.pas</a></span></span> uses Squish DXTC library with Imaging (DLL needed), 
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ElderImagerySky_pas.html">ElderImagerySky.pas</a></span></span> loads SKY images from Daggerfall.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Conversions between RGB and YCoCg colorspaces.
+        </li><li class="li">
+          <code class="keyword">[F]</code>
+
+          Bug fixes: loading of some GIFs when using D2009+ failed, 
+          bugged XPM loading in Linux, indexed images resizing leak, 
+          PNM saving using D2009+, DXT3 alpha encoding, RGB&gt;&gt;CMYK conversion, 
+          garbled images in Lazarus GTK IDE.
+        </li><li class="li">
+          <code class="keyword">[*]</code>
+
+          Delphi 2010 and Lazarus 0.9.28 compatibility fixes.
+        </li></ul>
+    
+    
+    
+      <span class="subtopic2">Version 0.26.2 - 28th December 2008</span>
+      For complete list of changes see <code class="keyword">File Notes</code>
+        section at the end of each source file.
+      
+      <ul class="bullet"><li class="li">
+          <code class="keyword">[*]</code>
+
+          Delphi 2009 and Lazarus 0.9.26 compatibility fixes.
+          New project files for Delphi 2009 added. Kylix and CLX 
+          stuff removed.  
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          New canvas methods: flood and boundary fills, color channel
+          fills, color level adjustment, histogram calculation.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Animated <b>GIF</b> support rewritten and it now 
+          properly animates all tested GIFs (several thousand, true color ones too). 
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Added new <code class="keyword">Extras/Contrib</code> directory with 
+          Imaging modifications, extensions, demos, etc. contributed 
+          by users (now with ExtraGIF, NIF loader, and HqResampler).          
+        </li><li class="li">
+          <code class="keyword">[*]</code>
+
+          Changed LINK defined symbols that control which file formats will be
+          automatically registered. More in <span class="link"><a href="extfileformats.html">File Format Extensions</a></span></li><li class="li">
+          <code class="keyword">[+]</code>
+          <b>PSD</b>
+ images with alpha channel are now saved as layers 
+          to get proper transparency when opened in Photoshop.
+        </li><li class="li">
+          <code class="keyword">[*]</code>
+
+          Changed conditional compilation of <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingComponents_pas.html">ImagingComponents.pas</a></span></span>
+          unit to properly work with LCL widget sets other than
+          Win32 and GTK.
+        </li><li class="li">
+          <code class="keyword">[*]</code>
+
+          Removed linking against libstdc++ library in JPEG 2000 headers in Unix
+          (replaced with libc and Pascal functions).
+        </li><li class="li">
+          <code class="keyword">[F]</code>
+
+          Fixed problem with loading of progressive JPEGs (out of memory) 
+          when using FPC Win32.
+        </li></ul>
+    
+    
+    
+      <span class="subtopic2">Version 0.26.0 - 27th August 2008</span>
+      For complete list of changes see <code class="keyword">File Notes</code>
+        section at the end of each source file.
+      
+      <ul class="bullet"><li class="li">
+          <code class="keyword">[+]</code>
+
+          New data formats using 3Dc compression added: <code class="codeinline">ifATI1N</code>
+          and <code class="codeinline">ifATI2N</code>.
+          <b>DDS</b> file format updated to be able to load and save
+          images in this format.
+          <b>OpenGL</b> and <b>Direct3D</b> extensions were updated
+          to allow creating textures in these formats.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Canvas class was extended with many new methods and effects.
+          They include image drawing with blending (custom blending factors),
+          filtered image stretching, nonlinear filters (min, max, median),
+          point transforms (contrast, brightness, gamma, threshold), and blended
+          rectangle filling.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          New unit <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingBinary_pas.html">ImagingBinary.pas</a></span></span> was added to <code class="keyword">Extras</code>
+          extensions with morphologic operations on binary images.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+          <b>XPM</b>
+ file format loader was added to <code class="keyword">Extras</code>
+          extensions.
+        </li><li class="li">
+          <code class="keyword">[E]</code>
+          <b>LCL Imager</b>
+ and <b>Image Browser</b> demos were extended
+          with new functionality provided by canvas class (blending, filters,
+          morphology, etc.).
+        </li><li class="li">
+          <code class="keyword">[*]</code>
+
+          Updated <b>OpenJpeg</b> library (JPEG 2000) to version with
+          my CDEF patch that saves JP2 files with alpha properly.
+        </li><li class="li">
+          <code class="keyword">[*]</code>
+
+          Changed some file format loaders/savers to be more thread safe
+          so more images can be loaded concurrently..
+        </li><li class="li">
+          <code class="keyword">[F]</code>
+
+          Many bugs in library fixed (<b>GIF</b>, <b>BMP</b>, and <b>PNM</b> loaders,
+          ConvertSpecial, linear filters, ...).
+        </li></ul>
+    
+    
+    
+      <span class="subtopic2">Version 0.24.2 - 11th December 2007</span>
+      For complete list of changes see <code class="keyword">File Notes</code>
+        section at the end of each source file.
+      
+      <ul class="bullet"><li class="li">
+          <code class="keyword">[*]</code>
+
+          Updated <b>OpenJpeg</b> library (JPEG 2000) to latest
+          revision and added Imaging JPEG support for 64bit Linux.
+        </li><li class="li">
+          <code class="keyword">[F]</code>
+
+          Fixed various user reported bugs in file format
+          support for <b>GIF</b> and <b>JPEG</b> images.
+        </li><li class="li">
+          <code class="keyword">[*/+]</code>
+
+          Compatibility changes and project files for new Pascal
+          compilers/IDEs: Lazarus 0.9.24 (LCL support update),
+          FPC 2.2, RAD Studio 2007 (project files).
+        </li><li class="li">
+          <code class="keyword">[D]</code>
+
+          LCL Imager demo updated - operation timing added. Supports
+          alpha blending with new Lazarus.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          New features added to OpenGL texture builder: skip mipmap levels
+          and alternate pow2 texture resizing.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Pascal translation of Hq resampler with Imaging demo added
+          to Extras directory.
+        </li><li class="li">
+          <code class="keyword">[F]</code>
+
+          Some bugs in library fixed.
+        </li></ul>
+    
+    
+    
+      <span class="subtopic2">Version 0.24.0 - 27th June 2007</span>
+      For complete list of changes see <code class="keyword">File Notes</code>
+        section at the end of each source file.
+      
+      <ul class="bullet"><li class="li">
+          <code class="keyword">[D]</code>
+
+          Documentation updated to version <b>0.24</b>.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+          <b>TIFF</b>
+ image file format
+          loading and saving added to <code class="keyword">Extras</code>.
+          Not yet native Object Pascal.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+          <b>GIF</b>
+ image file format
+          loading and saving added to core library.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          New compressed image data format added: <code class="codeinline">ifBTC</code>
+          (block truncation coding).
+        </li><li class="li">
+          <code class="keyword">[*]</code>
+
+          Changed headers of some low level interface functions.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+          <b>High level</b>
+ interface in <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingClasses_pas.html">ImagingClasses.pas</a></span></span> unit
+          was slightly extended.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Other library enhancements (color conversions for 16bit channels,
+          new buffered file IO, ...).
+        </li><li class="li">
+          <code class="keyword">[+/*/F]</code>
+
+          Compatibility enhancements (Bitmap saving, JPEG loading,
+          DDS loading/saving,
+          UNIX compilation, Win64 compilation, FPC compilation, ...).
+        </li><li class="li">
+          <code class="keyword">[F]</code>
+
+          Many bugs in library fixed.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+          <b>Photoshop PSD</b>
+ image file format
+          loading and saving added to <code class="keyword">Extras</code>.
+        </li></ul>
+    
+    
+    
+      <span class="subtopic2">Version 0.22.0 - 25.01.2007</span>
+      For complete list of changes see <code class="keyword">File Notes</code>
+        section at the end of each source file.
+      
+      <ul class="bullet"><li class="li">
+          <code class="keyword">[D]</code>
+
+          Documentation updated to version <b>0.22</b>.
+        </li><li class="li">
+          <code class="keyword">[E]</code>
+
+          Some demos were extended, updated, and some bugs were fixed.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          New unit <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingColors_pas.html">ImagingColors.pas</a></span></span> added.
+          Some color space conversion functions are there now.
+        </li><li class="li">
+          <code class="keyword">[*/F]</code>
+          <b>High level</b>
+ interface in <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingClasses_pas.html">ImagingClasses.pas</a></span></span> unit
+          was extended and many bugs were fixed there.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+          <b>Canvas</b>
+ class was extended. FrameRect, Rectangle, Ellipse, and Line methods
+          were added, and you can now specify PenColor, PenMode, and FillMode.
+          New convolution kernels were added too.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+          <b>JPEG 2000</b>
+ image file format
+          loading and saving added to <code class="keyword">Extras</code>.
+          Not yet native Object Pascal.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+          <b>PCX (ZSoft Paintbrush)</b>
+ image file format
+          loading added to <code class="keyword">Extras</code>.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+          <b>PBM, PGM, PPM, PAM, PFM (Portable Maps)</b>
+ image file formats
+          loading and saving added.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+          <b>Elder Imagery</b>
+ extension added to <code class="keyword">Extras</code>
+          for loading and saving images from older Bethesda games (Daggerfall mainly).
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Added new <code class="keyword">Extras</code> package (located in
+          <code class="keyword">(ImagingRoot)\Extras</code> folder)
+          with additional extensions, demos, and tools for Imaging.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Functions added to the low level interface:
+          <span class="codeinline"><span class="link"><a href="../RefDoc/EnumFileFormats@LongInt@string@string@string@Boolean@Boolean.html">EnumFileFormats</a></span></span>.
+        </li><li class="li">
+          <code class="keyword">[+/*]</code>
+
+          Many changes to image file format loader/saver classes
+          for easier creation of new formats (old formats were updated
+          and some (Bitmap, DDS) have various parts rewritten).
+          Some new stuff added (file name masks).
+          Also file format enumeration functions were added.
+        </li><li class="li">
+          <code class="keyword">[F]</code>
+
+          Many bugs in library fixed.
+        </li></ul>
+    
+    
+    
+      <span class="subtopic2">Version 0.20.0 - 30.10.2006</span>
+      <ul class="bullet"><li class="li">
+          <code class="keyword">[E]</code>
+
+          New demo <b>VampConvert</b> replaced old <b>DXTTool</b>.
+          Demo <b>High Level</b> was removed because other demos
+          now use high level interface more.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Added new unit <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingCanvases_pas.html">ImagingCanvases.pas</a></span></span> with
+          classes for drawing/effects functions added
+          (not much functionality here yet).
+        </li><li class="li">
+          <code class="keyword">[+/F]</code>
+
+          High level interface in <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingClasses_pas.html">ImagingClasses.pas</a></span></span> unit
+          was extended and several bugs here were fixed.
+        </li><li class="li">
+          <code class="keyword">[*]</code>
+
+          Imaging now compiles and works on 64bit
+          <b>AMD64</b> CPU architecture (tested in Linux).
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          VCL/CLX/LCL support in <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingComponents_pas.html">ImagingComponents.pas</a></span></span> unit
+          was extended.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          New image data formats based on half-float (FP16) type added:
+          <code class="codeinline">ifR16F</code>, <code class="codeinline">ifA16R16G16B16F</code>, <code class="codeinline">ifA16B16G16R16F</code>.
+          <b>Direct3D</b> and <b>OpenGL</b> extensions now create textures in these formats too.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          New low level interface functions:
+          <code class="codeinline">IsFileFormatSupported, GetPixelDirect, SetPixelDirect,
+          GetPixel32, SetPixel32, GetPixelFP, SetPixelFP</code>.
+          <code class="codeinline">GetPixelBytes</code> was removed (same data can be obtained by
+          <code class="codeinline">GetImageFormatInfo</code>).
+        </li><li class="li">
+          <code class="keyword">[F/*]</code>
+
+          Many many bug fixes in many parts of the library as well as some optimizations,
+          changes, and tweaks.
+        </li></ul>
+    
+    
+    
+      <span class="subtopic2">Version 00.18 - 25.04.2006</span>
+      <div class="note">Note:
+    <span class="ntwpara">Source code is about 620 KiB in size.</span></div>
+      <ul class="bullet"><li class="li">
+          <code class="keyword">[D]</code>
+
+          Documentation updated to version <b>0.18</b>.
+        </li><li class="li">
+          <code class="keyword">[E]</code>
+
+          Demos were extended or updated.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          High level interface in <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingClasses_pas.html">ImagingClasses.pas</a></span></span> unit
+          was extended.
+        </li><li class="li">
+          <code class="keyword">[*/+]</code>
+
+          Mipmap generation in library core and
+          in <code class="keyword">Direct3D 9</code> and <code class="keyword">OpenGL</code>
+          extensions is now filtered.
+          Also <code class="keyword">Direct3D 9</code> extension was extended and works
+          with D3D surfaces now.
+        </li><li class="li">
+          <code class="keyword">[F]</code>
+
+          There was a bug in conversion between Imaging image
+          and <code class="codeinline">TBitmap</code> in <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingComponents_pas.html">ImagingComponents.pas</a></span></span>
+          unit when using <b>LCL</b> component set (with <b>GTK</b> interface).
+        </li><li class="li">
+          <code class="keyword">[*]</code>
+
+          Imaging now compiles and works in
+          <b>FreeBSD</b> and maybe in other Unixes as well.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Functions added to the low level interface:
+          <code class="codeinline">StretchRect</code>.
+        </li><li class="li">
+          <code class="keyword">[+/*]</code>
+
+          Filtered resizing and stretching implemented. <code class="codeinline">ResizeImage</code>
+          and other functions now take advantage of it.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+          <b>MNG (Multiple Network Graphics)</b>
+ image file format loading and
+          saving added. Supports usage of <b>PNG</b> and <b>JNG</b> frames, animation
+          capabilities are not used.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+          <b>JNG (JPEG Network Graphics)</b>
+ image file format loading and
+          saving added. Supports 8 bit gray and 24 bit RGB images with
+          optional alpha channel.
+        </li><li class="li">
+          <code class="keyword">[*/-]</code>
+          <b>PNG</b>
+ support moved from <code class="codeinline">ImagingPng</code> unit to
+          the new <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingNetworkGraphics_pas.html">ImagingNetworkGraphics.pas</a></span></span> unit. Old unit was
+          removed from Imaging.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          New unit <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingNetworkGraphics_pas.html">ImagingNetworkGraphics.pas</a></span></span> added for
+          future handling of all Network Graphics image formats.
+        </li></ul>
+    
+    
+    
+      <span class="subtopic2">Version 00.16 - 22.12.2005</span>
+      <div class="note">Note:
+    <span class="ntwpara">Source code is about 535 KiB in size.</span></div>
+      <ul class="bullet"><li class="li">
+          <code class="keyword">[D]</code>
+
+          Documentation updated to version <b>0.16</b>.
+        </li><li class="li">
+          <code class="keyword">[E]</code>
+
+          New demos created: <b>D3D Demo</b>, <b>OpenGL Demo</b> (Object Pascal).
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Functions added to the low level interface:
+          <code class="codeinline">RotateImage</code>.
+        </li><li class="li">
+          <code class="keyword">[E]</code>
+
+          New demos created: <b>SDL Demo</b>, <b>LCL Demo</b> (Object Pascal).
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Extension for creating/loading/saving <code class="keyword">Direct3D 9</code>
+          textures using Imaging added to the new <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingDirect3D9_pas.html">ImagingDirect3D9.pas</a></span></span> unit.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Extension for creating/loading/saving <code class="keyword">SDL</code>
+          surfaces using Imaging added to the new <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingSDL_pas.html">ImagingSDL.pas</a></span></span> unit.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Extension for creating/loading/saving <code class="keyword">OpenGL</code>
+          textures using Imaging added to the new <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingOpenGL_pas.html">ImagingOpenGL.pas</a></span></span> unit.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Functions added to the low level interface:
+          <code class="codeinline">ReplaceColor</code>.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+          <code class="codeinline">TGraphic</code>
+ descendant classes which use Imaging
+          added for <code class="keyword">VCL</code>, <code class="keyword">CLX</code> and
+          <code class="keyword">LCL</code> components sets. They are in the new
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingComponents_pas.html">ImagingComponents.pas</a></span></span> unit.
+        </li><li class="li">
+          <code class="keyword">[F*]</code>
+
+          Bugs (in 48/64 bit image handling) fixed in
+          <b>PNG (Portable Network Graphics)</b> image file format
+          handling and support for color keying (if present in image) added.
+        </li><li class="li">
+          <code class="keyword">[F]</code>
+
+          Headers of some functions exported from Imaging dll/so library were
+          changed in <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingExport_pas.html">ImagingExport.pas</a></span></span> unit and in the wrappers for
+          the other languages.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          New options <code class="codeinline">ImagingLoadOverrideFormat</code> and
+          <code class="codeinline">ImagingSaveOverrideFormat</code> added. Also all
+          option values are checked for validity before they are used.
+        </li></ul>
+    
+    
+    
+      <span class="subtopic2">Version 00.14 - 10.07.2005</span>
+      <div class="note">Note:
+    <span class="ntwpara">Source code is about 418 KiB in size.</span></div>
+      <ul class="bullet"><li class="li">
+          <code class="keyword">[D]</code>
+
+          Documentation updated to version <b>0.14</b>.
+        </li><li class="li">
+          <code class="keyword">[E]</code>
+
+          New demos created: <b>High Level</b> (Object Pascal),
+          <b>dotNET Demo01</b> (Delphi.NET).
+        </li><li class="li">
+          <code class="keyword">[*]</code>
+
+          You can now use Imaging with <b>MPL</b> or <b>LGPL</b> license.
+        </li><li class="li">
+          <code class="keyword">[*]</code>
+
+          Large changes in <b>Delphi.NET</b> wrapper. Function names and
+          parameter types are now almost same as in <b>Object Pascal</b>
+          without using dll. Some <b>.NET</b> only things added too.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Functions added to low level interface:
+          <code class="codeinline">NewPalette, CopyPalette, FreePalette,
+          DetermineFileFormat, DetermineStreamFormat, DetermineMemoryFormat, GetPixelsSize</code>.
+        </li><li class="li">
+          <code class="keyword">[*]</code>
+
+          Pixel format conversions rewritten to get better color
+          quality when converting from low bitcounts to higher
+          (visible mainly when using formats like <code class="codeinline">ifR3G3B2</code>
+          or <code class="codeinline">ifA4R4G4B4</code>).
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Functions added to low level interface:
+          <code class="codeinline">MapImageToPalette, FillRect, SplitImage, MakePaletteForImages</code>.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Basic high level interface created. Classes
+          <code class="codeinline">TSingleImage</code> and <code class="codeinline">TMultiImage</code>
+          added to <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingClasses_pas.html">ImagingClasses.pas</a></span></span> unit.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Functions added to low level interface:
+          <code class="codeinline">CopyRect</code>.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          New image formats added: <code class="codeinline">ifA16Gray16</code>.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+          <b>PNG (Portable Network Graphics)</b>
+ image file format loading and
+          saving added. Supports 1, 2, 4, 8, 16, 24, 32, 48 and 64 bit images.
+          1, 2 and 4 bit images can be only loaded.
+        </li><li class="li">
+          <code class="keyword">[F]</code>
+
+          Various bugs fixed in <code class="codeinline">Imaging, ImagingBitmap</code>
+          and <code class="codeinline">ImagingExport</code> units,
+          look there for details.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Functions added to low level interface:
+          <code class="codeinline">GenerateMipMaps, TestImagesInArray</code>.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Added wrapper unit for <b>Delphi.NET</b>.
+        </li></ul>
+    
+    
+    
+      <span class="subtopic2">Version 00.12 - 13.03.2005</span>
+      <div class="note">Note:
+    <span class="ntwpara">First version released to the public. Source code size
+      was about 250 KiB in size.</span></div>
+      <ul class="bullet"><li class="li">
+          <code class="keyword">[*]</code>
+          <b>DXTC</b>
+ compression and decompression code optimized
+          and it is now about 20% faster.
+        </li><li class="li">
+          <code class="keyword">[T]</code>
+          <b>VampyreDoc</b>
+ tool for documentation management created.
+          It can create <b>XHMTL</b> and <b>HTMLHelp</b> documentation
+          from <b>XML</b> based projects.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          New field <code class="codeinline">IsRBSwapped</code>
+          added to <span class="codeinline"><span class="link"><a href="../RefDoc/TImageFormatInfo.html">TImageFormatInfo</a></span></span> record.
+          It is used in conversions and in channel related functions to
+          distinguish between ARGB and ABGR formats.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          New image formats added: <code class="codeinline">ifA32R32G32B32F, ifA16B16G16R16, ifB16G16R16</code>.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Functions added to low level interface:
+          <code class="codeinline">ReduceColors, GetImageFormatInfo</code>.
+        </li><li class="li">
+          <code class="keyword">[*]</code>
+
+          Image format conversions between all types of formats are now
+          supported (<code class="codeinline">ChannelToIndex</code> and
+          <code class="codeinline">FloatToIndex</code> implemented).
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+ Color quantization with support
+          for alpha channel (using Median Cut algorithm) added.
+        </li><li class="li">
+          <code class="keyword">[F]</code>
+
+          Fixed huge memory leak in <b>Windows Bitmap</b> file format (occurred when
+          loading 8bit uncompressed image).
+        </li><li class="li">
+          <code class="keyword">[E]</code>
+
+          Demos created: <b>DXT Tool</b> (Object Pascal), <b>Test</b> (C/C++),
+          <b>VCL Image Browser</b> (Object Pascal).
+        </li><li class="li">
+          <code class="keyword">[U]</code>
+          <b>Vampyre Imaging Library</b>
+ project registered at
+          <span class="link"><a href="http://sourceforge.net">SourceForge</a></span> (03.12.2004).
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Added <code class="codeinline">PushOptions</code> and
+          <code class="codeinline">PopOptions</code> low level functions for
+          pushing and popping Imaging options.
+        </li><li class="li">
+          <code class="keyword">[*]</code>
+          <code class="codeinline">SwapChannels</code>
+ and
+          <code class="codeinline">SwapChannelsOfPalette</code>
+          low level functions extended
+          to allow to swap all channels, not only red and blue.
+        </li><li class="li">
+          <code class="keyword">[*]</code>
+
+          Checked and if necessary added support for special image formats
+          (only <b>DXTC</b> images now) in all low level functions. 
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+          <b>DXT1, DXT3</b>
+ and <b>DXT5</b> decoding and encoding added. 
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+          <b>DDS (DirecDraw Surface)</b>
+ image file format saving added.
+          Supports mipmaps, cube maps, volume textures and ordinary images.
+        </li><li class="li">
+          <code class="keyword">[E]</code>
+
+          Demos created: <b>Benchmark</b> (Object Pascal/C++).
+        </li></ul>
+    
+    
+    
+      <span class="subtopic2">Version 00.11 - 18.11.2004</span>
+      <div class="note">Note:
+    <span class="ntwpara">Source code size was about 150 KiB in size.</span></div>
+      <ul class="bullet"><li class="li">
+          <code class="keyword">[+]</code>
+
+          New image format added: <code class="codeinline">ifR32F, ifDXT1, ifDXT3, ifDXT5</code>.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+          <b>DDS (DirecDraw Surface)</b>
+ image file format loading added.
+          Supports mipmaps, cube maps, volume textures and ordinary images.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          New image formats added: <code class="codeinline">ifX8R8G8B8, ifX1R5G5B5, ifX4R4G4B4</code>.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Property <code class="codeinline">SupportedFormats</code> added to
+          <code class="codeinline">TImageFileFormat</code> class.
+          It is set of <code class="codeinline">TImageFormat</code> values
+          which can be saved by this file format. Also
+          <code class="codeinline">MakeCompatible</code> method was added.
+          It converts unsupported formats to supported before saving.
+        </li><li class="li">
+          <code class="keyword">[*]</code>
+
+          Made <b>PasZLib</b> library compatible with all compilers and platforms
+          supported by Imaging (needed for PNG support).
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          New low level functions for palette support added: <code class="codeinline">FindColor, FillGrayscalePalette, FillCustomPalette, SwapChannelsOfPalette</code>.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Added import unit and header for Object Pascal and C/C++ to
+          enable using Imaging library compiled into dynamic link library (<b>dll/so</b>).
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+          <b>BMP (Windows Bitmap)</b>
+ image file format loading and saving added.
+          Supports 1, 4, 8, 16, 24 and 32 bit images with or without RLE compression.
+          1 and 4 bit images can be only loaded.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Added support for function inlining in <b>Delphi 2005</b> (although not tested yet)
+          and <b>Free Pascal</b> (although compiler crashes on this now).
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          New image formats added: <code class="codeinline">ifA8Gray8, ifR3G3B2, ifR1G1B1</code>.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          New low level functions added: <code class="codeinline">ConvertImage, FlipImage, MirrorImage, SwapChannels, CloneImage,
+          FreeImagesInArray, ResizeImage</code>.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+
+          Added image format conversion engine which will support all
+          members of <code class="codeinline">TImageFormat</code>.
+          Some indexed and special format conversions are not implemented yet.
+        </li><li class="li">
+          <code class="keyword">[+]</code>
+          <b>TGA (Truevision Targa)</b>
+ image file format loading and saving added.
+          Supports 8, 15/16, 24 and 32 bit images with or without RLE compression.
+        </li></ul>
+    
+    
+    
+      <span class="subtopic2">Version 00.10 - 23.09.2004</span>
+      <div class="note">Note:
+    <span class="ntwpara">First working version. Source code size was about 80 KiB in size.</span></div>
+      <ul class="bullet"><li class="li">
+          <code class="keyword">[+]</code>
+          <b>JPEG (Joint Photographic Experts Group)</b>
+ image file format loading and saving added.
+        Supports 8 and 24 bit images.
+      </li><li class="li">
+          <code class="keyword">[*]</code>
+
+        Made <b>PasJpeg</b> library compatible with all compilers and platforms
+        supported by Imaging.
+      </li><li class="li">
+          <code class="keyword">[+]</code>
+
+        Initial low level functions added: <code class="codeinline">InitImage, NewImage, TestImage, FreeImage,
+        LoadImageFromFile, LoadImageFromStream, LoadImageFromMemory,
+        LoadMultiImageFromFile, LoadMultiImageFromStream, LoadMultiImageFromMemory,
+        SaveImageToFile, SaveImageToStream, SaveImageToMemory, SaveMultiImageToFile,
+        SaveMultiImageToStream, SaveMultiImageToMemory, SetOption, GetOption,
+        SetUserFileIO, ResetFileIO, GetPixelBytes</code>.
+      </li><li class="li">
+          <code class="keyword">[+]</code>
+
+        Initial image formats added: <code class="codeinline">ifUnknown, ifDefault, ifIndex8, ifGray8, ifGray16, ifGray32,
+        ifGray64, ifR5G6B5, ifA1R5G5B5, ifA4R4G4B4, ifR8G8B8,  ifA8R8G8B8,
+        ifR16G16B16, ifA16R16G16B16, ifA32B32G32R32F</code>.
+      </li><li class="li">
+          <code class="keyword">[*]</code>
+
+        Basic structure of library created.
+      </li><li class="li">
+          <code class="keyword">[U]</code>
+          <b>Vampyre Imaging Library</b>
+ project started (about 08.09.2004).
+      </li></ul>
+    
+    <br/>
+    <br/>
+    <a id="legend">
+      <span class="caption">Changes Legend</span>
+    </a>
+    <ul class="list"><li class="li">
+        <code class="keyword">[+]</code>
+ Addition (new features, functions etc.)</li><li class="li">
+        <code class="keyword">[-]</code>
+ Removal (old features, functions etc.)</li><li class="li">
+        <code class="keyword">[*]</code>
+ Change (existing features, functions etc. changed or extended)</li><li class="li">
+        <code class="keyword">[F]</code>
+ Bug fix</li><li class="li">
+        <code class="keyword">[D]</code>
+ Documentation related</li><li class="li">
+        <code class="keyword">[E]</code>
+ Examples and demos related</li><li class="li">
+        <code class="keyword">[T]</code>
+ Tools related</li><li class="li">
+        <code class="keyword">[U]</code>
+ Unique event</li></ul>
+    <span class="link"><a href="#top">Top</a></span>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

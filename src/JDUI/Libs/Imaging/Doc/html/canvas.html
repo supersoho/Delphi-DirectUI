@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>Canvas Class Tips</title></head><body>
+    <span class="title">Canvas Class Tips</span>
+    <p class="para">You can find few code snippets that show how to use
+      <span class="codeinline"><span class="link"><a href="../RefDoc/TImagingCanvas.html">TImagingCanvas</a></span></span> class to draw onto images.
+    </p>
+    <span class="caption">Canvas Creation And Updating</span>
+    <p class="para">You can create canvas for both <span class="codeinline"><span class="link"><a href="../RefDoc/TBaseImage.html">TBaseImage</a></span></span>
+      class descendants and <span class="codeinline"><span class="link"><a href="../RefDoc/TImageData.html">TImageData</a></span></span> structure.
+    </p>
+    <pre class="syntax">uses
+    Imaging, ImagingTypes, ImagingClasses, ImagingCanvases;
+  var
+    ImgData: TImageData;
+    ImgObj: TSingleImage;
+    Canvas: TImagingCanvas;
+  begin
+    // Load image to TImageData struct
+    InitImage(ImgData);
+    LoadImageFromFile('umajo.png', ImgData);
+    // Load image to TSingleImage object
+    ImgObj := TSingleImage.CreateFromFile('umajo2.png');
+    
+    // Create canvas for ImgData
+    Canvas := TImagingCanvas.CreateForData(@ImgData);
+    // Do some drawing
+    ...
+    // Resize image, you must then update canvas
+    ResizeImage(ImgData, 600, 400, rfBicubic);
+    Canvas.UpdateCanvasState;
+    // Draw some more
+    ...
+    
+    // Recreate canvas, now for high level object
+    Canvas.CreateForImage(ImgObj);
+    // Do some drawing
+    ...
+    // Change image format, you must then update canvas
+    ImgObj.Format := ifGray8;
+    Canvas.UpdateCanvasState;
+    // Draw some more
+    ...
+    
+    
+    // Free all
+    FreeImage(ImgData);
+    Canvas.Free;
+    ImgObj.Free;
+  end;
+    </pre>
+    <span class="caption">Drawing Primitives And Filling</span>
+    <p class="para">Now you will see how to draw lines, ellipses, and
+      rectangles.
+    </p>
+    <pre class="syntax">Canvas := TImagingCanvas.CreateForImage(Image);
+    ...
+    // You can set colors as 32bit or FP 128bit, they're automatically converted
+    Canvas.FillColor32 := $FF808040;
+    Canvas.PenColorFP := ColorFP(1.0, 0.6, 0.6, 1.0);
+    // Set fill mode and pen mode to solid
+    Canvas.PenMode := pmSolid;
+    Canvas.FillMode := fmSolid;
+    
+    // Now set some pixels and draw lines using pen
+    Canvas.Pixels32[200, 200] := $80FF0000;
+    Canvas.VertLine(20, 0, Image.Height);
+    Canvas.HorzLine(0, Image.Widht, 20);
+    Canvas.Line(10, 10, 90, 100);
+    
+    // Draw filled rectangle and ellipse with outline
+    Canvas.Rectangle(Canvas.ClipRect);
+    Canvas.Ellipse(Canvas.ClipRect);
+    
+    // Draw outlined rectangle and ellipse
+    Canvas.FillMode := fmClear;
+    Canvas.Rectangle(Rect(0, 0, 50, 100));
+    Canvas.Ellipse(Rect(0, 0, 50, 100));
+
+    // Clear whole canvas (uses fill color)
+    Canvas.FillColor32 := $FF000000;
+    Canvas.Clear
+    </pre>
+    <span class="caption">Drawing Image</span>
+    <p class="para">You can draw part of the canvas on another canvas.
+      Blending with custom source and dest factors is supported with some
+      best known combinations predefined (like alpha blending).
+      Stretching part of the canvas is also possible with
+      optional filtering (bilinear, bicubic, nearest).
+    </p>
+    <pre class="syntax">Canvas := TImagingCanvas.CreateForImage(Image);
+    ...
+    // Stretch part of canvas onto another one with alpha blending and bicubic filtering
+    Canvas.StretchDrawAlpha(SrcRect, DestCanvas, DestRect, rfBicubic);
+    // Draw part of canvas onto another one with custom combination of blend factors
+    Canvas.DrawBlend(SrcRect, DestCanvas, DestX, DestY, bfDstColor, bfSrcAlpha);
+    // Draw part of canvas onto another one with additive blending
+    Canvas.DrawAdd(SrcRect, DestCanvas, DestX, DestY);
+    // Draw part of canvas onto another one with additive blending (using factors)
+    Canvas.DrawBlend(SrcRect, DestCanvas, DestX, DestY, bfOne, bfOne);
+    // Stretch part of canvas onto another one with addtive blending and bilinear filtering (default param)
+    Canvas.StretchDrawAdd(SrcRect, DestCanvas, DestRect);
+    </pre>
+    <span class="caption">Effects</span>
+    <p class="para">Canvas class also allows you to apply linear and nonlinear filters
+      and use point transforms. You can always use your own kernels
+      and functions but there are also some predefined.
+    </p>
+    <pre class="syntax">Canvas := TImagingCanvas.CreateForImage(Image);
+    ...
+    // 3x3 Gaussian blurr
+    Canvas.ApplyConvolution3x3(FilterGaussian3x3);
+    // 7x7 Median filter
+    Canvas.ApplyMedianFilter(7);
+    // Modify contrast and brightness
+    Canvas.ModifyContrastBrightness(20, -10);
+    // Adjust gamma for each color channel
+    Canvas.GammaCorection(0.9, 1.3, 0.75);
+    </pre>
+    <p class="para">Look at <span class="link"><a href="pascal.html#ibrowser">VCL Image Browser Demo</a></span>
+      and <span class="link"><a href="pascal.html#lclimager">LCL Imager Demo</a></span>
+      for more Canvas examples.
+      General info on canvas usage is in
+      <span class="link"><a href="canvasusage.html">Using Canvas Class</a></span></p>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

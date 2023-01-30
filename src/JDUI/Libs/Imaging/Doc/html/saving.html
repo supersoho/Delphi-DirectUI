@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>Saving Images</title></head><body>
+    <span class="title">Saving Images</span>
+    <p class="para">Images can be saved to the files on disk, to the streams or
+    to a memory referenced by a pointer.
+    The following table lists functions which can be used for saving images.
+    These are low level functions operating on <span class="codeinline"><span class="link"><a href="../RefDoc/TImageData.html">TImageData</a></span></span> structure.</p>
+    <table class="table"><tr class="tr"><th class="th">Function name</th><th class="th">Usage</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SaveImageToFile@string@TImageData.html">SaveImageToFile</a></span></span>
+        </span></td><td class="td"><span class="tablepara">Save single image to file</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SaveImageToStream@string@TStream@TImageData.html">SaveImageToStream</a></span></span>
+        </span></td><td class="td"><span class="tablepara">Save single image to stream
+        (<code class="codeinline">TStream</code> descendants, <b>Object Pascal only</b>)</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SaveImageToMemory@string@Pointer@LongInt@TImageData.html">SaveImageToMemory</a></span></span>
+        </span></td><td class="td"><span class="tablepara">Save single image to memory</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SaveMultiImageToFile@string@TDynImageDataArray.html">SaveMultiImageToFile</a></span></span>
+        </span></td><td class="td"><span class="tablepara">Save multiple images to file</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SaveMultiImageToStream@string@TStream@TDynImageDataArray.html">SaveMultiImageToStream</a></span></span>
+        </span></td><td class="td"><span class="tablepara">Save multiple images to stream
+        (<code class="codeinline">TStream</code> descendants, <b>Object Pascal only</b>)</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SaveMultiImageToMemory@string@Pointer@LongInt@TDynImageDataArray.html">SaveMultiImageToMemory</a></span></span>
+        </span></td><td class="td"><span class="tablepara">Save multiple images to memory</span></td></tr></table>
+    <p class="para">You can learn how to use these functions from the
+    following code fragments.</p>
+    <p class="para">This example creates empty image and draws diagonal line from
+    left-top to right-bottom corner. Finally, image is saved to the file.</p>
+    <pre class="syntax">uses
+  SysUtils, Classes, ImagingTypes, Imaging;
+var
+  Img: <span class="codeinline"><span class="link"><a href="../RefDoc/TImageData.html">TImageData</a></span></span>;
+  I: LongInt;
+begin
+  // call this before using any TImageData record
+  <span class="codeinline"><span class="link"><a href="../RefDoc/InitImage@TImageData.html">InitImage</a></span></span>(Img);
+  // create 8 bit grayscale image
+  <span class="codeinline"><span class="link"><a href="../RefDoc/NewImage@LongInt@LongInt@TImageFormat@TImageData.html">NewImage</a></span></span>(1024, 1024, ifGray8, Img);
+  // draw diagonal line by direct writing to image's memory
+  for I := 0 to Img.Width - 1 do
+    PByteArray(@PByteArray(Img.Bits)[I * Img.Width])[I] := 128;
+  // save image to file
+  <span class="codeinline"><span class="link"><a href="../RefDoc/SaveImageToFile@string@TImageData.html">SaveImageToFile</a></span></span>('/home/galfar/images/line.tga', Img);
+  // memory occupied by image is freed
+  <span class="codeinline"><span class="link"><a href="../RefDoc/FreeImage@TImageData.html">FreeImage</a></span></span>(Img);
+end.
+    </pre>
+    <p class="para">In this example DDS image is loaded from stream. All contained
+    subimages are then compressed to DXT5 format and written to output stream.</p>
+    <pre class="syntax">procedure LoadAndSaveSomethingInDXT5(InStream, OutStream: TStream);
+var
+  Images: <span class="codeinline"><span class="link"><a href="../RefDoc/TDynImageDataArray.html">TDynImageDataArray</a></span></span>;
+  I: LongInt;
+begin
+  // load DDS multiimage from stream to Images array
+  <span class="codeinline"><span class="link"><a href="../RefDoc/LoadMultiImageFromStream@TStream@TDynImageDataArray.html">LoadMultiImageFromStream</a></span></span>(InStream, Images);
+  // convert all loaded images to DXT5 format
+  for I := 0 to Length(Images) - 1 do
+    <span class="codeinline"><span class="link"><a href="../RefDoc/ConvertImage@TImageData@TImageFormat.html">ConvertImage</a></span></span>(Images[I], ifDXT5);
+  // save converted images to output stream in DDS format
+  <span class="codeinline"><span class="link"><a href="../RefDoc/SaveMultiImageToStream@string@TStream@TDynImageDataArray.html">SaveMultiImageToStream</a></span></span>('dds', OutStream, Images);
+  // all images are freed
+  <span class="codeinline"><span class="link"><a href="../RefDoc/FreeImagesInArray@TDynImageDataArray.html">FreeImagesInArray</a></span></span>(Images);
+end;
+    </pre>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

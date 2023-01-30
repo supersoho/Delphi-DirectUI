@@ -1,0 +1,22 @@
+BCB 2006 Installation instructions for the Registered Source Code version of VCLZip:
+
+If you have installed VCLZip previously, including the evaluation version, you can if you wish, install this new version to the same directory.  The installation will overwrite files so you may wish to make a backup of the current files first. In this case, you will only need to proceed through step 6 of the instructions below.
+
+================
+
+1) Select File|Open from the menu. 
+
+2) Browse to the directory that you installed the VCLZip files to
+
+3) In the directory list box select VCLZipBCB2006_4.cbproj
+
+4) Click on the Open button
+
+5) VCLZipBCB2006_4.bpl will appear in the project window.
+
+6) Right click on VCLZipBCB2006_4.bpl and select "Install".  This will build and install VCLZip, VCLUnZip, and TSFXConfig
+
+7) You are now ready to start using VCLZip!
+
+8) Be sure, for any project that uses VCLZip or VCLUnZip, the path where you installed the VCLZip files is included in your "Project | Options" Directory/Conditionals Tab's Include Path textbox.
+

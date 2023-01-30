@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>How To ... (High Level)</title></head><body>
+    <span class="title">How To ... (High Level)</span>
+    <p class="para">High Level interface in the current version is made of
+    the base class <span class="codeinline"><span class="link"><a href="../RefDoc/TBaseImage.html">TBaseImage</a></span></span> and its two descendants
+    <span class="codeinline"><span class="link"><a href="../RefDoc/TSingleImage.html">TSingleImage</a></span></span> and <span class="codeinline"><span class="link"><a href="../RefDoc/TMultiImage.html">TMultiImage</a></span></span>.
+    More information on the current state of high level interface
+    can be found in
+    <span class="link"><a href="highlevel.html">Usage/High Level Interface</a></span>
+    section.</p>
+    <p class="para">You can learn how to use high level interface from the
+    following code fragments or (more useful) high level
+    <span class="link"><a href="pascal.html">Pascal Demos</a></span>.</p>
+    <pre class="syntax">// high level interface test
+<b>uses</b>
+  ImagingTypes,
+  // high level classes are declared in this unit
+  ImagingClasses;
+<b>var</b>
+  // this is one level image container
+  SImg: <span class="codeinline"><span class="link"><a href="../RefDoc/TSingleImage.html">TSingleImage</a></span></span>;
+  // this is multi level image container
+  MImg: <span class="codeinline"><span class="link"><a href="../RefDoc/TMultiImage.html">TMultiImage</a></span></span>;
+<b>begin</b>
+  // new 400x300x24 image is created
+  SImg := <span class="codeinline"><span class="link"><a href="../RefDoc/TSingleImage.html">TSingleImage</a></span></span>.CreateFromParams(400, 300, ifR8G8B8);
+  // resize image
+  SImg.Resize(512, 384, rfBicubic);
+  // you can find out whether image is valid or not this way:
+  <b>if</b> SImg.Valid <b>then</b>
+    WriteLn('Image is valid!');
+  // you are free to use low level functions on high level classes
+  // you can use ImageData property to get access to underlying structure
+  SwapChannels(SImg.ImageDataPointer^, ChannelRed, ChannelGreen);
+  // image can be converted to another format by simply setting Format property
+  SImg.Format := ifIndex8;
+  // extended format info is accessible trough FormatInfo property
+  WriteLn('Image has ', SImg.FormatInfo.PaletteEntries, ' palette entries');
+
+  // new multi image without parameters is created (default sized 1 level image
+  // will be created)
+  MImg := <span class="codeinline"><span class="link"><a href="../RefDoc/TMultiImage.html">TMultiImage</a></span></span>.Create;
+  // single image is assigned to multi image - multi image will now have
+  // one level identical to source single image
+  MImg.Assign(SImg);
+  // single image is resized
+  SImg.Width := SImg.Width * 2;
+  // new level is added to multi image (SImg is cloned)
+  MImg.AddLevel(SImg);
+  // single image is converted
+  SImg.Format := ifR32F;
+  // new level is inserted to multi image at index 0 (SImg is cloned)
+  MImg.InsertLevel(0, SImg);
+  // all levels of multi image are written to stream
+  MImg.SaveMultiToStream('tga', SomeStream);
+
+  // images are freed
+  SImg.Free;
+  MImg.Free;
+<b>end.</b></pre>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

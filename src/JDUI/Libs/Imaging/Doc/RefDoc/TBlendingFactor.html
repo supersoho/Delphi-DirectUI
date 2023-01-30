@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>TBlendingFactor Enumeration</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="generator" content="Doc-O-Matic" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <link rel="STYLESHEET" href="default.css" type="text/css" />
+
+<script type="text/javascript" src="scripts.js"></script>
+</head>
+<body class="Element57" onmousedown="onBodyMouseDown();">
+
+<!-- Begin Popups -->
+
+<!-- End Popups -->
+
+<!-- Begin Page Header -->
+<div class="Element92">
+<div class="Element5">
+TBlendingFactor Enumeration</div>
+<div class="Element7">
+<a href="ImagingCanvases_pas.html">ImagingCanvases</a></div>
+</div>
+
+<!-- End Page Header -->
+
+<!-- Begin Client Area -->
+
+<!-- Begin Page Content -->
+<div class="Element58">
+<div class="Element11">
+<div class="Element10">
+<p class="Element10">
+Source and destination blending factors for drawing functions with blending.</p></div>
+</div>
+<div class="Element99">
+Pascal</div>
+<div class="Element101"><div class="Element100"><pre class="Element100"><strong>public</strong> TBlendingFactor = (bfIgnore, bfZero, bfOne, bfSrcAlpha, bfOneMinusSrcAlpha, bfDstAlpha, bfOneMinusDstAlpha, bfSrcColor, bfOneMinusSrcColor, bfDstColor, bfOneMinusDstColor);</pre></div></div>
+<div class="Element14">
+File</div>
+<div class="Element11">
+<div class="Element10">
+<p class="Element10">
+<a href="ImagingCanvases_pas.html">ImagingCanvases</a> (at line 84)</p></div>
+</div>
+<div class="Element14">
+Members</div>
+<div class="Element11">
+<div class="Element10">
+<div class="Element272">
+<div class="TableDiv">
+<table cellspacing="0" class="Table0">
+<tr>
+<td class="Element260" valign="top" width="35%">
+<div class="Element261">
+Members&nbsp;</div></td><td class="Element264" valign="top" width="65%">
+<div class="Element265">
+Description&nbsp;</div></td></tr><tr>
+<td class="Element262" valign="top" width="35%">
+<div class="Element263">
+bfIgnore&nbsp;</div></td><td class="Element266" valign="top" width="65%">
+<div class="Element267">
+Don't care&nbsp;</div></td></tr><tr>
+<td class="Element262" valign="top" width="35%">
+<div class="Element263">
+bfZero&nbsp;</div></td><td class="Element266" valign="top" width="65%">
+<div class="Element267">
+For Src and Dest, Factor = (0, 0, 0, 0)&nbsp;</div></td></tr><tr>
+<td class="Element262" valign="top" width="35%">
+<div class="Element263">
+bfOne&nbsp;</div></td><td class="Element266" valign="top" width="65%">
+<div class="Element267">
+For Src and Dest, Factor = (1, 1, 1, 1)&nbsp;</div></td></tr><tr>
+<td class="Element262" valign="top" width="35%">
+<div class="Element263">
+bfSrcAlpha&nbsp;</div></td><td class="Element266" valign="top" width="65%">
+<div class="Element267">
+For Src and Dest, Factor = (Src.A, Src.A, Src.A, Src.A)&nbsp;</div></td></tr><tr>
+<td class="Element262" valign="top" width="35%">
+<div class="Element263">
+bfOneMinusSrcAlpha&nbsp;</div></td><td class="Element266" valign="top" width="65%">
+<div class="Element267">
+For Src and Dest, Factor = (1 - Src.A, 1 - Src.A, 1 - Src.A, 1 - Src.A)&nbsp;</div></td></tr><tr>
+<td class="Element262" valign="top" width="35%">
+<div class="Element263">
+bfDstAlpha&nbsp;</div></td><td class="Element266" valign="top" width="65%">
+<div class="Element267">
+For Src and Dest, Factor = (Dest.A, Dest.A, Dest.A, Dest.A)&nbsp;</div></td></tr><tr>
+<td class="Element262" valign="top" width="35%">
+<div class="Element263">
+bfOneMinusDstAlpha&nbsp;</div></td><td class="Element266" valign="top" width="65%">
+<div class="Element267">
+For Src and Dest, Factor = (1 - Dest.A, 1 - Dest.A, 1 - Dest.A, 1 - Dest.A)&nbsp;</div></td></tr><tr>
+<td class="Element262" valign="top" width="35%">
+<div class="Element263">
+bfSrcColor&nbsp;</div></td><td class="Element266" valign="top" width="65%">
+<div class="Element267">
+For Dest, Factor = (Src.R, Src.R, Src.B, Src.A)&nbsp;</div></td></tr><tr>
+<td class="Element262" valign="top" width="35%">
+<div class="Element263">
+bfOneMinusSrcColor&nbsp;</div></td><td class="Element266" valign="top" width="65%">
+<div class="Element267">
+For Dest, Factor = (1 - Src.R, 1 - Src.G, 1 - Src.B, 1 - Src.A)&nbsp;</div></td></tr><tr>
+<td class="Element262" valign="top" width="35%">
+<div class="Element263">
+bfDstColor&nbsp;</div></td><td class="Element266" valign="top" width="65%">
+<div class="Element267">
+For Src, Factor = (Dest.R, Dest.G, Dest.B, Dest.A)&nbsp;</div></td></tr><tr>
+<td class="Element262" valign="top" width="35%">
+<div class="Element263">
+bfOneMinusDstColor&nbsp;</div></td><td class="Element266" valign="top" width="65%">
+<div class="Element267">
+For Src, Factor = (1 - Dest.R, 1 - Dest.G, 1 - Dest.B, 1 - Dest.A)&nbsp;</div></td></tr></table></div></div>
+</div>
+</div>
+<div class="Element14">
+Description</div>
+<div class="Element11">
+<div class="Element10">
+<p class="Element10">
+ Blending formula: SrcColor * SrcFactor + DestColor * DestFactor</p></div>
+</div>
+<div class="Element14">
+Related Information</div>
+<div class="Element11">
+<div class="Element10">
+<a href="ImagingCanvases_pas.html">ImagingCanvases</a></div>
+</div>
+</div>
+<!-- End Page Content -->
+
+<!-- Begin Page Footer -->
+<div class="Element95">
+<em>You are here:</em> Symbol Reference &gt; Structs, Records, Enums &gt; <a href="TBlendingFactor.html">TBlendingFactor Enumeration</a></div>
+<div class="Element93">
+<table width="100%" cellspacing="0" cellpadding="0">
+<tr><td width="100%">
+<div class="Element4">
+<a href="toc.html">Contents</a> | <a href="idx.html">Index</a></div>
+</td></tr><tr><td width="100%">
+<div class="Element91">
+<a href="TColor24Rec.html">Next</a></div>
+</td></tr></table></div>
+
+<!-- End Page Footer -->
+
+<!-- End Client Area -->
+</body></html>

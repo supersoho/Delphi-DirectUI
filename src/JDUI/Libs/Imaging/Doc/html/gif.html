@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>Graphics Interchange Format</title></head><body>
+    <span class="title">Graphics Interchange Format</span>
+    <p class="para">GIF was
+      (and is still used) popular format for storing images supporting
+      multiple images per file and single color transparency.
+      Pixel format is 8 bit indexed where each image frame can have
+      its own color palette. GIF uses lossless LZW compression
+      (patent expired few years ago).
+      Imaging can load and save all GIFs with all frames and supports
+      transparency.
+    </p>
+    <p class="para">Loadng of animated GIFs was rewritten in Imaging 0.26.2 (based 
+      on ExtraGIF mod by Sergey Galezdinov).
+      It now supports two modes of operation: 
+      <ul class="bullet"><li class="li"><b>Raw Frames</b> just extracts raw frames from GIF files
+          without any modification. Useful when you want to do your own
+          GIF animator. Extracted frames are all in <code class="codeinline">ifIndex8</code>.
+        </li><li class="li"><b>Animated Frames</b> animates all frames using disposal methods
+          and placement of frames onto logical screen. Correctly animates 
+          all tested GIFs (several thousand). Animated frames are 
+          in <code class="codeinline">ifA8R8G8B8</code> format so even rare true color GIFs 
+          are supported (each frame has only 256 colors but you can place them
+          side by side onto logical screen to create one larger true color image). 
+          This is the default mode.  
+        </li></ul></p>
+    <p class="para">You can select which mode you wan to use 
+      with <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingGIFLoadAnimated.html">ImagingGIFLoadAnimated</a></span></span> option along with   
+      <span class="codeinline"><span class="link"><a href="../RefDoc/SetOption@LongInt@LongInt.html">SetOption</a></span></span> and <span class="codeinline"><span class="link"><a href="../RefDoc/GetOption@LongInt.html">GetOption</a></span></span> functions.
+      Or you can set them by modifying properties of <span class="codeinline"><span class="link"><a href="../RefDoc/TGIFFileFormat.html">TGIFFileFormat</a></span></span>
+      class.
+    </p>
+    <span class="tabletitle">Options Related to GIF Files</span><table class="table"><tr class="tr"><th class="th">OptionId</th><th class="th">Allowed Values</th><th class="th">Usage</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingGIFLoadAnimated.html">ImagingGIFLoadAnimated</a></span></span>
+        </span></td><td class="td"><span class="tablepara">
+          <b>0 (false)</b>
+ or <b>1 (true)</b></span></td><td class="td"><span class="tablepara">Boolean option that specifies whether GIF images with more frames
+            are animated by Imaging (according to frame disposal methods) or just
+            raw frames are loaded and sent to user (if you want to animate GIF yourself).
+            Default value is <b>1 (true)</b>. </span></td></tr></table>
+    <span class="tabletitle">GIF File Format Support</span><table class="table"><tr class="tr"><th class="th">Format</th><th class="th">TImageFormat equivalent</th><th class="th">Loading</th><th class="th">Saving</th></tr><tr class="tr"><td class="td"><span class="tablepara">up to 256 colors indexed</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifIndex8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">true color with transparency for animated frames</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA8R8G8B8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">No</span></td></tr></table>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

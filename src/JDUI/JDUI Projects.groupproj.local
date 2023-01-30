@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Default.Personality>
+		<Projects ActiveProject="C:\Works\DelphiProjects\JDUI\DirectUIDemo\DirectUIDemo.dproj"/>
+	</Default.Personality>
+	<Transactions>
+    <Transaction>2014/01/09 19:57:54.000.089,C:\工作\新版IM\IM\Client\Projects.groupproj=C:\工作\新版IM\IM\Client\IM Projects.groupproj</Transaction>
+    <Transaction>2014/01/09 19:58:07.000.067,C:\工作\新版IM\IM\Client\IM Projects.groupproj=C:\工作\新版IM\IM\Client\NewIM Projects.groupproj</Transaction>
+    <Transaction>2020/08/29 11:40:28.000.508,C:\工作\JDUI\JDUI Projects.groupproj=C:\工作\JDUI\NewIM Projects.groupproj</Transaction>
+  </Transactions>
+</BorlandProject>

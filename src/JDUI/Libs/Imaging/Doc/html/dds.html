@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>DirectDraw Surface File Format</title></head><body>
+    <span class="title">DirectDraw Surface File Format</span>
+    <p class="para">The Microsoft DirectDraw Surface (.dds)
+      file format is used to store textures and
+      cubic environment maps, both with and
+      without mipmap levels. This format can
+      store uncompressed and compressed formats, and is the preferred file format
+      for storing DXTn compressed data.
+      This format was introduced with DirectX 7.0.
+      In DirectX 8.0, support for volume textures was added.
+      Many new games use DDS files to store their textures.
+      More information on DDS files can be found in DirectX SDK documentation.
+    </p>
+    <p class="para">Imaging supports loading and saving of all three types of DDS files -
+      standard textures, cube maps and volume textures. Each of these types can
+      be with or without mipmaps and compressed with DXTC.
+      Pixel formats of DDS files supported by Imaging can be found in the table below.
+    </p>
+    <span class="tabletitle">DirectDraw Surface File Format Support</span><table class="table"><tr class="tr"><th class="th">D3DFORMAT</th><th class="th">TImageFormat equivalent</th><th class="th">Loading</th><th class="th">Saving</th></tr><tr class="tr"><td class="td"><span class="tablepara">D3DFMT_R3G3B2</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifR3G3B2</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">D3DFMT_R5G6B5</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifR5G6B5</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">D3DFMT_X1R5G5B5</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifX1R5G5B5</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">D3DFMT_X4R4G4B4</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifX4R4G4B4</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">D3DFMT_R8G8B8</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifR8G8B8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">D3DFMT_X8R8G8B8</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifX8R8G8B8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">D3DFMT_A1R5G5B5</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA1R5G5B5</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">D3DFMT_A4R4G4B4</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA4R4G4B4</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">D3DFMT_A8R8G8B8</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA8R8G8B8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">D3DFMT_A16B16G16R16</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA16B16G16R16</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">D3DFMT_L8</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifGray8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">D3DFMT_A8L8</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA8Gray8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">D3DFMT_L16</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifGray16</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">D3DFMT_R32F</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifR32F</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">D3DFMT_A32B32G32R32F</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA32B32G32R32F</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">D3DFMT_X8B8G8R8</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifX8R8G8B8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">No</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">D3DFMT_A8B8G8R8</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA8R8G8B8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">No</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">D3DFMT_X8L8V8U8</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifX8R8G8B8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">No</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">D3DFMT_Q8W8V8U8</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA8R8G8B8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">No</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">D3DFMT_Q16W16V16U16</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA16B16G16R16</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">No</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">D3DFMT_V8U8</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA8Gray8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">No</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">D3DFMT_DXT1</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifDXT1</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">D3DFMT_DXT3</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifDXT3</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">D3DFMT_DXT5</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifDXT5</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr></table>
+    <p class="para">When working with DDS files you can find useful some options
+      which can be set by <span class="codeinline"><span class="link"><a href="../RefDoc/SetOption@LongInt@LongInt.html">SetOption</a></span></span> function and their current values
+      can be get by <span class="codeinline"><span class="link"><a href="../RefDoc/GetOption@LongInt.html">GetOption</a></span></span> function.
+      Or you can set them by modifying properties of <span class="codeinline"><span class="link"><a href="../RefDoc/TDDSFileFormat.html">TDDSFileFormat</a></span></span>
+      class.
+      Options are divided into two groups - loading options and saving options.
+      Loading options have prefix <code class="codeinline">ImagingDDSLoaded</code> and
+      they store some properties of the last loaded DDS file.
+      You can use saving options with prefix <code class="codeinline">ImagingDDSSave</code>
+      to tell Imaging how to save the next DDS file (save settings persist
+      until they are changed by <span class="codeinline"><span class="link"><a href="../RefDoc/SetOption@LongInt@LongInt.html">SetOption</a></span></span> call) - ordinary texture
+      or volume texture with mipmaps or other?
+      You can learn how to use these options and how to load and save DDS files
+      in <span class="link"><a href="ddsfiles.html">Loading and Saving DDS Files</a></span>
+      section.
+    </p>
+    <span class="tabletitle">Options Related to DDS Files</span><table class="table"><tr class="tr"><th class="th">OptionId</th><th class="th">Allowed Values</th><th class="th">Usage</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingDDSLoadedCubeMap.html">ImagingDDSLoadedCubeMap</a></span></span>
+        </span></td><td class="td"><span class="tablepara">
+          <b>0 (false)</b>
+ or <b>1 (true)</b></span></td><td class="td"><span class="tablepara">Indicates whether the last loaded DDS file contained cube
+        environment map or not. </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingDDSLoadedVolume.html">ImagingDDSLoadedVolume</a></span></span>
+        </span></td><td class="td"><span class="tablepara">
+          <b>0 (false)</b>
+ or <b>1 (true)</b></span></td><td class="td"><span class="tablepara">Indicates whether the last loaded DDS file contained
+        volume texture or not. </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingDDSLoadedMipMapCount.html">ImagingDDSLoadedMipMapCount</a></span></span>
+        </span></td><td class="td"><span class="tablepara">
+          <b>1</b>
+ to <b>N</b></span></td><td class="td"><span class="tablepara">Number of mip map levels of the last loaded DDS file.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingDDSLoadedDepth.html">ImagingDDSLoadedDepth</a></span></span>
+        </span></td><td class="td"><span class="tablepara">
+          <b>1</b>
+ to <b>N</b></span></td><td class="td"><span class="tablepara">Depth (slices of volume texture or faces of
+        cube map) of the last loaded DDS file.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingDDSSaveCubeMap.html">ImagingDDSSaveCubeMap</a></span></span>
+        </span></td><td class="td"><span class="tablepara">
+          <b>0 (false)</b>
+ or <b>1 (true)</b></span></td><td class="td"><span class="tablepara">Indicates whether DDS files will be saved as cube
+        environment map or not. Default value is <b>0 (false)</b>.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingDDSSaveVolume.html">ImagingDDSSaveVolume</a></span></span>
+        </span></td><td class="td"><span class="tablepara">
+          <b>0 (false)</b>
+ or <b>1 (true)</b></span></td><td class="td"><span class="tablepara">Indicates whether DDS files will be saved as
+        volume texture or not. Default value is <b>0 (false)</b>.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingDDSSaveMipMapCount.html">ImagingDDSSaveMipMapCount</a></span></span>
+        </span></td><td class="td"><span class="tablepara">
+          <b>1</b>
+ to <b>N</b></span></td><td class="td"><span class="tablepara">Number of mip map levels to be saved to the next saved DDS file.
+        Default value is <b>1</b>.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingDDSSaveDepth.html">ImagingDDSSaveDepth</a></span></span>
+        </span></td><td class="td"><span class="tablepara">
+          <b>1</b>
+ to <b>N</b></span></td><td class="td"><span class="tablepara">Depth (slices of volume texture or faces of
+        cube map) of the next saved DDS file.
+        Default value is <b>1</b>.</span></td></tr></table>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

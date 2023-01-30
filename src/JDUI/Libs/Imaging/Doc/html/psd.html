@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>Photoshop Document</title></head><body>
+    <span class="title">Photoshop Document</span>
+    <p class="para">The .PSD (Photoshop Document) format stores an image with support
+      for most imaging options available in Adobe Photoshop program.
+      These include layers with masks, color spaces,
+      ICC profiles, transparency, text, alpha channels, etc.
+    </p>
+    <p class="para">Loading and saving of indexed, grayscale, RGB(A), HDR (FP32), and CMYK
+      (auto converted to RGB) images is supported. Non-HDR gray, RGB,
+      and CMYK images can have 8bit or 16bit color channels.
+      There is no support for loading mono images, duotone images are treated
+      like grayscale images, and multichannel and CIE Lab images are loaded as
+      RGB images but without actual conversion to RGB color space.
+      Also no layer information is loaded.
+    </p>
+    <p class="para">As of Imaging version 0.26.2 images with alpha channel can be 
+      saved using layers. That way when opened in Photoshop they 
+      have proper transparency, not alpha channel 
+      (will have one layer, RGB color channels, and transparency).
+      PSD files with layers are bigger because image has to be stored 
+      as background as well as layer data.
+      Therefore, RLE compression was implemented to keep the files smaller 
+      (Photoshop saves PSDs RLE compressed too by default).
+      Note that layers are not supported for floating point image data formats
+      since it's not supported by Photoshop itself.
+      Saving of layers can also be disabled 
+      (will be opened in PS as background raster with RGBA channels) 
+      using appropriate option.    
+    </p>
+    <span class="tabletitle">Photoshop Document File Format Support</span><table class="table"><tr class="tr"><th class="th">Format</th><th class="th">TImageFormat equivalent</th><th class="th">Loading</th><th class="th">Saving</th></tr><tr class="tr"><td class="td"><span class="tablepara">8 bit indexed</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifIndex8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">24 bit RGB</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifR8G8B8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">48 bit RGB</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifR16G16B16</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">32 bit ARGB</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA8R8G8B8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">64 bit ARGB</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA16R16G16B16</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">8 bit grayscale</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifGray8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">16 bit grayscale</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifGray16</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">16 bit grayscale + alpha</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA8Gray8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">32 bit grayscale + alpha</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA16Gray16</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">32 bit R FP32</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifR32F</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">128 bit ARGB FP32</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA32B32G32R32F</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">other types</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">depends on type</code>
+        </span></td><td class="td"><span class="tablepara">Yes/No</span></td><td class="td"><span class="tablepara">No</span></td></tr></table>
+    <p class="para">When working with PSD files you can find useful some options
+      which can be set by <span class="codeinline"><span class="link"><a href="../RefDoc/SetOption@LongInt@LongInt.html">SetOption</a></span></span> function and their current values
+      can be get by <span class="codeinline"><span class="link"><a href="../RefDoc/GetOption@LongInt.html">GetOption</a></span></span> function.
+      Or you can set them by modifying properties of <span class="codeinline"><span class="link"><a href="../RefDoc/TPSDFileFormat.html">TPSDFileFormat</a></span></span>
+      class.
+    </p>
+    <span class="tabletitle">Options Related to PSD Files</span><table class="table"><tr class="tr"><th class="th">OptionId</th><th class="th">Allowed Values</th><th class="th">Usage</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingPSDSaveAsLayer.html">ImagingPSDSaveAsLayer</a></span></span>
+        </span></td><td class="td"><span class="tablepara">
+          <b>0 (false)</b>
+ or <b>1 (true)</b></span></td><td class="td"><span class="tablepara">If enabled image data is saved as layer of PSD file. This is required
+            to get proper transparency when opened in Photoshop for images with
+            alpha data (will be opened with one layer, RGB color channels, and transparency).
+            If you don't need this Photoshop compatibility turn this option off as you'll get
+            smaller file (will be opened in PS as background raster with RGBA channels)
+            Default value is <b>1 (true)</b>. </span></td></tr></table>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

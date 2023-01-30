@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>Using dll/so Access</title></head><body>
+    <span class="title">Using dll/so Access</span>
+    <p class="para">You can use Imaging library directly from your <b>Object Pascal</b>
+    project by means of <code class="codeinline">uses</code> clause.
+    This kind of usage is recommended but you can also use Imaging library
+    in the form of external library - dynamic link library (Windows <code class="keyword">dll</code> file) or shared objects (Linux <code class="keyword">SO</code> file).
+    Using external library can be useful if you have have more executables
+    using Imaging which will be distributed together (so you can have
+    smaller executables). This is also only way how to use Imaging from
+    programming languages other than <b>Object Pascal</b>.</p>
+    <p class="para">First you need Imaging compiled to external library. Projects
+    for building external library can be found in
+    <code class="keyword">Source/Projects</code> directory.
+    You can also use build scripts named <code class="keyword">BuildLibrary*.bat</code>
+    and <code class="keyword">BuildLibrary*.sh</code>. They are located in
+    <code class="keyword">Scripts</code> directory and compiled library will be placed
+    in <code class="keyword">Bin</code> directory. In order to successfully use
+    these scripts you must have paths to compilers properly set.
+    When you have compiled library you must assure that operating system is
+    be able to find it at your application's startup.
+    Windows library is named <code class="keyword">VampyreImaging.dll</code> and
+    Linux version has name <code class="keyword">libVampyreImaging.so</code>.
+    </p>
+    <p class="para">Next thing you need is wrapper for programming language you want to use.
+    Now there are wrappers for <b>Object Pascal</b>, <b>C/C++</b>
+    and <b>Delphi.NET</b>. Wrappers are located in
+    <code class="keyword">Source/Wrappers</code> directory.
+    </p>
+    <div class="note">Note:
+    <span class="ntwpara">Some types of function parameters differ between dll/so usage and
+    direct usage. <code class="codeinline">string</code> types are changed to <code class="codeinline">PChar</code>
+    types, dynamic arrays are not used at all - wrapper type
+    <span class="codeinline"><span class="link"><a href="../RefDoc/TImageDataList.html">TImageDataList</a></span></span> is used instead.
+    Also all function names have <code class="codeinline">Im</code> prefix.
+    </span></div>
+    <p class="para">Here you can find some code fragments which will show you how
+    to use dll/so access to Imaging library.
+    If you want samples in language other than <b>Object Pascal</b> look
+    at <span class="link"><a href="demos.html">Demos</a></span>.  
+    </p>
+    <pre class="syntax">uses
+  ImagingTypes, ImagingImport;
+var
+  Img: <span class="codeinline"><span class="link"><a href="../RefDoc/TImageData.html">TImageData</a></span></span>
+begin
+  // this call loads external Imaging library, you should check if it was successful
+  if not <span class="codeinline"><span class="link"><a href="../RefDoc/ImLoadLibrary.html">ImLoadLibrary</a></span></span> then
+    WriteLn('Imaging library dll was not loaded successfully, program will crash soon!');
+  // call this before any access to TImageData is made
+  <span class="codeinline"><span class="link"><a href="../RefDoc/ImInitImage@TImageData.html">ImInitImage</a></span></span>(Img);
+  // load some image
+  <span class="codeinline"><span class="link"><a href="../RefDoc/ImLoadImageFromFile@PAnsiChar@TImageData.html">ImLoadImageFromFile</a></span></span>('/home/galfar/images/jaguar.jpg', Img);
+  // compress it to DXT1 format
+  <span class="codeinline"><span class="link"><a href="../RefDoc/ImConvertImage@TImageData@TImageFormat.html">ImConvertImage</a></span></span>(Img, ifDXT1);
+  // and save it in DDS file format
+  <span class="codeinline"><span class="link"><a href="../RefDoc/ImSaveImageToFile@PAnsiChar@TImageData.html">ImSaveImageToFile</a></span></span>('/home/galfar/images/jaguar.dds', Img);
+  // free memory occupied by image
+  <span class="codeinline"><span class="link"><a href="../RefDoc/ImFreeImage@TImageData.html">ImFreeImage</a></span></span>(Img);
+  // unload Imaging library
+  <span class="codeinline"><span class="link"><a href="../RefDoc/ImFreeLibrary.html">ImFreeLibrary</a></span></span>;
+end.
+    </pre>
+    <p class="para">Since <span class="codeinline"><span class="link"><a href="../RefDoc/TDynImageDataArray.html">TDynImageDataArray</a></span></span> is <b>Object Pascal</b> dynamic array,
+    which can not be used from other languages, all parameters of this
+    type are replaced with <span class="codeinline"><span class="link"><a href="../RefDoc/TImageDataList.html">TImageDataList</a></span></span> typed parameters.
+    Some new functions are introduced for accessing list's items and properties.
+    You can see them all in action in the next code listing.
+    </p>
+    <pre class="syntax">uses
+  ImagingTypes, ImagingImport;
+var
+  ImgList: <span class="codeinline"><span class="link"><a href="../RefDoc/TImageDataList.html">TImageDataList</a></span></span>;
+  Img: <span class="codeinline"><span class="link"><a href="../RefDoc/TImageData.html">TImageData</a></span></span>;
+  I, Size: LongInt;
+begin
+  // this call loads external Imaging library, you should check if it was successful
+  if not <span class="codeinline"><span class="link"><a href="../RefDoc/ImLoadLibrary.html">ImLoadLibrary</a></span></span> then
+    WriteLn('Imaging library dll was not loaded successfully, program will crash soon!');
+  // make sure list pointer doesn't point to invalid memory address
+  ImgList := nil;
+  // load some images, list's size is changed during loading
+  <span class="codeinline"><span class="link"><a href="../RefDoc/ImLoadMultiImageFromFile@PAnsiChar@TImageDataList.html">ImLoadMultiImageFromFile</a></span></span>('/home/galfar/images/jaguar_with_mipmaps.jpg', Img);
+  // get the actual list's size
+  Size := <span class="codeinline"><span class="link"><a href="../RefDoc/ImGetImageListSize@TImageDataList.html">ImGetImageListSize</a></span></span>(ImgList);
+  for I := 0 to Size - 1 do
+  begin
+    // get list's element
+    <span class="codeinline"><span class="link"><a href="../RefDoc/ImGetImageListElement@TImageDataList@LongInt@TImageData.html">ImGetImageListElement</a></span></span>(ImgList, Img, I);
+    // resize element
+    <span class="codeinline"><span class="link"><a href="../RefDoc/ImResizeImage@TImageData@LongInt@LongInt@TResizeFilter.html">ImResizeImage</a></span></span>(Img, Img.Width / 2, Img.Height / 2, rfBicubic);
+    // set list's element
+    <span class="codeinline"><span class="link"><a href="../RefDoc/ImSetImageListElement@TImageDataList@LongInt@TImageData.html">ImSetImageListElement</a></span></span>(ImgList, Img, I);
+  end;
+  // create space for new image in the list
+  <span class="codeinline"><span class="link"><a href="../RefDoc/ImSetImageListSize@TImageDataList@LongInt.html">ImSetImageListSize</a></span></span>(ImgList, Size + 1);
+  // create new image
+  <span class="codeinline"><span class="link"><a href="../RefDoc/ImNewImage@LongInt@LongInt@TImageFormat@TImageData.html">ImNewImage</a></span></span>(256, 256, ifDXT1, Img);
+  // put this new image into the list
+  <span class="codeinline"><span class="link"><a href="../RefDoc/ImSetImageListElement@TImageDataList@LongInt@TImageData.html">ImSetImageListElement</a></span></span>(ImgList, Img, Size);
+  // save halved images to file
+  <span class="codeinline"><span class="link"><a href="../RefDoc/ImSaveMultiImageToFile@PAnsiChar@TImageDataList.html">ImSaveMultiImageToFile</a></span></span>('/home/galfar/images/jaguar_smaller.dds', Img);
+  // free all images in list and list itself
+  <span class="codeinline"><span class="link"><a href="../RefDoc/ImFreeImageList@TImageDataList.html">ImFreeImageList</a></span></span>(ImgList);
+  // unload Imaging library
+  <span class="codeinline"><span class="link"><a href="../RefDoc/ImFreeLibrary.html">ImFreeLibrary</a></span></span>;
+end.
+    </pre>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

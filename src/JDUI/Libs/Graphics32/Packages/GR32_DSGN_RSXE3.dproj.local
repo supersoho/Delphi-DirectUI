@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899/12/30 00:00:00.000.444,=GR32_RSXE3.dcp</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.511,F:\尹进的文件\IM\Client\Libs\Graphics32\Packages\GR32_DSGN_RSXE3.dproj=F:\尹进的文件\IM\Client\Libs\Graphics32\Packages\GR32_DSGN_RSXE2.dproj</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="1">
+    <File Path="..\..\Graphics32"/>
+    <File Path="..\GR32_Dsgn_Bitmap.pas"/>
+    <File Path="..\GR32_Dsgn_Bitmap.dfm"/>
+    <File Path="..\GR32_Dsgn_Color.pas"/>
+    <File Path="..\GR32_Dsgn_Misc.pas"/>
+    <File Path="..\GR32_Reg.dcr"/>
+    <File Path="..\GR32_Reg.pas"/>
+    <File Path="designide.dcp"/>
+    <File Path="GR32_RSXE3.dcp"/>
+    <File Path="rtl.dcp"/>
+    <File Path="vcl.dcp"/>
+  </ProjectSortOrder>
+</BorlandProject>

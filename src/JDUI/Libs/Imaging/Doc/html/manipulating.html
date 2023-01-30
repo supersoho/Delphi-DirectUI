@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>Manipulating Images</title></head><body>
+    <span class="title">Manipulating Images</span>
+    <p class="para">Imaging offers some image manipulation functions which work
+    with all supported image data formats. Conversions, resizing,
+    color reduction and other are available.
+    You can find list of all low level image manipulation and drawing/pixel
+    functions in <span class="link"><a href="lowlevel.html">Low Level Interface</a></span> section.
+    You can look at usage of many of these functions in the
+    <span class="link"><a href="pascal.html#vampconvert">VampConvert</a></span>
+    and
+    <span class="link"><a href="pascal.html#benchmark">Benchmark</a></span> Object Pascal demos
+    and <span class="link"><a href="cpp.html#benchmark">C++ Benchmark</a></span> demo.</p>
+    <p class="para">In the following code listing you can see typical usage of Imaging's
+    manipulation functions.</p>
+    <pre class="syntax">uses
+  ImagingTypes, Imaging;
+var
+  Img, ImgClone: <span class="codeinline"><span class="link"><a href="../RefDoc/TImageData.html">TImageData</a></span></span>;
+begin
+  ...
+  // image is now initialized and loaded
+  // now we want image to be mirrored
+  <span class="codeinline"><span class="link"><a href="../RefDoc/MirrorImage@TImageData.html">MirrorImage</a></span></span>(Img);
+  // and flipped
+  <span class="codeinline"><span class="link"><a href="../RefDoc/FlipImage@TImageData.html">FlipImage</a></span></span>(Img);
+  // conversion to 32bit ARGB format
+  <span class="codeinline"><span class="link"><a href="../RefDoc/ConvertImage@TImageData@TImageFormat.html">ConvertImage</a></span></span>(Img, ifA8R8G8B8);
+  // swap alpha channel with green channel
+  <span class="codeinline"><span class="link"><a href="../RefDoc/SwapChannels@TImageData@LongInt@LongInt.html">SwapChannels</a></span></span>(Img, ChannelAlpha, ChannelGreen);
+  // now we make clone of image
+  <span class="codeinline"><span class="link"><a href="../RefDoc/InitImage@TImageData.html">InitImage</a></span></span>(ImgClone);
+  <span class="codeinline"><span class="link"><a href="../RefDoc/CloneImage@TImageData@TImageData.html">CloneImage</a></span></span>(Img, ImgClone);
+  // reduce colors of clone to 1024
+  <span class="codeinline"><span class="link"><a href="../RefDoc/ReduceColors@TImageData@LongInt.html">ReduceColors</a></span></span>(ImgClone, 1024);
+  // and resize original image
+  <span class="codeinline"><span class="link"><a href="../RefDoc/ResizeImage@TImageData@LongInt@LongInt@TResizeFilter.html">ResizeImage</a></span></span>(Img, Img.Width * 2, Image.Height div 2, rfBicubic);
+  // finally convert clone to DXT5
+  <span class="codeinline"><span class="link"><a href="../RefDoc/ConvertImage@TImageData@TImageFormat.html">ConvertImage</a></span></span>(ImgClone, ifDXT5);
+  // do something else with image
+  ...
+end.
+    </pre>
+    <p class="para">In this example you can find how to pass fill color parameters to 
+    functions like <span class="codeinline"><span class="link"><a href="../RefDoc/FillRect@TImageData@LongInt@LongInt@LongInt@LongInt@Pointer.html">FillRect</a></span></span>. These functions work for all possible image 
+    data format so fill color is defined as pointer to pixel in image's format.
+    You can also use <span class="codeinline"><span class="link"><a href="../RefDoc/GetPixel32@TImageData@LongInt@LongInt.html">GetPixel32</a></span></span>, <span class="codeinline"><span class="link"><a href="../RefDoc/SetPixel32@TImageData@LongInt@LongInt@TColor32Rec.html">SetPixel32</a></span></span>,
+    <span class="codeinline"><span class="link"><a href="../RefDoc/GetPixelFP@TImageData@LongInt@LongInt.html">GetPixelFP</a></span></span>, and <span class="codeinline"><span class="link"><a href="../RefDoc/SetPixelFP@TImageData@LongInt@LongInt@TColorFPRec.html">SetPixelFP</a></span></span> to set/get pixel colors
+    which are automatically converted to native color format of each data format.
+
+    </p>
+    <pre class="syntax">var
+  Img: <span class="codeinline"><span class="link"><a href="../RefDoc/TImageData.html">TImageData</a></span></span>;
+  Pix32: <span class="codeinline"><span class="link"><a href="../RefDoc/TColor32Rec.html">TColor32Rec</a></span></span>
+  Pix24: <span class="codeinline"><span class="link"><a href="../RefDoc/TColor24Rec.html">TColor24Rec</a></span></span>
+  Pix64: <span class="codeinline"><span class="link"><a href="../RefDoc/TColor64Rec.html">TColor64Rec</a></span></span>
+  Pix48: <span class="codeinline"><span class="link"><a href="../RefDoc/TColor48Rec.html">TColor48Rec</a></span></span>
+  PixWord: Word;
+  PixByte: Byte;
+begin
+  ...
+  // image is now initialized and loaded
+  // now we set pixel colors 
+  Pix32.Color := $FFFF0000; // opaque red
+  Pix64.Color := $FFFF0000FFFF0000; // opaque green 
+  with Pix24 do begin R := $FF; G := $FF; B := 0; end; // yellow 
+  with Pix48 do begin R := $FF00; G := $00FF; B := $0800; end; // something redish
+  PixWord := (31 shl 10) or (15 shl 5) or 25; // something violetish in R5G5B5
+  PixByte := 111; 
+ 
+  // image is then converted between various formats
+  // and rectangle is filled with appropriate pixels
+  
+  <span class="codeinline"><span class="link"><a href="../RefDoc/ConvertImage@TImageData@TImageFormat.html">ConvertImage</a></span></span>(Img, ifA16R16G16B16);
+  <span class="codeinline"><span class="link"><a href="../RefDoc/FillRect@TImageData@LongInt@LongInt@LongInt@LongInt@Pointer.html">FillRect</a></span></span>(Img, 20, 20, 60, 40, @Pix64);
+  
+  ConvertImage(Img, ifA8R8G8B8);
+  FillRect(Img, 20, 20, 60, 40, @Pix32);
+  
+  ConvertImage(Img, ifR16G16B16);
+  FillRect(Img, 20, 20, 60, 40, @Pix48);
+  
+  ConvertImage(Img, ifR8G8B8);
+  FillRect(Img, 20, 20, 60, 40, @Pix24);
+  
+  ConvertImage(Img, ifX1R5G5B5);
+  FillRect(Img, 20, 20, 60, 40, @PixWord);
+  
+  ConvertImage(Img, ifGray8);
+  FillRect(Img, 20, 20, 60, 40, @PixByte);
+ 
+  ...
+end.    
+    </pre>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>Delphi.NET Demos</title></head><body>
+    <span class="title">Delphi.NET Demos</span>
+    <p class="para">These Delphi.NET demos currently exist:</p>
+    <ul class="bullet"><li class="li">
+        <span class="link"><a href="#demo01">Demo 01</a></span>
+      </li></ul>
+    <div class="note">Note:
+    <span class="ntwpara">If you want to use Imaging in Delphi.NET you must include
+    <code class="codeinline">ImagingNET.pas</code> (located in
+    <code class="keyword">Source\Wrappers\Delphi.NET</code> directory)
+    unit to your uses clause.
+    You can use <code class="codeinline">Imaging</code> class which encapsulates
+    imported functions and uses more dotNET-like names and types or
+    functions directly imported from dll. There are also some
+    dotNET only functions and extensions (for example color records like
+    <span class="codeinline"><span class="link"><a href="../RefDoc/TColor32Rec.html">TColor32Rec</a></span></span> and others have various conversion methods and
+    some overloaded operators).
+    Only tested compiler for dotNET demos is Delphi 2006 but
+    Delphi 8/2005/Turbo.NET should work too. Imaging .NET demos work
+    in Mono too.
+    </span></div>
+    <div class="note">Note:
+    <span class="ntwpara">All non-Object Pascal programs using Imaging require <b>VampyreImaging.dll</b>
+    (Windows) or <b>libVampyreImaging.so</b> (Linux) to run.
+    Compiled Imaging library must be located somewhere on system's
+    search path for these demos to work.
+    </span></div>
+    
+    <span class="subtopic1">
+      <a id="demo01">Demo 01</a>
+    </span>
+    <p class="para">Simple image viewer program demonstrating usage of Imaging library
+    in Delphi.NET.
+    </p>
+    <span class="tabletitle">Demo Information</span><table class="table"><tr class="tr"><td class="td"><span class="tablepara">
+          <b>Name</b>
+        </span></td><td class="td"><span class="tablepara">Demo 01</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <b>Language</b>
+        </span></td><td class="td"><span class="tablepara">Delphi.NET</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <b>Source Path</b>
+        </span></td><td class="td"><span class="tablepara">(Imaging Root)\Demos\Delphi.NET\Demo01</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <b>Exe Path</b>
+        </span></td><td class="td"><span class="tablepara">(Imaging Root)\Demos\Bin\Demo01.exe</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <b>Platforms (tested)</b>
+        </span></td><td class="td"><span class="tablepara">
+          <b>.NET</b>
+ on Win32</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <b>Compilers (tested)</b>
+        </span></td><td class="td"><span class="tablepara">Delphi 2006 (<b>.NET</b>)</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <b>Demo shows usage of</b>
+        </span></td><td class="td"><span class="tablepara">low level (using dyn. library wrapper)</span></td></tr></table>
+
+
+    It loads image stored in one of file formats
+    supported by Imaging library and assigns it to PictureBox component.
+    You can get some information about loaded image by clicking on PictureBox.
+    <img class="imageblock" src="dotnetdemo01.png" alt=""/><br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <Package Version="3">
+    <PathDelim Value="\"/>
+    <Name Value="VPR_Lazarus"/>
+    <CompilerOptions>
+      <Version Value="8"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <IncludeFiles Value="..\..\Source\"/>
+        <OtherUnitFiles Value="..\..\Source\;..\..\Source\"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)\"/>
+      </SearchPaths>
+      <Parsing>
+        <SyntaxOptions>
+          <UseAnsiStrings Value="True"/>
+        </SyntaxOptions>
+      </Parsing>
+      <Other>
+        <CompilerPath Value="$(CompPath)"/>
+      </Other>
+    </CompilerOptions>
+    <Files Count="4">
+      <Item1>
+        <Filename Value="GR32_PolygonsEx.pas"/>
+        <UnitName Value="GR32_PolygonsEx"/>
+      </Item1>
+      <Item2>
+        <Filename Value="GR32_VectorUtils.pas"/>
+        <UnitName Value="GR32_VectorUtils"/>
+      </Item2>
+      <Item3>
+        <Filename Value="GR32_VectorGraphics.pas"/>
+        <UnitName Value="GR32_VectorGraphics"/>
+      </Item3>
+      <Item4>
+        <Filename Value="GR32_VPR.pas"/>
+        <UnitName Value="GR32_VPR"/>
+      </Item4>
+    </Files>
+    <Type Value="RunAndDesignTime"/>
+    <RequiredPkgs Count="2">
+      <Item1>
+        <PackageName Value="GR32_L"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="LCL"/>
+        <MinVersion Major="1" Valid="True"/>
+      </Item2>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+      <IgnoreBinaries Value="False"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

@@ -1,0 +1,83 @@
+Vampyre Imaging Library Benchmark Demo version 0.20.0
+
+-------------  Loading Images -------------
+Loading image: Tigers.jpg
+Image loaded in:                                                       66 035 us
+Loading image: Tigers.bmp
+Image loaded in:                                                        3 538 us
+Loading image: Tigers.png
+Image loaded in:                                                       88 954 us
+Loading image: Tigers.tga
+Image loaded in:                                                        5 030 us
+Loading image: Drake.mng
+Image loaded in:                                                        9 566 us
+Loading image: Tigers.jng
+Image loaded in:                                                       76 601 us
+Loading image: Tigers.dds
+Image loaded in:                                                        1 524 us
+
+-----------  Image Manipulation -----------
+Decompressing image from DXT1 format... 
+Image decompressed in:                                                  9 381 us
+Resizing image to 3000x3000 (bilinear) ... 
+Image resized in:                                                   2 250 548 us
+Converting image to A16R16G16B16 64bit format ... 
+Image converted in:                                                 2 361 281 us
+Flipping image ... 
+Image flipped in:                                                     141 800 us
+Mirroring image ... 
+Image mirrored in:                                                    339 231 us
+Swapping channels of image ... 
+Channels swapped in:                                                  804 629 us
+Converting image to A32B32G32R32F 128bit floating point format... 
+Image converted in:                                                 1 423 606 us
+Converting image to A4R4G4B4 16bit format... 
+Image converted in:                                                 3 203 257 us
+Converting image to A8R8G8B8 32bit format... 
+Image converted in:                                                 3 923 148 us
+Cloning image ... 
+Image cloned in:                                                      114 664 us
+Copying rectangle ... 
+Rectangle copied in:                                                   24 003 us
+Filling rectangle ... 
+Rectangle filled in:                                                   16 491 us
+Stretching rectangle (bicubic) ... 
+Rectangle stretched in:                                             2 528 132 us
+Replacing colors in rectangle ... 
+Colors replaced in:                                                   169 217 us
+Creating mipmaps ... 
+Mipmaps created in:                                                 2 523 078 us
+Splitting image ... 
+Image split in:                                                       191 630 us
+Resizing image to 1000x1000 (bicubic) ... 
+Image resized in:                                                   2 164 823 us
+Rotating image 180 degrees CCW ... 
+Image rotated in:                                                      34 875 us
+Rotating image 90 degrees CCW ... 
+Image rotated in:                                                      47 117 us
+Reducing colors count to 1024... 
+Colors reduced in:                                                  1 162 143 us
+Making palette for images ... 
+Palette made in:                                                       92 593 us
+Mapping image to existing palette ... 
+Image mapped in:                                                    2 770 816 us
+Compressing image to DXT1 format... 
+Image compressed in:                                                  475 908 us
+
+-------------  Saving Images --------------
+Saving image to format: dds
+Image saved in:                                                         1 468 us
+Converting image to R8G8B8 24bit format... 
+Image converted in:                                                    61 426 us
+Saving image to format: jpg
+Image saved in:                                                       211 578 us
+Saving image to format: bmp
+Image saved in:                                                         8 765 us
+Saving image to format: png
+Image saved in:                                                       490 733 us
+Saving image to format: tga
+Image saved in:                                                         8 776 us
+Saving image to format: mng
+Image saved in:                                                       487 021 us
+Saving image to format: jng
+Image saved in:                                                       215 510 us

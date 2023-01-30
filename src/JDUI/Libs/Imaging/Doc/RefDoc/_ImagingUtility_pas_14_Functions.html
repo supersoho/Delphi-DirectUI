@@ -1,0 +1,411 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>ImagingUtility.pas Functions</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="generator" content="Doc-O-Matic" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <link rel="STYLESHEET" href="default.css" type="text/css" />
+
+<script type="text/javascript" src="scripts.js"></script>
+</head>
+<body class="Element57" onmousedown="onBodyMouseDown();">
+
+<!-- Begin Popups -->
+
+<!-- End Popups -->
+
+<!-- Begin Page Header -->
+<div class="Element92">
+<div class="Element27">
+ImagingUtility.pas Functions</div>
+</div>
+
+<!-- End Page Header -->
+
+<!-- Begin Client Area -->
+
+<!-- Begin Page Content -->
+<div class="Element58">
+<div class="Element14">
+Functions</div>
+<div class="Element10030">
+<div class="Section30">
+<div class="Element212">
+<div class="TableDiv">
+<table cellspacing="0" class="Table1">
+<tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="BoundsToRect@LongInt@LongInt@LongInt@LongInt.html">BoundsToRect</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns rectangle (X, Y, X + Width, Y + Height).&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="BoundsToRect@TRect.html">BoundsToRect</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns rectangle (R.Left, R.Top, R.Left + R.Right, R.Top + R.Bottom).&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="BuildFileList@string@LongInt@TStrings@TFileListOptions.html">BuildFileList</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+This function fills Files string list with names of files found with FindFirst/FindNext functions (See details on Path/Atrr here).&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="CalcCrc32@LongWord@Pointer@LongInt.html">CalcCrc32</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Calculates CRC32 for the given data.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="Ceil@Single.html">Ceil</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns smallest integer &gt;= Val (for 5.1 returns 6).&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="ClampFloat@Single@Single@Single.html">ClampFloat</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Clamps float value to range &nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="ClampInt@LongInt@LongInt@LongInt.html">ClampInt</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Clamps integer value to range &nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="ClampToByte@LongInt.html">ClampToByte</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Clamps integer value to Byte boundaries.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="ClampToWord@LongInt.html">ClampToWord</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Clamps integer value to Word boundaries.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="ClipCopyBounds@LongInt@LongInt@LongInt@LongInt@LongInt@LongInt@LongInt@LongInt@TRect.html">ClipCopyBounds</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Clips given source bounds and dest position.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="ClipRectBounds@LongInt@LongInt@LongInt@LongInt@TRect.html">ClipRectBounds</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Clips given bounds to Clip rectangle.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="ClipStretchBounds@LongInt@LongInt@LongInt@LongInt@LongInt@LongInt@LongInt@LongInt@LongInt@LongInt@TRect.html">ClipStretchBounds</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Clips given source bounds and dest bounds.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="DebugMsg@string@array_of_const.html">DebugMsg</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Outputs debug message - shows message dialog in Windows and writes to console in Linux/Unix.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="FillMemoryByte@Pointer@LongInt@Byte.html">FillMemoryByte</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Fills given memory with given Byte value.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="FillMemoryLongWord@Pointer@LongInt@LongWord.html">FillMemoryLongWord</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Fills given memory with given LongWord value.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="FillMemoryWord@Pointer@LongInt@Word.html">FillMemoryWord</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Fills given memory with given Word value.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="FloatToStrFmt@Double@Integer.html">FloatToStrFmt</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns string representation of float number (with digit grouping).&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="Floor@Single.html">Floor</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns largest integer &lt;= Val (for 5.9 returns 5).&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="FormatExceptMsg@string@array_of_const.html">FormatExceptMsg</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Formats given message for usage in Exception.Create(..).&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="FreeAndNil@.html">FreeAndNil</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Frees class instance and sets its reference to nil.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="FreeMem@Pointer.html">FreeMem</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Replacement of standard System.FreeMem procedure which checks if P is nil (this is only needed for Free Pascal, Delphi makes checks in its FreeMem).&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="FreeMemNil@.html">FreeMemNil</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Frees pointer and sets it to nil.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="GetAppDir.html">GetAppDir</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns directory where application's exceutable is located without path delimiter at the end.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="GetAppExe.html">GetAppExe</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns file name of application's executable.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="GetExceptObject.html">GetExceptObject</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns current exception object.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="GetFileExt@string.html">GetFileExt</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns file extension (without &quot;.&quot; dot)&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="GetNumMipMapLevels@LongInt@LongInt.html">GetNumMipMapLevels</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns how many mipmap levels can be created for image of given size.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="GetTimeMicroseconds.html">GetTimeMicroseconds</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns time value with microsecond resolution.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="GetTimeMilliseconds.html">GetTimeMilliseconds</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns time value with milisecond resolution.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="GetVolumeLevelCount@LongInt@LongInt.html">GetVolumeLevelCount</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns total number of levels of volume texture with given depth and mipmap count (this is not depth * mipmaps!).&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="Iff@Boolean@Boolean@Boolean.html">Iff</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+If Condition is True then TruePart is retured, otherwise FalsePart is returned.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="Iff@Boolean@Char@Char.html">Iff</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+If Condition is True then TruePart is retured, otherwise FalsePart is returned.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="Iff@Boolean@Int64@Int64.html">Iff</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+If Condition is True then TruePart is retured, otherwise FalsePart is returned.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="Iff@Boolean@LongInt@LongInt.html">Iff</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+If Condition is True then TruePart is retured, otherwise FalsePart is returned.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="Iff@Boolean@Pointer@Pointer.html">Iff</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+If Condition is True then TruePart is retured, otherwise FalsePart is returned.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="Iff@Boolean@string@string.html">Iff</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+If Condition is True then TruePart is retured, otherwise FalsePart is returned.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="IffFloat@Boolean@Single@Single.html">IffFloat</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+If Condition is True then TruePart is retured, otherwise FalsePart is returned.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="IffUnsigned@Boolean@LongWord@LongWord.html">IffUnsigned</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+If Condition is True then TruePart is retured, otherwise FalsePart is returned.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="IntToStrFmt@Int64.html">IntToStrFmt</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns string representation of integer number (with digit grouping).&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="IsLittleEndian.html">IsLittleEndian</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+This function returns True if running on little endian machine.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="IsPow2@LongInt.html">IsPow2</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns True if Num is power of 2.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="Log2@Single.html">Log2</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns log base 2 of X.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="Log2Int@LongInt.html">Log2Int</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns log base 2 of integer X (max 2^30) or -1 if X is not power of 2.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="MatchFileNameMask@string@string@Boolean.html">MatchFileNameMask</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns True if FileName matches given Mask with optional case sensitivity.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="Max@LongInt@LongInt.html">Max</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns greater of two integer numbers.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="MaxFloat@Single@Single.html">MaxFloat</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns greater of two float numbers.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="Min@LongInt@LongInt.html">Min</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns lesser of two integer numbers.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="MinFloat@Single@Single.html">MinFloat</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns lesser of two float numbers.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="MulDiv@Word@Word@Word.html">MulDiv</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns result from multiplying Number by Numerator and then dividing by Denominator.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="NextPow2@LongInt.html">NextPow2</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns next power of 2 greater than or equal to Num (if Num itself is power of 2 then it retuns Num).&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="PosEx@string@string@LongInt.html">PosEx</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Similar to RTL's Pos function but with optional Offset where search will start.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="PosNoCase@string@string@LongInt.html">PosNoCase</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Same as <a href="PosEx@string@string@LongInt.html">PosEx</a> but without case sensitivity.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="Pow2Int@LongInt.html">Pow2Int</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Raises 2 to the given integer power (in range [0, 30]).&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="Power@Single@Single.html">Power</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Raises Base to any power.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="RectInRect@TRect@TRect.html">RectInRect</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns True if R1 fits into R2.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="RectIntersects@TRect@TRect.html">RectIntersects</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns True if R1 and R2 intersects.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="RectToBounds@TRect.html">RectToBounds</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns rectangle (R.Left, R.Top, R.Right - R.Left, R.Bottom - R.Top).&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="ScaleRectToRect@TRect@TRect.html">ScaleRectToRect</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Scales one rectangle to fit into another.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="StrToken@string@Char.html">StrToken</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns a sub-string from S which is followed by Sep separator and deletes the sub-string from S including the separator.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="StrTokenEnd@string@Char.html">StrTokenEnd</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Same as <a href="StrToken@string@Char.html">StrToken</a> but searches from the end of S string.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="StrTokensToList@string@Char@TStrings.html">StrTokensToList</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Fills instance of TStrings with tokens from string S where tokens are separated by one of Seps characters.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="SwapEndianLongWord@LongWord.html">SwapEndianLongWord</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Swaps byte order of LongWord value.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="SwapEndianLongWord@PLongWord@LongInt.html">SwapEndianLongWord</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Swaps byte order of multiple LongWord values.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="SwapEndianWord@PWordArray@LongInt.html">SwapEndianWord</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Swaps byte order of multiple Word values.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="SwapEndianWord@Word.html">SwapEndianWord</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Swaps byte order of Word value.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="SwapMin@LongInt@LongInt.html">SwapMin</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Swaps two LongInt values if necessary to ensure that <a href="Min@LongInt@LongInt.html">Min</a> &lt;= <a href="Max@LongInt@LongInt.html">Max</a>.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="SwapValues@Byte@Byte.html">SwapValues</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Swaps two Byte values&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="SwapValues@LongInt@LongInt.html">SwapValues</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Swaps two LongInt values&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="SwapValues@Single@Single.html">SwapValues</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Swaps two Single values&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="SwapValues@Word@Word.html">SwapValues</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Swaps two Word values&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="Switch@Boolean.html">Switch</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Switches Boolean value.&nbsp;</div></td></tr></table></div></div>
+</div>
+</div>
+</div>
+<!-- End Page Content -->
+
+<!-- Begin Page Footer -->
+<div class="Element95">
+<em>You are here:</em> Symbol Reference &gt; Files &gt; <a href="ImagingUtility_pas.html">ImagingUtility.pas</a></div>
+<div class="Element93">
+<table width="100%" cellspacing="0" cellpadding="0">
+<tr><td width="100%">
+<div class="Element4">
+<a href="toc.html">Contents</a> | <a href="idx.html">Index</a></div>
+</td></tr></table></div>
+
+<!-- End Page Footer -->
+
+<!-- End Client Area -->
+</body></html>

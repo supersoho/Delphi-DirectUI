@@ -1,0 +1,111 @@
+Vampyre Imaging Library Benchmark Demo version 0.22.0
+
+-------------  Loading Images -------------
+Loading image: Tigers.bmp
+Image loaded in:                                                      3 320 us
+Loading image: Tigers.jpg
+Image loaded in:                                                     32 779 us
+Loading image: Tigers.png
+Image loaded in:                                                     93 797 us
+Loading image: Tigers.mng
+Image loaded in:                                                     96 092 us
+Loading image: Tigers.jng
+Image loaded in:                                                     63 536 us
+Loading image: Tigers.dds
+Image loaded in:                                                      1 025 us
+Loading image: Tigers.tga
+Image loaded in:                                                     10 871 us
+Loading image: Tigers.jp2
+Image loaded in:                                                    660 351 us
+Loading image: Tigers.pcx
+Image loaded in:                                                     11 859 us
+Loading image: Tigers.pbm
+Image loaded in:                                                     11 726 us
+Loading image: Tigers.pgm
+Image loaded in:                                                        458 us
+Loading image: Tigers.ppm
+Image loaded in:                                                      6 623 us
+Loading image: Tigers.pam
+Image loaded in:                                                        681 us
+Loading image: Tigers.pfm
+Image loaded in:                                                      3 391 us
+
+-----------  Image Manipulation -----------
+Resizing image to 3000x3000 (bilinear) ... 
+Image resized in:                                                 3 427 540 us
+Converting image to A16R16G16B16 64bit format ... 
+Image converted in:                                               1 937 871 us
+Flipping image ... 
+Image flipped in:                                                   173 622 us
+Mirroring image ... 
+Image mirrored in:                                                  307 104 us
+Swapping channels of image ... 
+Channels swapped in:                                                624 112 us
+Converting image to A32B32G32R32F 128bit floating point format... 
+Image converted in:                                               1 237 674 us
+Converting image to A4R4G4B4 16bit format... 
+Image converted in:                                               2 080 662 us
+Converting image to A8R8G8B8 32bit format... 
+Image converted in:                                               3 558 625 us
+Cloning image ... 
+Image cloned in:                                                    166 346 us
+Copying rectangle ... 
+Rectangle copied in:                                                 29 940 us
+Filling rectangle ... 
+Rectangle filled in:                                                 18 229 us
+Stretching rectangle (bicubic) ... 
+Rectangle stretched in:                                           2 117 241 us
+Replacing colors in rectangle ... 
+Colors replaced in:                                                 138 114 us
+Creating mipmaps ... 
+Mipmaps created in:                                               2 604 357 us
+Splitting image ... 
+Image split in:                                                     292 998 us
+Resizing image to 1000x1000 (bicubic) ... 
+Image resized in:                                                 2 432 806 us
+Rotating image 180 degrees CCW ... 
+Image rotated in:                                                    49 276 us
+Rotating image 90 degrees CCW ... 
+Image rotated in:                                                   144 460 us
+Reducing colors count to 1024... 
+Colors reduced in:                                                  592 499 us
+Making palette for images ... 
+Palette made in:                                                     70 140 us
+Mapping image to existing palette ... 
+Image mapped in:                                                  2 276 302 us
+Compressing image to DXT1 format... 
+Image compressed in:                                                395 231 us
+Decompressing image from DXT1 format... 
+Image decompressed in:                                               50 769 us
+Converting image to R8G8B8 24bit format... 
+Image converted in:                                                  19 849 us
+
+-------------  Saving Images --------------
+Saving image to format: bmp
+Image saved in:                                                      12 548 us
+Saving image to format: jpg
+Image saved in:                                                     187 517 us
+Saving image to format: png
+Image saved in:                                                     415 875 us
+Saving image to format: mng
+Image saved in:                                                     371 874 us
+Saving image to format: jng
+Image saved in:                                                     162 545 us
+Saving image to format: dds
+Image saved in:                                                      13 058 us
+Saving image to format: tga
+Image saved in:                                                      12 671 us
+Saving image to format: jp2
+Image saved in:                                                   2 961 423 us
+Saving image to format: cif
+Image saved in:                                                     322 413 us
+Saving image to format: img
+Image saved in:                                                     303 729 us
+Saving image to format: pgm
+Image saved in:                                                      52 729 us
+Saving image to format: ppm
+Image saved in:                                                      77 639 us
+Saving image to format: pam
+Image saved in:                                                      76 158 us
+Saving image to format: pfm
+Image saved in:                                                     534 554 us

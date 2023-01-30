@@ -1,0 +1,29 @@
+GR32_Misc.pas Change Log
+
+11 Nov 10 (ver 2.92)
+bugfix     - minor bug in SimpleShadow() function.
+
+23 May 10 (ver 3.9)
+changed    - moved a lot of functions that are not dependant on the 
+             TLine32 class from GR32_Lines to GR32_misc.
+added      - Simple3D functions.
+
+22 May 10 (ver 3.8a)
+bugfix   - ApplyMask procedure fixed again and its parameter list modified.
+added    - several new functions including FixedPoints() & FloatPoints()
+
+9 November 09 (ver 3.8)
+bugfix   - ApplyMask procedure wasn't properly handling anti-aliased masks.
+
+2 October 09 (ver 3.72)
+added    - Compiler directives to stop 'unsafe code', 'unsafe type' and 
+           'unsafe cast' warnings
+added    - several overloaded functions.
+
+25 August 09 (ver 3.6)
+added   - GetConvexHull function.
+added   - CreateMaskFromPolygon
+added   - ApplyMaskToAlpha
+added   - ApplyMask
+added   - GetPointsAroundEllipse
+added   - Several functions moved from GR32_Lines unit.

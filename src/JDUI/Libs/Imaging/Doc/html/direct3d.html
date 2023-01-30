@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>Direct3D Textures</title></head><body>
+    <span class="title">Direct3D Textures</span>
+    <p class="para">This extensions contains functions for loading and saving
+      <code class="keyword">Direct3D</code> textures
+      using Imaging and for converting images to textures and vice versa.
+      Currently supported <code class="keyword">Direct3D</code> version is 9.0.
+      You need <code class="keyword">Direct3D</code> headers for
+      <code class="keyword">Object Pascal</code> to be able to compile this extension.
+      They can be found at <span class="link"><a href="http://www.clootie.ru">http://www.clootie.ru</a></span>.
+      Extension does not require D3DX library so if you use it
+      only for loading or saving textures you can replace it by Imaging
+      and remove dependency on 2+ MiB dll file.
+      It is implemented in <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingDirect3D9_pas.html">ImagingDirect3D9.pas</a></span></span> unit located
+      in <code class="keyword">(ImagingRoot)\Source\Extensions</code> directory.
+      To use it simply add this unit to <code class="codeinline">uses</code> list of your program.
+      Currently only 2D textures are supported, DXTC/S3TC and 3Dc compressed, and
+      floating point textures are created if supported by hardware.
+    </p>
+    <p class="para">Here is the table with <code class="keyword">Direct3D</code> functions
+      currently available.
+      There is also Imaging <code class="keyword">Direct3D</code> demo you can look at
+      for inspiration <span class="link"><a href="pascal.html#d3ddemo">Object Pascal Direct3D Demo</a></span>.
+    </p>
+    <span class="tabletitle">Imaging Direct3D extension functions</span><table class="table"><tr class="tr"><th class="th">Loading Functions</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/LoadD3DTextureFromFile@string@IDirect3DDevice9@IDirect3DTexture9@PLongInt@PLongInt.html">LoadD3DTextureFromFile</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/LoadD3DTextureFromStream@TStream@IDirect3DDevice9@IDirect3DTexture9@PLongInt@PLongInt.html">LoadD3DTextureFromStream</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/LoadD3DTextureFromMemory@Pointer@LongInt@IDirect3DDevice9@IDirect3DTexture9@PLongInt@PLongInt.html">LoadD3DTextureFromMemory</a></span></span>
+        </span></td></tr><tr class="tr"><th class="th">Saving Functions</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SaveD3DTextureToFile@string@IDirect3DTexture9.html">SaveD3DTextureToFile</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SaveD3DTextureToStream@string@TStream@IDirect3DTexture9.html">SaveD3DTextureToStream</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SaveD3DTextureToMemory@string@Pointer@LongInt@IDirect3DTexture9.html">SaveD3DTextureToMemory</a></span></span>
+        </span></td></tr><tr class="tr"><th class="th">Conversion Functions</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/CreateD3DTextureFromImage@TImageData@IDirect3DDevice9@IDirect3DTexture9@LongInt@LongInt@LongInt@LongWord@TD3DFormat@TD3DPool@PLongInt@PLongInt.html">CreateD3DTextureFromImage</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/CreateD3DTextureFromMultiImage@TDynImageDataArray@IDirect3DDevice9@IDirect3DTexture9@LongInt@LongInt@LongInt@LongWord@TD3DFormat@TD3DPool@PLongInt@PLongInt.html">CreateD3DTextureFromMultiImage</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/CreateD3DSurfaceFromImage@TImageData@IDirect3DSurface9.html">CreateD3DSurfaceFromImage</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/CreateImageFromD3DTexture@IDirect3DTexture9@TImageData@TImageFormat.html">CreateImageFromD3DTexture</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/CreateMultiImageFromD3DTexture@IDirect3DTexture9@TDynImageDataArray@LongInt@TImageFormat.html">CreateMultiImageFromD3DTexture</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/CreateImageFromD3DSurface@IDirect3DSurface9@TImageData.html">CreateImageFromD3DSurface</a></span></span>
+        </span></td></tr><tr class="tr"><th class="th">Other Functions</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/GetDeviceTextureCaps@IDirect3DDevice9@TD3DTextureCaps.html">GetDeviceTextureCaps</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/IsD3DFormatSupported@IDirect3DDevice9@TD3DFormat.html">IsD3DFormatSupported</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImageFormatToD3DFormat@TImageFormat@TImageFormat.html">ImageFormatToD3DFormat</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/D3DFormatToImageFormat@TD3DFormat.html">D3DFormatToImageFormat</a></span></span>
+        </span></td></tr></table>
+    <div class="note">Note:
+    <span class="ntwpara">
+      <span class="codeinline"><span class="link"><a href="../RefDoc/LoadD3DTextureFromFile@string@IDirect3DDevice9@IDirect3DTexture9@PLongInt@PLongInt.html">LoadD3DTextureFromFile</a></span></span>
+ and similar functions use
+      these default values: All mipmap levels are created, Pool
+      is D3DPOOL_MANAGED, Usage is 0, Format and size are taken from image.
+      If you want to set those parameters to other values use
+      <span class="codeinline"><span class="link"><a href="../RefDoc/CreateD3DTextureFromImage@TImageData@IDirect3DDevice9@IDirect3DTexture9@LongInt@LongInt@LongInt@LongWord@TD3DFormat@TD3DPool@PLongInt@PLongInt.html">CreateD3DTextureFromImage</a></span></span> or <span class="codeinline"><span class="link"><a href="../RefDoc/CreateD3DTextureFromMultiImage@TDynImageDataArray@IDirect3DDevice9@IDirect3DTexture9@LongInt@LongInt@LongInt@LongWord@TD3DFormat@TD3DPool@PLongInt@PLongInt.html">CreateD3DTextureFromMultiImage</a></span></span>
+      instead.
+    </span></div>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

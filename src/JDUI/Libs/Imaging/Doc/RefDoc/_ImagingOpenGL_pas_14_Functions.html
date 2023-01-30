@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>ImagingOpenGL.pas Functions</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="generator" content="Doc-O-Matic" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <link rel="STYLESHEET" href="default.css" type="text/css" />
+
+<script type="text/javascript" src="scripts.js"></script>
+</head>
+<body class="Element57" onmousedown="onBodyMouseDown();">
+
+<!-- Begin Popups -->
+
+<!-- End Popups -->
+
+<!-- Begin Page Header -->
+<div class="Element92">
+<div class="Element27">
+ImagingOpenGL.pas Functions</div>
+</div>
+
+<!-- End Page Header -->
+
+<!-- Begin Client Area -->
+
+<!-- Begin Page Content -->
+<div class="Element58">
+<div class="Element14">
+Functions</div>
+<div class="Element10030">
+<div class="Section30">
+<div class="Element212">
+<div class="TableDiv">
+<table cellspacing="0" class="Table1">
+<tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="CreateGLTextureFromImage@TImageData@LongInt@LongInt@Boolean@TImageFormat@PLongInt@PLongInt.html">CreateGLTextureFromImage</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Converts <a href="TImageData.html">TImageData</a> structure to OpenGL texture.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="CreateGLTextureFromMultiImage@TDynImageDataArray@LongInt@LongInt@Boolean@LongInt@TImageFormat@PLongInt@PLongInt.html">CreateGLTextureFromMultiImage</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Converts images in TDymImageDataArray to one OpenGL texture.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="CreateImageFromGLTexture@GLuint@TImageData@TImageFormat.html">CreateImageFromGLTexture</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Converts main level of the GL texture to <a href="TImageData.html">TImageData</a> strucrue.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="CreateMultiImageFromGLTexture@GLuint@TDynImageDataArray@LongInt@TImageFormat.html">CreateMultiImageFromGLTexture</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Converts GL texture to <a href="TDynImageDataArray.html">TDynImageDataArray</a> array of images.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="GetGLProcAddress@string.html">GetGLProcAddress</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Function which can be used to retrieve GL extension functions.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="GetGLTextureCaps@TGLTextureCaps.html">GetGLTextureCaps</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns texture capabilities of installed OpenGL driver.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="ImageFormatToGL@TImageFormat@GLenum@GLenum@GLint@TGLTextureCaps.html">ImageFormatToGL</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns True if the given image format can be represented as GL texture format.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="IsGLExtensionSupported@string.html">IsGLExtensionSupported</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Returns True if the given GL extension is supported.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="LoadGLTextureFromFile@string@PLongInt@PLongInt.html">LoadGLTextureFromFile</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Creates GL texture from image in file in format supported by Imaging.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="LoadGLTextureFromMemory@Pointer@LongInt@PLongInt@PLongInt.html">LoadGLTextureFromMemory</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Creates GL texture from image in memory in format supported by Imaging.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="LoadGLTextureFromStream@TStream@PLongInt@PLongInt.html">LoadGLTextureFromStream</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Creates GL texture from image in stream in format supported by Imaging.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="SaveGLTextureToFile@string@GLuint.html">SaveGLTextureToFile</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Saves GL texture to file in one of formats supported by Imaging.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="SaveGLTextureToMemory@string@Pointer@LongInt@GLuint.html">SaveGLTextureToMemory</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Saves GL texture to memory in one of formats supported by Imaging.&nbsp;</div></td></tr><tr>
+<td class="Element202" valign="top" width="35%">
+<div class="Element203">
+<a href="SaveGLTextureToStream@string@TStream@GLuint.html">SaveGLTextureToStream</a>&nbsp;</div></td><td class="Element206" valign="top" width="65%">
+<div class="Element207">
+Saves GL texture to stream in one of formats supported by Imaging.&nbsp;</div></td></tr></table></div></div>
+</div>
+</div>
+</div>
+<!-- End Page Content -->
+
+<!-- Begin Page Footer -->
+<div class="Element95">
+<em>You are here:</em> Symbol Reference &gt; Files &gt; <a href="ImagingOpenGL_pas.html">ImagingOpenGL.pas</a></div>
+<div class="Element93">
+<table width="100%" cellspacing="0" cellpadding="0">
+<tr><td width="100%">
+<div class="Element4">
+<a href="toc.html">Contents</a> | <a href="idx.html">Index</a></div>
+</td></tr></table></div>
+
+<!-- End Page Footer -->
+
+<!-- End Client Area -->
+</body></html>

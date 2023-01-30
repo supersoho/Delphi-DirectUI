@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>CreateD3DTextureFromImage Function</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="generator" content="Doc-O-Matic" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <link rel="STYLESHEET" href="default.css" type="text/css" />
+
+<script type="text/javascript" src="scripts.js"></script>
+</head>
+<body class="Element57" onmousedown="onBodyMouseDown();">
+
+<!-- Begin Popups -->
+
+<!-- End Popups -->
+
+<!-- Begin Page Header -->
+<div class="Element92">
+<div class="Element5">
+CreateD3DTextureFromImage Function</div>
+<div class="Element7">
+<a href="ImagingDirect3D9_pas.html">ImagingDirect3D9</a></div>
+</div>
+
+<!-- End Page Header -->
+
+<!-- Begin Client Area -->
+
+<!-- Begin Page Content -->
+<div class="Element58">
+<div class="Element11">
+<div class="Element10">
+<p class="Element10">
+Converts <a href="TImageData.html">TImageData</a> structure to IDirect3DTexture9 texture.</p></div>
+</div>
+<div class="Element99">
+Pascal</div>
+<div class="Element101"><div class="Element100"><pre class="Element100"><strong>function</strong> CreateD3DTextureFromImage(<strong>const</strong> Image: <a href="TImageData.html">TImageData</a>; 
+                                   Device: IDirect3DDevice9; 
+                                   <strong>var</strong> Texture: IDirect3DTexture9; 
+                                   Width: LongInt = 0; 
+                                   Height: LongInt = 0; 
+                                   MipLevels: LongInt = 0; 
+                                   Usage: LongWord = 0; 
+                                   Format: TD3DFormat = D3DFMT_UNKNOWN; 
+                                   Pool: TD3DPool = D3DPOOL_MANAGED; 
+                                   CreatedWidth: PLongInt = <strong>nil</strong>; 
+                                   CreatedHeight: PLongInt = <strong>nil</strong>): Boolean;</pre></div></div>
+<div class="Element14">
+File</div>
+<div class="Element11">
+<div class="Element10">
+<p class="Element10">
+<a href="ImagingDirect3D9_pas.html">ImagingDirect3D9</a> (at line 96)</p></div>
+</div>
+<div class="Element14">
+Description</div>
+<div class="Element11">
+<div class="Element10">
+<p class="Element10">
+ Input images is used as main mipmap level and additional requested levels are generated from this one. For the details on parameters look at <a href="CreateD3DTextureFromMultiImage@TDynImageDataArray@IDirect3DDevice9@IDirect3DTexture9@LongInt@LongInt@LongInt@LongWord@TD3DFormat@TD3DPool@PLongInt@PLongInt.html">CreateD3DTextureFromMultiImage</a> function.</p></div>
+</div>
+<div class="Element14">
+Related Information</div>
+<div class="Element11">
+<div class="Element10">
+<a href="ImagingDirect3D9_pas.html">ImagingDirect3D9</a></div>
+</div>
+</div>
+<!-- End Page Content -->
+
+<!-- Begin Page Footer -->
+<div class="Element95">
+<em>You are here:</em> Symbol Reference &gt; Functions &gt; <a href="CreateD3DTextureFromImage@TImageData@IDirect3DDevice9@IDirect3DTexture9@LongInt@LongInt@LongInt@LongWord@TD3DFormat@TD3DPool@PLongInt@PLongInt.html">CreateD3DTextureFromImage Function </a></div>
+<div class="Element93">
+<table width="100%" cellspacing="0" cellpadding="0">
+<tr><td width="100%">
+<div class="Element4">
+<a href="toc.html">Contents</a> | <a href="idx.html">Index</a></div>
+</td></tr><tr><td width="100%">
+<div class="Element91">
+<a href="CreateD3DSurfaceFromImage@TImageData@IDirect3DSurface9.html">Previous</a> | <a href="CreateD3DTextureFromMultiImage@TDynImageDataArray@IDirect3DDevice9@IDirect3DTexture9@LongInt@LongInt@LongInt@LongWord@TD3DFormat@TD3DPool@PLongInt@PLongInt.html">Next</a></div>
+</td></tr></table></div>
+
+<!-- End Page Footer -->
+
+<!-- End Client Area -->
+</body></html>

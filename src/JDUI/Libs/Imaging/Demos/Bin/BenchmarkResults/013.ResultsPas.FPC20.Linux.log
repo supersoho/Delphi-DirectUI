@@ -1,0 +1,67 @@
+Vampyre Imaging Library Benchmark Demo version 0.13
+
+-------------  Loading Images -------------
+Loading image: Tigers.jpg
+Image loaded in: 125497 us
+Loading image: Tigers.bmp
+Image loaded in: 27891 us
+Loading image: Tigers.png
+Image loaded in: 31615 us
+Loading image: Tigers.tga
+Image loaded in: 8197 us
+Loading image: Tigers.dds
+Image loaded in: 497 us
+
+-----------  Image Manipulation -----------
+Decompressing image from DXT1 format... 
+Image decompressed in: 9436 us
+Resizing image to 3000x3000 ... 
+Image resized in: 176358 us
+Converting image to A16R16G16B16 64bit format ... 
+Image converted in: 903830 us
+Flipping image ... 
+Image flipped in: 170722 us
+Mirroring image ... 
+Image mirrored in: 333220 us
+Swapping channels of image ... 
+Channels swapped in: 762032 us
+Converting image to A32B32G32R32F 128bit floating point format... 
+Image converted in: 1639155 us
+Converting image to A4R4G4B4 16bit format... 
+Image converted in: 2481666 us
+Converting image to A8R8G8B8 32bit format... 
+Image converted in: 2379278 us
+Cloning image ... 
+Image cloned in: 150581 us
+Copying rectangle ... 
+Rectangle copied in: 27587 us
+Filling rectangle ... 
+Rectangle filled in: 35372 us
+Creating mipmaps ... 
+Mipmaps created in: 421245 us
+Splitting image ... 
+Image split in: 177532 us
+Resizing image to 1000x1000 ... 
+Image resized in: 25226 us
+Reducing colors count to 512... 
+Colors reduced in: 615352 us
+Making palette for images ... 
+Palette made in: 87444 us
+Mapping image to existing palette ... 
+Image mapped in: 4364075 us
+Compressing image to DXT1 format... 
+Image compressed in: 458817 us
+
+-------------  Saving Images --------------
+Saving image to format: dds
+Image saved in: 1352 us
+Converting image to R8G8B8 24bit format... 
+Image converted in: 53477 us
+Saving image to format: jpg
+Image saved in: 249093 us
+Saving image to format: bmp
+Image saved in: 11873 us
+Saving image to format: png
+Image saved in: 642496 us
+Saving image to format: tga
+Image saved in: 11283 us

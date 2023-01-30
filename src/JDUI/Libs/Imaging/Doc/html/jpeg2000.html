@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>JPEG 2000 Format</title></head><body>
+    <span class="title">JPEG 2000 Format</span>
+    <p class="para">
+      <b>JPEG 2000</b>
+ is a wavelet-based image compression standard.
+      It was created by the <b>Joint Photographic Experts Group</b> committee
+      as a replacement for their own DCT based JPEG standard.
+      JPEG 2000 can operate at higher compression
+      ratios without generating 'blocky and blurry'
+      artifacts of the older JPEG standard.
+      Nowadays JPEG 2000 is not as widely supported as its predecessor.
+      Common file name extensions are <b>.jp2</b>, <b>.j2c</b>, and <b>.j2k</b> (for code stream only).
+    </p>
+    <p class="para">As of version 0.24.2 Imaging uses <b>OpenJPEG</b> library
+      compiled to object files (Delphi) or static libraries (FPC)
+      and linked to Object Pascal program.
+      Therefore, JPEG 2000 support is not a part of core library
+      (not native Pascal) now
+      and is located in <code class="keyword">Extras</code> package.
+      Currently Imaging supports JPEG 2000 on Win32
+      (for Delphi and FPC) and Linux systems (FPC only - no Kylix support).
+      For Linux there are precompiled objects for x86 and x86_64 architectures.
+    </p>
+    <p class="para">JPEG 2000 supports wide variety of data formats. You can have arbitrary number
+      of components/channels, each with different bitdepth and optional
+      "signedness". JPEG 2000 images can be lossy or lossless compressed.
+      Imaging can load most data formats (except multichannel images
+      with component bitdepth &gt; 16 =&gt; no Imaging data format equivalents).
+      Components with sample separation are loaded correctly, ICC profiles
+      or palettes are not used, YCbCr images are translated to RGB.
+    </p>
+    <span class="tabletitle">JPEG 2000 File Format Support</span><table class="table"><tr class="tr"><th class="th">Format</th><th class="th">TImageFormat equivalent</th><th class="th">Loading</th><th class="th">Saving</th></tr><tr class="tr"><td class="td"><span class="tablepara">8 bit grayscale</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifGray8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">16 bit grayscale</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifGray16</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">32 bit grayscale</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifGray32</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">8 bit grayscale + alpha</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA8Gray8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">16 bit grayscale + alpha</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA16Gray16</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">24 bit RGB</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifR8G8B8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">48 bit RGB</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifR16G16B16</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">32 bit ARGB</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA8R8G8B8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">64 bit ARGB</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA16R16G16B16</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr></table>
+    <div class="note">Note:
+    <span class="ntwpara">JPEG 2000 offers vast amount of channel count and bitdepth combinations
+      but formats listed in table are the most common ones.
+    </span></div>
+    <p class="para">When working with JPEG 2000 files you can find useful some options
+      which can be set by <span class="codeinline"><span class="link"><a href="../RefDoc/SetOption@LongInt@LongInt.html">SetOption</a></span></span> function and their current values
+      can be get by <span class="codeinline"><span class="link"><a href="../RefDoc/GetOption@LongInt.html">GetOption</a></span></span> function.
+      Or you can set them by modifying properties of <span class="codeinline"><span class="link"><a href="../RefDoc/TJpeg2000FileFormat.html">TJpeg2000FileFormat</a></span></span>
+      class.
+    </p>
+    <span class="tabletitle">Options Related to JPEG 2000 Files</span><table class="table"><tr class="tr"><th class="th">OptionId</th><th class="th">Allowed Values</th><th class="th">Usage</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingJpeg2000Quality.html">ImagingJpeg2000Quality</a></span></span>
+        </span></td><td class="td"><span class="tablepara">
+          <b>1</b>
+ to <b>100</b></span></td><td class="td"><span class="tablepara">JPEG 2000 compression quality used when saving images.
+          Higher value means worse compression/better image quality/larger file size.
+          Default value is <b>80</b>.
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingJpeg2000CodeStreamOnly.html">ImagingJpeg2000CodeStreamOnly</a></span></span>
+        </span></td><td class="td"><span class="tablepara">
+          <b>0 (False)</b>
+ or <b>1 (True)</b></span></td><td class="td"><span class="tablepara">Controls whether JPEG 2000 image is saved with full file headers or just
+          as code stream. Default value is <b>False (0)</b>.
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingJpeg2000LosslessCompression.html">ImagingJpeg2000LosslessCompression</a></span></span>
+        </span></td><td class="td"><span class="tablepara">
+          <b>0 (False)</b>
+ or <b>1 (True)</b></span></td><td class="td"><span class="tablepara">Specifies JPEG 2000 image compression type. If True (1), saved JPEG 2000 files
+          will be losslessly compressed. Otherwise lossy compression is used.
+          Default value is <b>False (0)</b>.
+        </span></td></tr></table>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

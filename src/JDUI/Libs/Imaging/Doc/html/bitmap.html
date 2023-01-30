@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>Windows Bitmap File Format</title></head><body>
+    <span class="title">Windows Bitmap File Format</span>
+    <p class="para">Windows bitmap files are stored in a device-independent bitmap (DIB)
+      format
+      that allows Windows to display the bitmap on any type of display device. The
+      term "device independent" means that the bitmap specifies pixel color in a
+      form independent of the method used by a display to represent color.
+      Bitmaps can store 1, 4 and 8 bit indexed images and 16, 24
+      and 32 RGB images. 4 and 8 bit images can also be compressed with RLE.
+      Imaging can also read OS/2 bitmaps but can not save them.
+    </p>
+    <span class="tabletitle">Windows Bitmap File Format Support</span><table class="table"><tr class="tr"><th class="th">Format</th><th class="th">TImageFormat equivalent</th><th class="th">Loading</th><th class="th">Saving</th></tr><tr class="tr"><td class="td"><span class="tablepara">1 bit indexed</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifIndex8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">No</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">4 bit indexed</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifIndex8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">No</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">8 bit indexed</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifIndex8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">4 bit indexed RLE compressed</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifIndex8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">No</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">8 bit indexed RLE compressed</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifIndex8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">16 bit 555 RGB</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifX1R5G5B5</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">16 bit 565 RGB (note 1)</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifR5G6B5</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">16 bit 444 RGB (note 1)</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifX4R4G4B4</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">24 bit RGB</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifR8G8B8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">32 bit RGB</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifX8R8G8B8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">16 bit 1555 ARGB (note 2)</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA1R5G5B5</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">16 bit 4444 ARGB (note 2)</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA4R4G4B4</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">32 bit ARGB (note 2)</span></td><td class="td"><span class="tablepara">
+          <code class="codeinline">ifA8R8G8B8</code>
+        </span></td><td class="td"><span class="tablepara">Yes</span></td><td class="td"><span class="tablepara">Yes</span></td></tr></table>
+    <div class="note">Note:
+    <span class="ntwpara">1) Many image viewers and image editing programs do not support
+      these 16 bit formats and treat them as X1R5G5B5 format.<br/>
+      2) Alpha channels in BMP files are often ignored by some (many) viewers/editors.
+    </span></div>
+    <p class="para">When working with Bitmap files you can find useful some options
+      which can be set by <span class="codeinline"><span class="link"><a href="../RefDoc/SetOption@LongInt@LongInt.html">SetOption</a></span></span> function and their current values
+      can be get by <span class="codeinline"><span class="link"><a href="../RefDoc/GetOption@LongInt.html">GetOption</a></span></span> function.
+      Or you can set them by modifying properties of <span class="codeinline"><span class="link"><a href="../RefDoc/TBitmapFileFormat.html">TBitmapFileFormat</a></span></span>
+      class.
+    </p>
+    <span class="tabletitle">Options Related to Bitmap Files</span><table class="table"><tr class="tr"><th class="th">OptionId</th><th class="th">Allowed Values</th><th class="th">Usage</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingBitmapRLE.html">ImagingBitmapRLE</a></span></span>
+        </span></td><td class="td"><span class="tablepara">
+          <b>0 (false)</b>
+ or <b>1 (true)</b></span></td><td class="td"><span class="tablepara">Indicates whether 8 bit Bitmap images will be saved with or without
+        RLE compression (efficient only for images
+        with large areas of the same color).
+        Default value is <b>1 (true)</b>. </span></td></tr></table>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

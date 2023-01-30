@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>Multiple Network Graphics File Format</title></head><body>
+    <span class="title">Multiple Network Graphics File Format</span>
+    <p class="para">MNG is a multiple-image member of the Network Graphics
+      format family. It can contain animations, slide shows,
+      or complex still frames, comprised of multiple
+      PNG or JNG single-image datastreams.
+      This format has complex animation capabilities but Imaging only
+      extracts frames. Individual frames are stored as standard PNG or JNG
+      images.
+    </p>
+    <p class="para">Imaging saves MNG files as MNG-VLC (very low complexity) so it is basically
+      an array of image frames without MNG animation chunks. Frames can be saved
+      as lossless PNG or lossy JNG images.
+      Every frame can be in different data format.
+    </p>
+    <p class="para">For information about supported data formats of individual frames look
+      at PNG and JNG file formats, which are internally used to store frames.
+    </p>
+    <div class="linklist"><div class="s">MNG frame formats</div><div class="linklistitem"><span class="listedlink"><a href="png.html">PNG File Format</a></span></div><div class="linklistitem"><span class="listedlink"><a href="jng.html">JNG File Format</a></span></div></div>
+    <p class="para">When working with MNG files you can find useful some options
+      which can be set by <span class="codeinline"><span class="link"><a href="../RefDoc/SetOption@LongInt@LongInt.html">SetOption</a></span></span> function and their current values
+      can be get by <span class="codeinline"><span class="link"><a href="../RefDoc/GetOption@LongInt.html">GetOption</a></span></span> function.
+      Or you can set them by modifying properties of <span class="codeinline"><span class="link"><a href="../RefDoc/TMNGFileFormat.html">TMNGFileFormat</a></span></span>
+      class.
+    </p>
+    <span class="tabletitle">Options Related to MNG Files</span><table class="table"><tr class="tr"><th class="th">OptionId</th><th class="th">Allowed Values</th><th class="th">Usage</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingMNGLossyCompression.html">ImagingMNGLossyCompression</a></span></span>
+        </span></td><td class="td"><span class="tablepara">
+          <b>0 (False)</b>
+ or <b>1 (True)</b></span></td><td class="td"><span class="tablepara">Specifies whether MNG animation frames are saved with lossy or lossless
+          compression. Lossless frames are saved as PNG images and lossy frames are
+          saved as JNG images.
+          Default value is <b>0</b>. </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingMNGLossyAlpha.html">ImagingMNGLossyAlpha</a></span></span>
+        </span></td><td class="td"><span class="tablepara">
+          <b>0 (False)</b>
+ or <b>1 (True)</b></span></td><td class="td"><span class="tablepara">Defines whether alpha channel of lossy compressed MNG frames
+          (when ImagingMNGLossyCompression is 1) is lossy compressed too.
+          Default value is <b>0</b>. </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingMNGPreFilter.html">ImagingMNGPreFilter</a></span></span>
+        </span></td><td class="td"><span class="tablepara">
+          <b>0, 1, 2, 3, 4, 5, 6</b>
+        </span></td><td class="td"><span class="tablepara">Sets precompression filter used when saving MNG frames as PNG images.
+          Allowed values are:
+          <ul class="list"><li class="li">0 - None Filter</li><li class="li">1 - Sub Filter</li><li class="li">2 - Up Filter</li><li class="li">3 - Average Filter</li><li class="li">4 - Paeth Filter</li><li class="li">5 - Use 0 for indexed/gray images and 4 for RGB/ARGB images</li><li class="li">6 - Adaptive filtering - use best filter for each scanline - very slow</li></ul>
+          Note that filters 3 and 4 are much slower than filters 1 and 2.
+          Default value is <b>5</b>. </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingMNGCompressLevel.html">ImagingMNGCompressLevel</a></span></span>
+        </span></td><td class="td"><span class="tablepara">
+          <b>0 (no compression)</b>
+ to <b>9 (best compression)</b></span></td><td class="td"><span class="tablepara">Sets ZLib compression level used when saving MNG frames as PNG images.
+          Default value is <b>5</b>. </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingMNGQuality.html">ImagingMNGQuality</a></span></span>
+        </span></td><td class="td"><span class="tablepara">
+          <b>1</b>
+ to <b>100</b></span></td><td class="td"><span class="tablepara">Specifies compression quality used when saving MNG frames as JNG images.
+        Higher value means worse compression/better image quality/larger file size.
+        Default value is <b>90</b>.</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingMNGProgressive.html">ImagingMNGProgressive</a></span></span>
+        </span></td><td class="td"><span class="tablepara">
+          <b>0 (False)</b>
+ or <b>1 (True)</b></span></td><td class="td"><span class="tablepara">Specifies whether images are saved in progressive format when saving MNG
+        frames as JNG images.
+        Progressive JPEG rearranges the stored data into a series of scans of
+        increasing quality.  In situations where a JPEG file is transmitted across a
+        slow communications link, a decoder can generate a low-quality image very
+        quickly from the first scan, then gradually improve the displayed quality as
+        more scans are received. Default value is <b>0 (False)</b>. </span></td></tr></table>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

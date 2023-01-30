@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>Low Level Interface</title></head><body>
+    <span class="title">Low Level Interface</span>
+    <p class="para">Imaging's low level interface is set of functions operating
+      on <span class="codeinline"><span class="link"><a href="../RefDoc/TImageData.html">TImageData</a></span></span> structure and <span class="codeinline"><span class="link"><a href="../RefDoc/TDynImageDataArray.html">TDynImageDataArray</a></span></span>.
+      These functions are implemented in <span class="codeinline"><span class="link"><a href="../RefDoc/Imaging_pas.html">Imaging.pas</a></span></span> unit
+      and you can find how to use them in
+      <span class="link"><a href="procedures.html">How To ... </a></span> section.
+      You can also look at <span class="link"><a href="demos.html">Demos</a></span> section.
+      Low level interface is accessible from programming languages other
+      than <b>Object Pascal</b>. Information on this can be found in
+      <span class="link"><a href="usingdll.html">Using dll/so Access</a></span> section.
+    </p>
+    <div class="note">Note:
+    <span class="ntwpara">There are more functions in Imaging that are not part of low level interface
+      but can be freely used with it. Ulike those, low level interface functions are
+      provided for other programming languages too.
+      Look at <span class="codeinline"><span class="link"><a href="../RefDoc/Imaging_pas.html">Imaging.pas</a></span></span>, <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingFormats_pas.html">ImagingFormats.pas</a></span></span>, and other units
+      for more functions.
+    </span></div>
+    <p class="para">Here is the table with all low level interface functions currently available.
+    </p>
+    <table class="table"><tr class="tr"><th class="th">General Functions</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/InitImage@TImageData.html">InitImage</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/NewImage@LongInt@LongInt@TImageFormat@TImageData.html">NewImage</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/TestImage@TImageData.html">TestImage</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/FreeImage@TImageData.html">FreeImage</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/FreeImagesInArray@TDynImageDataArray.html">FreeImagesInArray</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/TestImagesInArray@TDynImageDataArray.html">TestImagesInArray</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/DetermineFileFormat@string.html">DetermineFileFormat</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/DetermineStreamFormat@TStream.html">DetermineStreamFormat</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/DetermineMemoryFormat@Pointer@LongInt.html">DetermineMemoryFormat</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/IsFileFormatSupported@string.html">IsFileFormatSupported</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/EnumFileFormats@LongInt@string@string@string@Boolean@Boolean.html">EnumFileFormats</a></span></span>
+        </span></td></tr><tr class="tr"><th class="th">Loading Functions</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/LoadImageFromFile@string@TImageData.html">LoadImageFromFile</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/LoadImageFromStream@TStream@TImageData.html">LoadImageFromStream</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/LoadImageFromMemory@Pointer@LongInt@TImageData.html">LoadImageFromMemory</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/LoadMultiImageFromFile@string@TDynImageDataArray.html">LoadMultiImageFromFile</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/LoadMultiImageFromStream@TStream@TDynImageDataArray.html">LoadMultiImageFromStream</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/LoadMultiImageFromMemory@Pointer@LongInt@TDynImageDataArray.html">LoadMultiImageFromMemory</a></span></span>
+        </span></td></tr><tr class="tr"><th class="th">Saving Functions</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SaveImageToFile@string@TImageData.html">SaveImageToFile</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SaveImageToStream@string@TStream@TImageData.html">SaveImageToStream</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SaveImageToMemory@string@Pointer@LongInt@TImageData.html">SaveImageToMemory</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SaveMultiImageToFile@string@TDynImageDataArray.html">SaveMultiImageToFile</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SaveMultiImageToStream@string@TStream@TDynImageDataArray.html">SaveMultiImageToStream</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SaveMultiImageToMemory@string@Pointer@LongInt@TDynImageDataArray.html">SaveMultiImageToMemory</a></span></span>
+        </span></td></tr><tr class="tr"><th class="th">Manipulation Functions</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/CloneImage@TImageData@TImageData.html">CloneImage</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ConvertImage@TImageData@TImageFormat.html">ConvertImage</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/FlipImage@TImageData.html">FlipImage</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/MirrorImage@TImageData.html">MirrorImage</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ResizeImage@TImageData@LongInt@LongInt@TResizeFilter.html">ResizeImage</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SwapChannels@TImageData@LongInt@LongInt.html">SwapChannels</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ReduceColors@TImageData@LongInt.html">ReduceColors</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/GenerateMipMaps@TImageData@LongInt@TDynImageDataArray.html">GenerateMipMaps</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/MapImageToPalette@TImageData@PPalette32@LongInt.html">MapImageToPalette</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SplitImage@TImageData@TDynImageDataArray@LongInt@LongInt@LongInt@LongInt@Boolean@Pointer.html">SplitImage</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/MakePaletteForImages@TDynImageDataArray@PPalette32@LongInt@Boolean.html">MakePaletteForImages</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/RotateImage@TImageData@Single.html">RotateImage</a></span></span>
+        </span></td></tr><tr class="tr"><th class="th">Drawing/Pixel Functions</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/CopyRect@TImageData@LongInt@LongInt@LongInt@LongInt@TImageData@LongInt@LongInt.html">CopyRect</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/FillRect@TImageData@LongInt@LongInt@LongInt@LongInt@Pointer.html">FillRect</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ReplaceColor@TImageData@LongInt@LongInt@LongInt@LongInt@Pointer@Pointer.html">ReplaceColor</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/StretchRect@TImageData@LongInt@LongInt@LongInt@LongInt@TImageData@LongInt@LongInt@LongInt@LongInt@TResizeFilter.html">StretchRect</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/GetPixelDirect@TImageData@LongInt@LongInt@Pointer.html">GetPixelDirect</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SetPixelDirect@TImageData@LongInt@LongInt@Pointer.html">SetPixelDirect</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/GetPixel32@TImageData@LongInt@LongInt.html">GetPixel32</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SetPixel32@TImageData@LongInt@LongInt@TColor32Rec.html">SetPixel32</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/GetPixelFP@TImageData@LongInt@LongInt.html">GetPixelFP</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SetPixelFP@TImageData@LongInt@LongInt@TColorFPRec.html">SetPixelFP</a></span></span>
+        </span></td></tr><tr class="tr"><th class="th">Palette Functions</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/NewPalette@LongInt@PPalette32.html">NewPalette</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/FreePalette@PPalette32.html">FreePalette</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/CopyPalette@PPalette32@PPalette32@LongInt@LongInt@LongInt.html">CopyPalette</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/FindColor@PPalette32@LongInt@TColor32.html">FindColor</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/FillGrayscalePalette@PPalette32@LongInt.html">FillGrayscalePalette</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/FillCustomPalette@PPalette32@LongInt@Byte@Byte@Byte@Byte.html">FillCustomPalette</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SwapChannelsOfPalette@PPalette32@LongInt@LongInt@LongInt.html">SwapChannelsOfPalette</a></span></span>
+        </span></td></tr><tr class="tr"><th class="th">Options Functions</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SetOption@LongInt@LongInt.html">SetOption</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/GetOption@LongInt.html">GetOption</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/PushOptions.html">PushOptions</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/PopOptions.html">PopOptions</a></span></span>
+        </span></td></tr><tr class="tr"><th class="th">Image Format Functions</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/GetImageFormatInfo@TImageFormat@TImageFormatInfo.html">GetImageFormatInfo</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/GetPixelsSize@TImageFormat@LongInt@LongInt.html">GetPixelsSize</a></span></span>
+        </span></td></tr><tr class="tr"><th class="th">IO Functions</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/SetUserFileIO@TOpenReadProc@TOpenWriteProc@TCloseProc@TEofProc@TSeekProc@TTellProc@TReadProc@TWriteProc.html">SetUserFileIO</a></span></span>
+        </span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <span class="codeinline"><span class="link"><a href="../RefDoc/ResetFileIO.html">ResetFileIO</a></span></span>
+        </span></td></tr></table>
+    <p class="para">You can find other functions in <span class="link"><a href="reference.html">Reference</a></span>
+      but they are not available for other languages thus they are not
+      part of the low level interface. Some of them are even dangerous to use
+      if you do not know what you are doing.
+    </p>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

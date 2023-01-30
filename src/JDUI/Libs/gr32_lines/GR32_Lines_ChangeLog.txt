@@ -1,0 +1,151 @@
+GR32_Lines.pas Change Log
+
+17 Nov 10 (ver 3.93)
+updated    - improved drawing of line corners for 'stippled' TLines32.Draw() 
+             method added in ver 3.92.
+
+11 Nov 10 (ver 3.92)
+bugfix     - bug in TLines32.AddPoints when adding points to the beginning.
+added      - another TLines32.Draw() method for drawing 'stippled' lines. This 
+             method has a TArrayOfFloat parameter to define stippling and two 
+             color parameters, one for filling and the other for outlining.
+             (This creates a very different look to the old stipple draw method.)
+             
+23 May 10 (ver 3.9)
+changed    - moved a lot of functions that are not dependant on the 
+             TLine32 class from GR32_Lines to GR32_misc.
+
+22 May 10 (ver 3.8a)
+bugfix    - TLines32.OutlinePoints.
+
+9 November 09 (ver 3.8)
+bugfix    - SimpleRadialFill procedure.
+
+3 October 09 (ver 3.72c)
+changed  - SimpleRadialGradient functions changed to (overloaded) 
+           SimpleRadialFill  to minimize confusion with SimpleGradientFill.
+updated  - Some SimpleRadialFill overloaded functions now accept an 
+           angle parmeter.
+
+2 October 09 (ver 3.72)
+bugfix   - Minor bugs in SimpleRadialFill and SimpleRadialGradient functions
+added    - Compiler directives to stop 'unsafe code', 'unsafe type' and 
+           'unsafe cast' warnings
+           
+4 September 09 (ver 3.7c)
+bugfix   - Minor bug in drawing stippled lines fixed.
+
+31 August 09 (ver 3.7)
+modified - SimpleBevel procedure (improved handling of alpha transparency.)
+
+25 August 09 (ver 3.6)
+added   - SimpleBevel procedure. (Useful for watermarking etc.)
+changed - Moved several procedures to GR32_Misc unit
+
+17 July 09 (ver 3.5)
+added   - TArrowHead.GetPoints public method.
+added   - TLines32.GetArrowTruncatedPoints public method.
+updated - minor improvements to SimpleRadialFill procedure.
+updated - other minor improvements
+
+18 June 09 (ver 3.4c)
+bugfix  - TLines32.AddPoints method wasn't returning the number of points added.
+
+16 June 09 (ver 3.4)
+Version number updated to keep synchronised with GR32_Text.
+
+19 May 09 (ver 3.3m)
+changed - TLines32.LineWidth now exposed as a Public property.
+changed - Removed TLines32.IsClockwiseDirection property. (Use 
+          GR32_Misc.IsClockwise function if necessary.)
+added   - InflatePoints function.
+
+6 May 09 (ver 3.3)
+changed - Minor changes to demo only.
+
+15 Apr 09 (Ver 3.1r)
+added   - SimpleShadow function
+
+14 Apr 09 (Ver 3.1n)
+changed - TLines32.DrawGradient now takes an array or colors and is no longer
+          limited to a two color gradient.
+changed - SimpleGradientFill now takes an array or colors and is no longer
+          limited to a two color gradient.
+added   - SimpleGradientFill function overriden so it now also accepts a 
+          TArrayOfArrayOfFixedPoint parameter.
+added   - SimpleRadialFill function overriden so it now also accepts a 
+          TArrayOfArrayOfFixedPoint parameter.
+changed - numerous functions moved to the new GR32_Misc unit.
+bugfix  - occasional divide by zero bug introduced in the last update is fixed.
+changed - SimpleRadialFill now does an elliptical fill rather than a circular fill.
+added   - DrawRadialGradient function overriden so it now also takes a 
+          TFloatRect parameter enabling drawing of elliptical radial gradients.
+          
+5 Apr 09 (Ver 3.0)
+change  - major rewrite of TLine32.Build method (utilising much of the logic 
+          from GR32_Polygons and also refinements from Mattias Andersson's 
+          GR32_VectorUtils unit). The previous code, while functional, was very 
+          convoluted (making maintenance difficult) and less efficient.
+change  - TLine32 no longer has a TBitmap32 property so all drawing methods
+          now require a Bitmap parameter. This now enables TLine32 objects to
+          draw to multiple TBitmap32s.
+change  - TLine32 BevelRatio property renamed MiterLimit since its behaviour has 
+          changed and indicates the point at which mitered joins become truncated.
+change  - renamed TLines32.GetPtDirection to TLines32.IsClockwiseDirection
+change  - exposed TLines32's GetLeftPoints and GetRightPoints methods.
+added   - esButt option to TEndStyles.
+added   - SimpleRadialFill function.
+added   - DrawRadialGradient function.
+added   - SimpleStippleFill function.
+
+13 Mar 09 (Ver 2.4r)
+bugfix  - drawing closed lines where the first and last points were identical 
+          produced drawing artefacts 
+
+26 Feb 09 (Ver 2.4n)
+bugfix  - drawing closed lines was still occasionally producing small drawing artefacts 
+added   - several more support functions including DrawPoint() and RotatePolyPoints()
+
+18 Feb 09 (Ver 2.4m)
+added   - a number of support functions including GetCSplinePoints(), 
+          CopyLine() and SmoothChart()
+
+10 Feb 09 (Ver 2.4i)
+added   - FillMode property to TLine32.
+added   - overloaded SimpleFill function
+added   - overloaded SimpleLine function
+
+9 Feb 09 (Ver 2.4e)
+changed   - exposed GetDirection method in TLine32.
+
+6 Feb 09 (Ver 2.4c)
+bugfix    - minor change to fix a compiler error in Delphi 5.
+
+1 Feb 09 (Ver 2.4c)
+added    - AntialiasMode property to TLines32
+
+1 Feb 09 (Ver 2.4)
+bugfix   - minor bug in TLines32.Build method
+change   - renamed GetBezierPoints() to GetCBezierPoints() to make it explicitly 
+           a cubic bezier function and to differentiate it from its quadratic 
+           GetQBezierPoints() counterpart.
+improved - all bezier algorithms (now simpler and faster)
+added    - compiler option to use Mattias Andersson's new GR32_PolygonsEx unit.
+           
+20 Jan 09 (Ver 2.3m)
+bugfix   - broke MidPoint and Average functions in previous update
+improved - SimpleText function
+
+17 Jan 09 (Ver 2.3i)
+added    - GetQBezierPoints function for quadratic beziers
+added    - GetQSplinePoints function for quadratic bezier splines
+added    - SimpleText function (particularly useful if ClearType font smoothing 
+           is enabled).
+
+12 Jan 09 (Ver 2.3a)
+improved - arrow drawing
+removed  - jsMiterClipped JoinStyle (use jsBevelled instead)
+changed  - MiterClipRatio property now BevelRatio
+bugfix   - fixed range error whenever calling GetOutline() returns an empty point array
+
+10 Jan 09 (Ver 2.2)

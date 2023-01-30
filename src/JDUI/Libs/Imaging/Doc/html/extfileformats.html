@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>File Format Extensions</title></head><body>
+    <span class="title">File Format Extensions</span>
+    <p class="para">These extensions allow Imaging to load and save images from/to
+      files in various formats.
+      File formats included in Imaging core (that is in
+      <code class="keyword">Source</code> directory) must satisfy these requirements:
+      both loading and saving support, native crossplatform
+      Object Pascal implementation, support as many data formats as possible,
+      be stream safe (you have multiple images in one stream and you load them
+      one by one without exactly knowing where they start - after loading one
+      stream position must be precisely at the beginning of another - some
+      file formats (e.g. Daggerfall images) need to know exact file size during loading so
+      they are inherently unsafe).
+      File format loaders/savers that do not meet these requirements are
+      located in Extras package (<code class="keyword">Extras\Extensions</code> directory).
+    </p>
+    <p class="para">Some complex file formats make compiled binaries significantly larger.
+      Most notably <b>TIFF</b> (around 400 KiB),
+      <b>JPEG</b> (around 100 KiB), <b>JPEG2000</b> (around 150 KiB), and <b>PNG</b>
+      (around 50 KiB). Some formats use others internally - <b>MNG</b> and <b>JNG</b> use
+      PNG and JPEG. If you know you won't be needing some of those formats
+      and you don't want large binaries you can disable them at compile stage.
+      
+      This is done by uncommenting <code class="codeinline">DONT_LINK_*</code> (where * is file format
+      identifier) symbols in 
+      <code class="codeinline">ImagingOptions.inc</code> include file
+      located in <code class="keyword">Source</code> directory.
+      All core file formats have corresponding symbols here and all
+      are enabled by default in this include file.
+      
+      There is also <code class="codeinline">DONT_LINK_EXTRAS</code> symbol that controls
+      automatic linking with file formats declared in Extras package
+      (individual <code class="codeinline">DONT_LINK_*</code> symbols for these file format can be turned 
+      on/off in <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingExtras_pas.html">ImagingExtras.pas</a></span></span>
+      unit located in <code class="keyword">Extras\Extensions</code> directory).
+    </p>
+    <div class="warning">Warning:
+    <span class="ntwpara">In Imaging 0.26.2 file format linking symbols were changed 
+      from <code class="codeinline">LINK_*</code> to <code class="codeinline">DONT_LINK_*</code>.
+      So if you used these symbols somewhere in you projects 
+      please check your code if it still works as intended 
+      after 0.26.2 installation.
+      <br/>
+      Why did it change?<br/>    
+      Since all formats are enabled by default in Imaging releases, 
+      if you wanted to disable one format you had to manually edit 
+      <code class="codeinline">ImagingOptions.inc</code> and comment out appropriate 
+      <code class="codeinline">$DEFINE</code> statement.
+      So there was a problem when you had more projects using the same 
+      Imaging installation and each wanting to use different subset of file formats.
+      With new symbols you don't have to edit the include file at all, 
+      just add <code class="codeinline">DONT_LINK_*</code> to "Conditional defines" (or its Lazarus equivalent)
+      in compiler options of each project.
+    </span></div>
+    <div class="linklist"><div class="s">More on supported file formats</div><div class="linklistitem"><span class="listedlink"><a href="fileformats.html">Supported File Formats</a></span></div></div>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

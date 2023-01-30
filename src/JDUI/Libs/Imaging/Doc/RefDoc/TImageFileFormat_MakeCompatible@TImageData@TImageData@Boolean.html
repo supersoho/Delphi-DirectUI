@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>TImageFileFormat.MakeCompatible Method </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="generator" content="Doc-O-Matic" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <link rel="STYLESHEET" href="default.css" type="text/css" />
+
+<script type="text/javascript" src="scripts.js"></script>
+</head>
+<body class="Element57" onmousedown="onBodyMouseDown();">
+
+<!-- Begin Popups -->
+
+<!-- End Popups -->
+
+<!-- Begin Page Header -->
+<div class="Element92">
+<div class="Element5">
+TImageFileFormat.MakeCompatible Method </div>
+<div class="Element7">
+<a href="TImageFileFormat.html">TImageFileFormat Class</a></div>
+</div>
+
+<!-- End Page Header -->
+
+<!-- Begin Client Area -->
+
+<!-- Begin Page Content -->
+<div class="Element58">
+<div class="Element11">
+<div class="Element10">
+<p class="Element10">
+Makes Image compatible with this file format (that means it is in one of data formats in Supported formats set).</p></div>
+</div>
+<div class="Element14">
+Class</div>
+<div class="Element10030">
+<div class="Section30">
+<p class="Section30">
+<a href="TImageFileFormat.html">TImageFileFormat Class</a></p></div>
+</div>
+<div class="Element99">
+Pascal</div>
+<div class="Element101"><div class="Element100"><pre class="Element100"><strong>public</strong> <strong>function</strong> MakeCompatible(<strong>const</strong> Image: <a href="TImageData.html">TImageData</a>; 
+                               <strong>var</strong> Compatible: <a href="TImageData.html">TImageData</a>; 
+                               <strong>out</strong> MustBeFreed: Boolean): Boolean;</pre></div></div>
+<div class="Element14">
+Description</div>
+<div class="Element11">
+<div class="Element10">
+<p class="Element10">
+ If input is already in supported format then Compatible just use value from input (Compatible := Image) so must not free it after you are done with it (image bits pointer points to input image's bits). If input is not in supported format then it is cloned to Compatible and concerted to one of supported formats (which one dependeds on this file format). If image is cloned MustBeFreed is set to True to indicated that you must free Compatible after you are done with it.</p></div>
+</div>
+<div class="Element14">
+Related Information</div>
+<div class="Element11">
+<div class="Element10">
+<a href="TImageFileFormat.html">TImageFileFormat Class</a></div>
+</div>
+</div>
+<!-- End Page Content -->
+
+<!-- Begin Page Footer -->
+<div class="Element95">
+<em>You are here:</em> Symbol Reference &gt; Classes &gt; <a href="TImageFileFormat.html">TImageFileFormat Class</a> &gt; Methods &gt; <a href="TImageFileFormat_MakeCompatible@TImageData@TImageData@Boolean.html">MakeCompatible Method </a></div>
+<div class="Element93">
+<table width="100%" cellspacing="0" cellpadding="0">
+<tr><td width="100%">
+<div class="Element4">
+<a href="toc.html">Contents</a> | <a href="idx.html">Index</a></div>
+</td></tr><tr><td width="100%">
+<div class="Element91">
+<a href="TImageFileFormat_LoadFromStream@TStream@TDynImageDataArray@Boolean.html">Previous</a> | <a href="TImageFileFormat_SaveToFile@string@TDynImageDataArray@Boolean.html">Next</a></div>
+</td></tr></table></div>
+
+<!-- End Page Footer -->
+
+<!-- End Client Area -->
+</body></html>

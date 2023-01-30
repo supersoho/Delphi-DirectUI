@@ -1,0 +1,87 @@
+{ KPDEFS.INC }
+
+{$IFDEF VER110}
+  {$ObjExportAll On}     { 4/20/98  2.11}
+{$ENDIF}
+{$IFDEF VER125}
+  {$ObjExportAll On}     { 3/22/99  2.17+}
+{$ENDIF}
+
+{$IFNDEF NO_HUGE_FILES}
+   {$DEFINE IMPLEMENT_HUGE_FILES}
+{$ENDIF}
+{$IFNDEF NO_USE_ZLIB}
+  {$DEFINE USE_ZLIB}
+{$ENDIF}
+
+{$IFDEF VER120}               { Delphi 4 }
+  {$DEFINE DELPHI_BCB_3}
+  {$DEFINE ISDELPHI4}
+  {$DEFINE HAS_64_BIT_INT}
+  {$DEFINE ISDELPHI}
+{$ENDIF}
+{$IFDEF VER125}               { BCB 4    }
+  {$DEFINE DELPHI_BCB_3}
+  {$DEFINE ISBCB4}
+  {$DEFINE ISBCB}
+  {$DEFINE HAS_64_BIT_INT}
+{$ENDIF}
+{$IFDEF VER130}
+  {$DEFINE DELPHI_BCB_3}
+  {$DEFINE HAS_64_BIT_INT}
+  {$IFDEF BCB}                { BCB 5    }
+        {$DEFINE ISBCB4}
+        {$DEFINE ISBCB5}
+        {$DEFINE ISBCB}
+  {$ELSE}                     { Delphi 5 }
+        {$DEFINE ISDELPHI4}
+        {$DEFINE ISDELPHI5}
+        {$DEFINE ISDELPHI}
+   {$ENDIF}
+{$ENDIF}
+
+{$IFNDEF DELPHI_BCB_3}
+  {$IFDEF conditionalexpressions}
+   {$IF COMPILERVERSION  >= 14.0 } { Delphi 6, BCB 6 and above }
+    {$IF COMPILERVERSION >= 18.0 } { Delphi 2009 and above }
+      {$DEFINE DELPHI2009}
+      {$DEFINE SUPPORT_UNICODE}
+    {$ELSE}
+      {$IF Defined(IMPLEMENT_UNICODE)}
+        {$DEFINE SUPPORT_UNICODE}
+      {$IFEND}
+    {$IFEND}
+    {$IF COMPILERVERSION >= 15.0 } { Delphi 7 and above }
+      {$DEFINE ISDELPHI7}
+    {$IFEND}
+    {$DEFINE DELPHI_BCB_3}
+    {$DEFINE HAS_64_BIT_INT}
+    {$DEFINE INT64STREAMS}
+    {$WARN SYMBOL_PLATFORM OFF}
+    {$WARN UNIT_PLATFORM OFF}
+    {$DEFINE ISCLX}
+    {$IF Defined(BCB) or Defined(__BORLANDC__)}  { BCB }
+        {$DEFINE ISBCB}
+        {$ObjExportAll On}
+    {$ELSE}                     { Delphi }
+        {$DEFINE ISDELPHI4}
+        {$DEFINE ISDELPHI}
+    {$IFEND BCB}
+   {$IFEND}
+  {$ENDIF CONDITIONAL_EXPRESSIONS}
+{$ENDIF}
+
+{$IFDEF MAKESMALL}
+{$DEFINE KPSMALL}
+{$IFNDEF WIN32}
+{$DEFINE NOLONGNAMES}
+{$DEFINE NODISKUTILS}
+{$ENDIF}
+{$ENDIF}
+{$IFDEF WIN32}
+{$IFDEF NOLONGNAMES}
+{$UNDEF NOLONGNAMES}
+{$UNDEF NODISKUTILS}
+{$ENDIF}
+{$ENDIF}
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>High Level Interface</title></head><body>
+    <span class="title">High Level Interface</span>
+    <p class="para">Imaging's high level interface is set of classes build on top
+    of low level interface
+    implemented in <span class="codeinline"><span class="link"><a href="../RefDoc/ImagingClasses_pas.html">ImagingClasses.pas</a></span></span> unit.
+    It is <b>Object Pascal</b> only, therefore it is not accessible
+    from other programming languages (although creating high level interface
+    for other languages using low level interface imported from dll/so should not
+    be difficult).</p>
+    <p class="para">High level interface
+    consists of the base class <span class="codeinline"><span class="link"><a href="../RefDoc/TBaseImage.html">TBaseImage</a></span></span> with two descendant classes.
+    The first is <span class="codeinline"><span class="link"><a href="../RefDoc/TSingleImage.html">TSingleImage</a></span></span> and it is high level wrapper to <span class="codeinline"><span class="link"><a href="../RefDoc/TImageData.html">TImageData</a></span></span>
+    structure. The second is <span class="codeinline"><span class="link"><a href="../RefDoc/TMultiImage.html">TMultiImage</a></span></span> and it is wrapper to 
+    <span class="codeinline"><span class="link"><a href="../RefDoc/TDynImageDataArray.html">TDynImageDataArray</a></span></span> array.</p>
+    <p class="para">These classes provide access to all members of underlying structures
+    trough properties. This access is read/write so you can for example
+    convert image to another format by setting <code class="codeinline">Format</code> property
+    to new value. You can also assign single image to multi image and vice versa.
+    Some image manipulation functions are integrated into high level interface.
+    However, you can use even those that are not integrated
+    with high level images classes. You can find information
+    how to do this and more in the following pages.</p>
+    <div class="linklist"><div class="s">Information about usage of the high level interface</div><div class="linklistitem"><span class="listedlink"><a href="procedures.html">How To ... </a></span></div><div class="linklistitem"><span class="listedlink"><a href="pascal.html">Object Pascal Demos</a></span></div></div>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

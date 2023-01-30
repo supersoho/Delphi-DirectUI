@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2018/07/03 11:35:14.000.409,=C:\Users\super\Documents\Embarcadero\Studio\Projects\Unit10.pas</Transaction>
+    <Transaction>2018/07/03 11:36:27.000.166,C:\Users\super\Documents\Embarcadero\Studio\Projects\Unit10.dfm=C:\工作\新版IM\IM\Client\OEMIM\MainFrm.dfm</Transaction>
+    <Transaction>2018/07/03 11:36:27.000.166,C:\Users\super\Documents\Embarcadero\Studio\Projects\Unit10.pas=C:\工作\新版IM\IM\Client\OEMIM\MainFrm.pas</Transaction>
+    <Transaction>2018/07/03 11:36:35.000.815,C:\Users\super\Documents\Embarcadero\Studio\Projects\Project5.dproj=C:\工作\新版IM\IM\Client\OEMIM\OEMIM.dproj</Transaction>
+    <Transaction>2020/08/22 16:15:17.000.923,C:\工作\新版IM\IM\Client\OEMIM\DirectUIDemo.dproj=C:\工作\新版IM\IM\Client\OEMIM\OEMIM.dproj</Transaction>
+    <Transaction>2020/08/24 11:58:46.000.166,=C:\工作\新版IM\IM\Client\OEMIM\DemoFrm.pas</Transaction>
+    <Transaction>2020/08/27 14:42:00.000.335,=C:\工作\新版IM\IM\Client\DirectUIDemo\ScreenshotFrm.pas</Transaction>
+    <Transaction>2020/08/27 14:42:00.000.538,=C:\工作\新版IM\IM\Client\DirectUIDemo\ScreenshotToolFrm.pas</Transaction>
+    <Transaction>2020/08/27 14:45:13.000.159,=C:\工作\新版IM\IM\Client\DirectUIDemo\TransparentTextInputFrm.pas</Transaction>
+    <Transaction>2020/08/28 09:30:51.000.547,=C:\工作\新版IM\IM\Client\DirectUIDemo\Unit11.pas</Transaction>
+    <Transaction>2020/08/28 09:31:47.000.245,C:\工作\新版IM\IM\Client\DirectUIDemo\AnimateFrm.dfm=C:\工作\新版IM\IM\Client\DirectUIDemo\Unit11.dfm</Transaction>
+    <Transaction>2020/08/28 09:31:47.000.245,C:\工作\新版IM\IM\Client\DirectUIDemo\AnimateFrm.pas=C:\工作\新版IM\IM\Client\DirectUIDemo\Unit11.pas</Transaction>
+    <Transaction>2020/08/29 13:23:10.000.901,C:\工作\JDUI\DirectUIDemo\TransparentTextInputFrm.pas=</Transaction>
+    <Transaction>2020/09/02 09:39:47.000.452,=C:\工作\JDUI\DirectUIDemo\jduMessageBoxFrm.pas</Transaction>
+  </Transactions>
+</BorlandProject>

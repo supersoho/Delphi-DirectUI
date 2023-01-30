@@ -1,0 +1,45 @@
+/****************************************************************************
+kpzcnst.rc
+
+String Table for VCLZip
+*****************************************************************************/
+
+#include "kpzcnst.pas"
+
+STRINGTABLE 
+{
+ IDS_OPENZIP, "Open a Zip File"
+ IDS_ZIPNAMEFILTER, "Zip Files (*.ZIP)|*.zip|SFX Files (*.EXE)|*.exe|Jar Files (*.JAR)|*.jar|All Files (*.*)|*.*"
+ IDS_CANCELDESTDIR, "User canceled Set Desination Directory"
+ IDS_INDEXOUTOFRANGE, "Index %d is out of range"
+ IDS_CANCELLOADDISK, "User canceled loading new disk"
+ IDS_CANCELOPERATION, "User Aborted Operation"
+ IDS_INCOMPLETEZIP, "Incomplete Zip File"
+ IDS_INVALIDZIP, "Not a valid zip file!"
+ IDS_INSERTDISK, "Please insert disk "
+ IDS_OFMULTISET, " of the multi-disk set."
+ IDS_CANCELZIPNAME, "User canceled setting zip file name."
+ IDS_CANCELZIPOPERATION, "User canceled Zip operation"
+ IDS_NEWFIXEDNAME, "Select a new name for the fixed file."
+ IDS_ZIPFILESFILTER, "Zip Files (*.ZIP)"
+ IDS_SEEKERROR, "\012Seek error"
+ IDS_SEEKORIGINERROR, "\030Invalid seek origin (%s)"
+ IDS_PUTBACKOVERFLOW, "\020Putback overflow"
+ IDS_LOWMEM, "*** inflate out of memory ***"
+ IDS_PREMEND, "Premature end of file reached"
+ IDS_REPLACEFILE, "Replace existing file "
+ IDS_FILEXISTALERT, "File Exists Alert"
+ IDS_UNKNOWNMETH, "Unknown Compression Method"
+ IDS_ZIPERROR, "Zip Error"
+ IDS_OUTPUTTOLARGE, "File is larger than uncompressed size!"
+ IDS_NOTREGISTERED, "This unregistered version of VCLZip will only run while the Delphi/BCB IDE is running"
+ IDS_WARNING, "Warning!"
+ IDS_NOCOPY, "Could not copy from "
+ IDS_ERROR, "Error"
+ IDS_NOTENOUGHROOM, "Not enough space to write archive",
+ IDS_CANTCREATEZCF, "Cant create zip configuration file",
+ IDS_CANTWRITEZCF, "Error writing zip configuration file",
+ IDS_CANTWRITEUCF "Cant write uncompressed file",
+ IDS_BAD_UNCOMPRESSED_SIZE "Amount read of uncompressed file is less than originally reported file size"
+}
+

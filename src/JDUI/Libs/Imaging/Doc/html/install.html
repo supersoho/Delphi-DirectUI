@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><meta name="generator" content="VampyreDoc"/><link href="../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><link href="../../../common/doc.css" type="text/css" rel="stylesheet"/><link href="doc.css" type="text/css" rel="stylesheet"/><title>Install and Compile</title></head><body>
+    <span class="title">Install and Compile</span>
+    <p class="para">Simply extract contents of distributed archive somewhere
+      on your hard disk and Imaging is installed.
+      However, you need to setup your compilers to be able to compile
+      Imaging.
+    </p>
+    <span class="tabletitle">Source directories needed to be known by compilers</span><table class="table"><tr class="tr"><th class="th">Directory</th><th class="th">Contents</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">(Imaging Root)\Source</code>
+        </span></td><td class="td"><span class="tablepara">Imaging library source code</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">(Imaging Root)\Source\JpegLib</code>
+        </span></td><td class="td"><span class="tablepara">JpegLib needed by Imaging to load/save JPEG/JNG images</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">(Imaging Root)\Source\ZLib</code>
+        </span></td><td class="td"><span class="tablepara">ZLib needed by Imaging to decode/decode PNG/MNG image data and other things</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">(Imaging Root)\Source\Projects</code>
+        </span></td><td class="td"><span class="tablepara">Project files for libraries and packages</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">(Imaging Root)\Source\Extensions</code>
+        </span></td><td class="td"><span class="tablepara">Imaging extensions source code</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">(Imaging Root)\Source\Wrappers\*</code>
+        </span></td><td class="td"><span class="tablepara">Wrappers for other languages</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">(Imaging Root)\Demos\ObjectPascal\Common</code>
+        </span></td><td class="td"><span class="tablepara">Some common routines used by Object Pascal demos</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">(Imaging Root)\Extras\Extensions</code>
+        </span></td><td class="td"><span class="tablepara">Extras extensions source code (mainly new file formats)</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">(Imaging Root)\Extras\Extensions\J2KObjects</code>
+        </span></td><td class="td"><span class="tablepara">Dir with static libraries needed for FPC if you have
+          JPEG 2000 support enabled. Must be added to FPC library path (-Fl).</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">(Imaging Root)\Extras\Extensions\LibTiff</code>
+        </span></td><td class="td"><span class="tablepara">Needed for <span class="link"><a href="tiff.html">TIFF</a></span> support in Delphi.</span></td></tr></table>
+    <span class="subtopic1">Compiler Setup</span>
+    <span class="subtopic2">Compiling Library</span>
+    <span class="caption">Delphi/Kylix Setup</span>
+    <p class="para">You need to add directories listed in the above
+      table to library path.
+    </p>
+    <ol class="orderedlist"><li class="li">Choose <span class="menuitem">Tools<img class="imageinline" src="path.png" alt=""/>Options<img class="imageinline" src="path.png" alt=""/>Environment Options<img class="imageinline" src="path.png" alt=""/>Delphi Options<img class="imageinline" src="path.png" alt=""/>Library - Win32</span>
+      in Delphi 2005+ or <span class="menuitem">Tools<img class="imageinline" src="path.png" alt=""/>Environment Options<img class="imageinline" src="path.png" alt=""/>Library</span> in Delphi 7- and Kylix.
+      </li><li class="li">Add directories to <span class="menuitem">Library path</span> string.</li></ol>
+    <span class="caption">Free Pascal Setup</span>
+    <p class="para">You can write settings to <code class="keyword">fpc.cfg</code> configuration
+      file or use them directly as command line parameters
+    </p>
+    <ol class="orderedlist"><li class="li">Use <code class="keyword">-FuUnitPath</code> parameter for all
+        directories listed in the above table and <code class="keyword">-FiIncludePath</code>
+        only for <code class="keyword">(Imaging_Root)\Source</code> directory.
+        Also library path must me added for JPEG2000
+        (Imaging Root\Extras\Extensions\J2KObjects) using <code class="keyword">-FlLibPath</code>.
+        Example: <code class="keyword">fpc -FuD:\Imaging\Source -FuD:\Imaging\Source\JpegLib ... -FiD:\Imaging\Source</code></li><li class="li">You should also set compiler mode and other compilation specific options.
+        I use <code class="keyword">-Sgi2dh</code> and it works.
+        <code class="keyword">g</code> means allow <code class="codeinline">goto</code>,
+        <code class="keyword">i</code> means allow function inlining,
+        <code class="keyword">2</code> allows some Delphi 2 extensions,
+        <code class="keyword">d</code> turns on Delphi compatibility mode
+        and <code class="keyword">h</code> turns on ANSI strings.
+      </li></ol>
+    <span class="subtopic2">Using Wrappers For Other Languages</span>
+    <span class="caption">Delphi.NET Setup</span>
+    <p class="para">You need to add directory in which Delphi.NET wrapper is located
+      to library path.
+    </p>
+    <ol class="orderedlist"><li class="li">Choose <span class="menuitem">Tools<img class="imageinline" src="path.png" alt=""/>Options<img class="imageinline" src="path.png" alt=""/>Environment Options<img class="imageinline" src="path.png" alt=""/>Delphi Options<img class="imageinline" src="path.png" alt=""/>Library - NET</span>
+      in Delphi 2005+.</li><li class="li">Add directory to <span class="menuitem">Library path</span> string.</li></ol>
+    <span class="caption">C/C++ Compiler Setup</span>
+    <p class="para">Settings depend entirely on the compiler used.
+      You need to add directory in which C/C++ wrapper headers are located
+      to its include path and then compile <code class="codeinline">ImagingImport.c</code>
+      file located in wrapper directory and link it with your object files.
+      You can find working MS VC++ 8.0 project in <code class="keyword">Demos\Cpp\Bench</code>
+      directory.
+    </p>
+    <span class="subtopic1">Build Scripts</span>
+    <p class="para">You can also compile Imaging library and demos without
+      setting your compilers. All you need is to make sure that you have
+      paths to compilers' executables in your system's search path
+      (<code class="keyword">PATH</code> environment variable).
+      Then you can run one of these scripts located in <code class="keyword">Scripts</code>
+      directory:
+    </p>
+    <table class="table"><tr class="tr"><th class="th">Script Name</th><th class="th">Usage</th></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">BuildLibraryDelphi.bat (Win32)</code>
+        </span></td><td class="td"><span class="tablepara">Builds <code class="keyword">VampyreImaging.dll</code> in
+        <code class="keyword">Bin</code> directory using Delphi</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">BuildLibraryFPC.bat (Win32)</code>
+        </span></td><td class="td"><span class="tablepara">Builds <code class="keyword">VampyreImaging.dll</code> in
+        <code class="keyword">Bin</code> directory using Free Pascal</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">BuildLibraryFPC.sh (Linux/Unix)</code>
+        </span></td><td class="td"><span class="tablepara">Builds <code class="keyword">libVampyreImaging.so</code> in
+        <code class="keyword">Bin</code> directory using Free Pascal</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">BuildDemosDelphi.bat (Win32)</code>
+        </span></td><td class="td"><span class="tablepara">Builds demos in <code class="keyword">Demos\Bin</code> directory using Delphi</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">BuildExtDemosDelphi.bat (Win32)</code>
+        </span></td><td class="td"><span class="tablepara">Builds demos of Imaging extensions which require external units
+        in <code class="keyword">Demos\Bin</code>
+        directory using Delphi (<span class="link"><a href="#extnote">Note</a></span>)</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">BuildDemosFPC.bat (Win32)</code>
+        </span></td><td class="td"><span class="tablepara">Builds demos in <code class="keyword">Demos\Bin</code> directory using Free Pascal</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">BuildDemosFPC64.bat (Win64)</code>
+        </span></td><td class="td"><span class="tablepara">Builds demos in <code class="keyword">Demos\Bin</code> directory using Free Pascal</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">BuildExtDemosFPC.bat (Win32)</code>
+        </span></td><td class="td"><span class="tablepara">Builds demos of Imaging extensions which require external units
+        in <code class="keyword">Demos\Bin</code>
+        directory using Free Pascal (<span class="link"><a href="#extnote">Note</a></span>)</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">BuildDemosDOS.bat (DOS)</code>
+        </span></td><td class="td"><span class="tablepara">Builds demos in <code class="keyword">Demos\Bin</code> directory using Free Pascal</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">BuildDemosFPC.sh (Linux/Unix)</code>
+        </span></td><td class="td"><span class="tablepara">Builds demos in <code class="keyword">Demos/Bin</code> directory using Free Pascal</span></td></tr><tr class="tr"><td class="td"><span class="tablepara">
+          <code class="keyword">BuildExtDemosFPC.sh (Linux/Unix)</code>
+        </span></td><td class="td"><span class="tablepara">Builds demos of Imaging extensions which require external units
+        in <code class="keyword">Demos\Bin</code>
+        directory using Free Pascal (<span class="link"><a href="#extnote">Note</a></span>)</span></td></tr></table>
+    <a id="extnote">
+      <div class="note">Note:
+    <span class="ntwpara">You must first set search directories in which
+        third party units required by some demos (like <code class="keyword">JEDI-SDL</code>,
+        <code class="keyword">Direct3D</code>, ...) are located. Just open the script and
+        you will see couple of empty variables (like <code class="codeinline">set SDLDIR=</code> in
+        *.bat or <code class="codeinline">SDLDIR=""</code> in *.sh script). Set the variables
+        to paths to required libraries and run the script. If you don't have
+        some of these libraries installed and variables are left empty
+        demos which require them will be simply skipped when the script is
+        executed.
+      </span></div>
+    </a>
+  <br/><br/><br/><div class="footer">Vampyre Imaging Library (Documentation for version 0.26.4)
+    <br/><a href="http://imaginglib.sourceforge.net" target="_blank">http://imaginglib.sourceforge.net</a><br/></div><br/></body></html>

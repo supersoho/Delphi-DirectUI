@@ -1,0 +1,67 @@
+Vampyre Imaging Library Benchmark Demo version 0.13
+
+-------------  Loading Images -------------
+Loading image: Tigers.jpg
+Image loaded in: 58597 us
+Loading image: Tigers.bmp
+Image loaded in: 21312 us
+Loading image: Tigers.png
+Image loaded in: 24332 us
+Loading image: Tigers.tga
+Image loaded in: 12822 us
+Loading image: Tigers.dds
+Image loaded in: 535 us
+
+-----------  Image Manipulation -----------
+Decompressing image from DXT1 format ...
+Image decompressed in: 8491 us
+Resizing image to 3000x3000 ...
+Image resized in: 142690 us
+Converting image to A16R16G16B16 64bit format ...
+Image converted in: 507876 us
+Flipping image ...
+Image flipped in: 177671 us
+Mirroring image ...
+Image mirrored in: 267325 us
+Swapping channels of image ...
+Channels swapped in: 500239 us
+Converting image to A32B32G32R32F 128bit floating point format ...
+Image converted in: 965410 us
+Converting image to A4R4G4B4 16bit format ...
+Image converted in: 1513920 us
+Converting image to A8R8G8B8 32bit format ...
+Image converted in: 1701175 us
+Cloning image ...
+Image cloned in: 146370 us
+Copying rectagle ...
+Rectangle copied in: 26738 us
+Filling rectagle ...
+Rectangle filled in: 29072 us
+Creating mipmaps ...
+Mipmaps created in: 428383 us
+Splitting image ...
+Image split in: 218834 us
+Resizing image to 1000x1000 ...
+Image resized in: 36891 us
+Reducing colors count to 512 ...
+Colors reduced in in: 305842 us
+Making palette for images ...
+Palette made in: 48934 us
+Mapping image to existing palette ...
+Image mapped in: 1998956 us
+Compressing image to DXT1 format ...
+Image compressed in: 407171 us
+
+-------------  Saving Images --------------
+Saving image to format: dds
+Image saved in: 2404 us
+Converting image to R8G8B8 24bit format ...
+Image converted in: 47182 us
+Saving image to format: jpg
+Image saved in: 172734 us
+Saving image to format: bmp
+Image saved in: 16795 us
+Saving image to format: png
+Image saved in: 377572 us
+Saving image to format: tga
+Image saved in: 12042 us

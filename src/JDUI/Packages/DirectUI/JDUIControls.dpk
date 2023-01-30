@@ -1,0 +1,56 @@
+package JDUIControls;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  vcl,
+  vclimg,
+  soaprtl,
+  DragDropDXE5,
+  vcldb,
+  PngComponents,
+  DCEF_DX10,
+  GR32_RSXE3;
+
+contains
+  JDUIControl in 'JDUIControl.pas',
+  JDUIFonts in 'JDUIFonts.pas',
+  JDUIObjects in 'JDUIObjects.pas',
+  JDUITableView in 'JDUITableView.pas',
+  JDUIUtils in 'JDUIUtils.pas',
+  JDUIBaseControl in 'JDUIBaseControl.pas',
+  JDUIPopupFrm in 'Forms\JDUIPopupFrm.pas' {jduPopupForm},
+  JDUITooltipFrm in 'Forms\JDUITooltipFrm.pas' {jduTooltipForm},
+  JDUIDropListFrm in 'Forms\JDUIDropListFrm.pas' {JDUIDropListForm};
+
+end.
+
+
+
+
